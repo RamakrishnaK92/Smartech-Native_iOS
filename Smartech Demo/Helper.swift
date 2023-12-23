@@ -7,6 +7,10 @@
 
 import Foundation
 
-func getLoginStatus(){
+struct SmartechEvent{
+    
+    
+    let productView = "product_view"
+    let productPurchase = "product_purchase"
     
 }

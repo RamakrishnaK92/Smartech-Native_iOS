@@ -3,4 +3,114 @@
    uuid = "60006D84-6AC4-4FAB-BB03-9A41B9B28CC8"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smartech Demo/ViewControllers/NotificationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "AppInboxController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - ab5b2728c33a75ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.tableView.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/Smartech%20Demo/ViewControllers/NotificationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - f5a0065ea1889e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.tableView.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/Smartech%20Demo/ViewControllers/NotificationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - a6489e09b0eed2c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.tableView.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/Smartech%20Demo/ViewControllers/NotificationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - 5fedb700e2a504"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.tableView.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - 65ada312ef4cedee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Smartech_Demo.AppInboxController"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/Smartech%20Demo/ViewControllers/NotificationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "71154DBF-EF60-4EB9-A000-78550A76DF5E - 6fa056e028d7b332"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smartech_Demo.AppInboxController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Smartech_Demo.AppInboxController&gt;"
+                  moduleName = "Smartech Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramakrishna.kasuba/Git/Smartech%20Native%20iOS/Smartech%20Demo/ViewControllers/NotificationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

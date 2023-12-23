@@ -20,6 +20,9 @@ class ViewController: UITableViewController{
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    var smartEvent = SmartechEvent.init()
+    var productViewDict:[String:Any] = [:]
+    var NetcoreEvent = Smartech.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,7 @@ class ViewController: UITableViewController{
         Utilities.styleTextField(loginTF)
         Utilities.styleFilledButton(signInBtn)
         
+       
        
         // Do any additional setup after loading the view.
         
@@ -57,6 +61,9 @@ class ViewController: UITableViewController{
             UserDefaults.standard.synchronize()
             
         }
+        
+        
+        
     }
     
 
@@ -122,9 +129,9 @@ class ViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        productViewDict = ["product_desc":"","product_url":"","product_imageurl":"","product_amount":0.0,"prid":""]
+        NetcoreEvent.trackEvent(smartEvent.productView, andPayload: productViewDict)
         
-        
-//        Smartech.sharedInstance().trackEvent("HOMEPAGE", andPayload: ["COUNTRY_CODE":"IN", "DEVICE_LANGUAGE":"EN"])
 //        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"Authentication Screen"])
     }
 }

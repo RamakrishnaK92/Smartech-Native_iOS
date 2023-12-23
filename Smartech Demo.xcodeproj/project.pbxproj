@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8C2652D404006DF7D0 /* RegisterViewController.swift */; };
 		97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8E2652D428006DF7D0 /* DashboardVC.swift */; };
 		97093C922652DC21006DF7D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C912652DC21006DF7D0 /* Utilities.swift */; };
-		9720CAB82656A216008DEA17 /* SmartechConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9720CAB72656A216008DEA17 /* SmartechConfig.plist */; };
 		9D09A913294D8739005E88C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09A912294D8739005E88C3 /* Helper.swift */; };
 		9D456F3D2941D2DB00ABCF10 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */; };
 		9D456F412941D2DB00ABCF10 /* SmartechNSE.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -27,6 +26,7 @@
 		9D4A89AF2945DDD600AC54B0 /* CEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */; };
 		9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */; };
 		9D6BC01C2951F46000D569E3 /* PXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */; };
+		9D7771C72B375230004DFA8F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7771C62B375230004DFA8F /* Media.xcassets */; };
 		9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */; };
 		9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */; };
 		9D9C9FC529B10D6C00654732 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720CAA3265697A2008DEA17 /* UserNotifications.framework */; };
@@ -113,7 +113,6 @@
 		9720CAA3265697A2008DEA17 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smartech Demo.entitlements"; sourceTree = "<group>"; };
-		9720CAB72656A216008DEA17 /* SmartechConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SmartechConfig.plist; sourceTree = "<group>"; };
 		9D09A912294D8739005E88C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEViewController.swift; sourceTree = "<group>"; };
 		9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXTableViewController.swift; sourceTree = "<group>"; };
+		9D7771C62B375230004DFA8F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInboxCellTableViewCell.swift; sourceTree = "<group>"; };
 		9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInboxCellTableViewCell.xib; sourceTree = "<group>"; };
 		9D9C9FC429B10D6B00654732 /* SmartechNC.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNC.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +186,6 @@
 		97093C502652A9A4006DF7D0 = {
 			isa = PBXGroup;
 			children = (
-				9720CAB72656A216008DEA17 /* SmartechConfig.plist */,
 				9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */,
 				97093C5B2652A9A4006DF7D0 /* Smartech Demo */,
 				97093C722652A9B6006DF7D0 /* Smartech DemoTests */,
@@ -279,6 +278,7 @@
 				9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */,
 				9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */,
 				9D9C9FCD29B10D6C00654732 /* Info.plist */,
+				9D7771C62B375230004DFA8F /* Media.xcassets */,
 			);
 			path = SmartechNC;
 			sourceTree = "<group>";
@@ -454,6 +454,8 @@
 				Base,
 			);
 			mainGroup = 97093C502652A9A4006DF7D0;
+			packageReferences = (
+			);
 			productRefGroup = 97093C5A2652A9A4006DF7D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -474,7 +476,6 @@
 			files = (
 				9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */,
 				97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */,
-				9720CAB82656A216008DEA17 /* SmartechConfig.plist in Resources */,
 				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
 				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
 				97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */,
@@ -506,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7771C72B375230004DFA8F /* Media.xcassets in Resources */,
 				9D9C9FCC29B10D6C00654732 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

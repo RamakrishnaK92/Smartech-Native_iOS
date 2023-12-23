@@ -12,7 +12,6 @@ target 'Smartech Demo' do
   pod 'SmartPush-iOS-SDK'
   
   pod 'SmartechNudges'
-  #pod 'SmartechNudges', :path => '~/Downloads/SmartechNudges-PO1159'
   pod 'SmartechAppInbox-iOS-SDK'
   
   pod 'IQKeyboardManagerSwift'
