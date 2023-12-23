@@ -6,27 +6,16 @@
 //
 
 import UIKit
-import UserNotifications
-import UserNotificationsUI
 import SmartPush
 
-class NotificationViewController: UIViewController, UNNotificationContentExtension {
+class NotificationViewController: SMTCustomNotificationViewController {
     
-    @IBOutlet var customBgView: UIView!
+    @IBOutlet var customPNView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SmartPush.sharedInstance().loadCustomNotificationContentView(customBgView)
-        // Do any required interface initialization here.
-    }
-    
-    func didReceive(_ notification: UNNotification) {
-        SmartPush.sharedInstance().didReceiveCustomNotification(notification)
-    }
-    
-    func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
-        SmartPush.sharedInstance().didReceiveCustomNotificationResponse(response) { (option) in
-            completion(option)
-        }
+        self.customView = customPNView
     }
 }
+
+
