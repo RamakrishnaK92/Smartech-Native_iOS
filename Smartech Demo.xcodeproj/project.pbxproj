@@ -1,0 +1,1200 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14273BD48C2CDF280605FC45 /* Pods_SmartechNSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */; };
+		1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862FB72280402A400EC3395 /* NotificationVC.swift */; };
+		97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */; };
+		97093C612652A9A4006DF7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C602652A9A4006DF7D0 /* ViewController.swift */; };
+		97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093C622652A9A4006DF7D0 /* Main.storyboard */; };
+		97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97093C652652A9B6006DF7D0 /* Assets.xcassets */; };
+		97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093C672652A9B6006DF7D0 /* LaunchScreen.storyboard */; };
+		97093C742652A9B6006DF7D0 /* Smartech_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C732652A9B6006DF7D0 /* Smartech_DemoTests.swift */; };
+		97093C7F2652A9B6006DF7D0 /* Smartech_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C7E2652A9B6006DF7D0 /* Smartech_DemoUITests.swift */; };
+		97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8C2652D404006DF7D0 /* RegisterViewController.swift */; };
+		97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8E2652D428006DF7D0 /* DashboardVC.swift */; };
+		97093C922652DC21006DF7D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C912652DC21006DF7D0 /* Utilities.swift */; };
+		9720CAB82656A216008DEA17 /* SmartechConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9720CAB72656A216008DEA17 /* SmartechConfig.plist */; };
+		9D09A913294D8739005E88C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09A912294D8739005E88C3 /* Helper.swift */; };
+		9D456F3D2941D2DB00ABCF10 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */; };
+		9D456F412941D2DB00ABCF10 /* SmartechNSE.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */; };
+		9D4A89AF2945DDD600AC54B0 /* CEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */; };
+		9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */; };
+		9D6BC01C2951F46000D569E3 /* PXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */; };
+		9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */; };
+		9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */; };
+		9D9C9FC529B10D6C00654732 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720CAA3265697A2008DEA17 /* UserNotifications.framework */; };
+		9D9C9FC629B10D6C00654732 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */; };
+		9D9C9FC929B10D6C00654732 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */; };
+		9D9C9FCC29B10D6C00654732 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */; };
+		9D9C9FD029B10D6C00654732 /* SmartechNC.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D9C9FC429B10D6B00654732 /* SmartechNC.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC618652950DAC400E670C5 /* InAppViewController.swift */; };
+		A9BDEB306C9DACCC40D920F7 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */; };
+		FA9B0D741C4B6543E678217F /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97093C702652A9B6006DF7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97093C512652A9A4006DF7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97093C582652A9A4006DF7D0;
+			remoteInfo = "Smartech Demo";
+		};
+		97093C7B2652A9B6006DF7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97093C512652A9A4006DF7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97093C582652A9A4006DF7D0;
+			remoteInfo = "Smartech Demo";
+		};
+		9D456F3F2941D2DB00ABCF10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97093C512652A9A4006DF7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D456F392941D2DB00ABCF10;
+			remoteInfo = SmartechNSE;
+		};
+		9D9C9FCE29B10D6C00654732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97093C512652A9A4006DF7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D9C9FC329B10D6B00654732;
+			remoteInfo = SmartechNC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9720CA9A26569784008DEA17 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9D456F412941D2DB00ABCF10 /* SmartechNSE.appex in Embed Foundation Extensions */,
+				9D9C9FD029B10D6C00654732 /* SmartechNC.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartech_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.release.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.release.xcconfig"; sourceTree = "<group>"; };
+		0F381077CD0805F3D3E12F39 /* Pods-SmartechNCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.release.xcconfig"; sourceTree = "<group>"; };
+		1862FB72280402A400EC3395 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		18E1E0FF274C059F00751F85 /* SmartechNudge-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartechNudge-bridging-header.h"; sourceTree = "<group>"; };
+		673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.debug.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.debug.xcconfig"; sourceTree = "<group>"; };
+		97093C592652A9A4006DF7D0 /* Smartech Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smartech Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97093C602652A9A4006DF7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97093C632652A9A4006DF7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97093C652652A9B6006DF7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97093C682652A9B6006DF7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97093C6A2652A9B6006DF7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97093C6F2652A9B6006DF7D0 /* Smartech DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smartech DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97093C732652A9B6006DF7D0 /* Smartech_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smartech_DemoTests.swift; sourceTree = "<group>"; };
+		97093C752652A9B6006DF7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97093C7A2652A9B6006DF7D0 /* Smartech DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smartech DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97093C7E2652A9B6006DF7D0 /* Smartech_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smartech_DemoUITests.swift; sourceTree = "<group>"; };
+		97093C802652A9B6006DF7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97093C8C2652D404006DF7D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		97093C8E2652D428006DF7D0 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		97093C912652DC21006DF7D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		9720CAA3265697A2008DEA17 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smartech Demo.entitlements"; sourceTree = "<group>"; };
+		9720CAB72656A216008DEA17 /* SmartechConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SmartechConfig.plist; sourceTree = "<group>"; };
+		9D09A912294D8739005E88C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9D456F3E2941D2DB00ABCF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D456F592941D3A000ABCF10 /* SmartechNSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartechNSE.entitlements; sourceTree = "<group>"; };
+		9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEViewController.swift; sourceTree = "<group>"; };
+		9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXTableViewController.swift; sourceTree = "<group>"; };
+		9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInboxCellTableViewCell.swift; sourceTree = "<group>"; };
+		9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInboxCellTableViewCell.xib; sourceTree = "<group>"; };
+		9D9C9FC429B10D6B00654732 /* SmartechNC.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNC.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		9D9C9FCB29B10D6C00654732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9D9C9FCD29B10D6C00654732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D9C9FD429B10E3200654732 /* SmartechNC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartechNC.entitlements; sourceTree = "<group>"; };
+		9DC618652950DAC400E670C5 /* InAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
+		AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB242CFED15D9454A345DCA /* Pods_SmartechNCE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNCE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.debug.xcconfig"; sourceTree = "<group>"; };
+		BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.release.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.release.xcconfig"; sourceTree = "<group>"; };
+		C5E1A6FFAFF928D5526740E6 /* Pods-SmartechNCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.debug.xcconfig"; sourceTree = "<group>"; };
+		F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97093C562652A9A4006DF7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA9B0D741C4B6543E678217F /* Pods_Smartech_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C6C2652A9B6006DF7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C772652A9B6006DF7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D456F372941D2DB00ABCF10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14273BD48C2CDF280605FC45 /* Pods_SmartechNSE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9C9FC129B10D6B00654732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9C9FC629B10D6C00654732 /* UserNotificationsUI.framework in Frameworks */,
+				9D9C9FC529B10D6C00654732 /* UserNotifications.framework in Frameworks */,
+				A9BDEB306C9DACCC40D920F7 /* Pods_SmartechNC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97093C502652A9A4006DF7D0 = {
+			isa = PBXGroup;
+			children = (
+				9720CAB72656A216008DEA17 /* SmartechConfig.plist */,
+				9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */,
+				97093C5B2652A9A4006DF7D0 /* Smartech Demo */,
+				97093C722652A9B6006DF7D0 /* Smartech DemoTests */,
+				97093C7D2652A9B6006DF7D0 /* Smartech DemoUITests */,
+				9D456F3B2941D2DB00ABCF10 /* SmartechNSE */,
+				9D9C9FC729B10D6C00654732 /* SmartechNC */,
+				97093C5A2652A9A4006DF7D0 /* Products */,
+				C84B9AE4E06871E6A73F2FD6 /* Pods */,
+				E8B794B1E4C981D6E18F6C2F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		97093C5A2652A9A4006DF7D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97093C592652A9A4006DF7D0 /* Smartech Demo.app */,
+				97093C6F2652A9B6006DF7D0 /* Smartech DemoTests.xctest */,
+				97093C7A2652A9B6006DF7D0 /* Smartech DemoUITests.xctest */,
+				9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */,
+				9D9C9FC429B10D6B00654732 /* SmartechNC.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97093C5B2652A9A4006DF7D0 /* Smartech Demo */ = {
+			isa = PBXGroup;
+			children = (
+				9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */,
+				18E1E0FF274C059F00751F85 /* SmartechNudge-bridging-header.h */,
+				97093C902652D438006DF7D0 /* ViewControllers */,
+				97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */,
+				9DECFD9B2A2DCAD100B6D045 /* Views */,
+				97093C652652A9B6006DF7D0 /* Assets.xcassets */,
+				9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */,
+				97093C6A2652A9B6006DF7D0 /* Info.plist */,
+				97093C912652DC21006DF7D0 /* Utilities.swift */,
+				9D09A912294D8739005E88C3 /* Helper.swift */,
+			);
+			path = "Smartech Demo";
+			sourceTree = "<group>";
+		};
+		97093C722652A9B6006DF7D0 /* Smartech DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				97093C732652A9B6006DF7D0 /* Smartech_DemoTests.swift */,
+				97093C752652A9B6006DF7D0 /* Info.plist */,
+			);
+			path = "Smartech DemoTests";
+			sourceTree = "<group>";
+		};
+		97093C7D2652A9B6006DF7D0 /* Smartech DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				97093C7E2652A9B6006DF7D0 /* Smartech_DemoUITests.swift */,
+				97093C802652A9B6006DF7D0 /* Info.plist */,
+			);
+			path = "Smartech DemoUITests";
+			sourceTree = "<group>";
+		};
+		97093C902652D438006DF7D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				97093C602652A9A4006DF7D0 /* ViewController.swift */,
+				97093C8C2652D404006DF7D0 /* RegisterViewController.swift */,
+				97093C8E2652D428006DF7D0 /* DashboardVC.swift */,
+				1862FB72280402A400EC3395 /* NotificationVC.swift */,
+				9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */,
+				9DC618652950DAC400E670C5 /* InAppViewController.swift */,
+				9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */,
+				9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */,
+				9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9D456F3B2941D2DB00ABCF10 /* SmartechNSE */ = {
+			isa = PBXGroup;
+			children = (
+				9D456F592941D3A000ABCF10 /* SmartechNSE.entitlements */,
+				9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */,
+				9D456F3E2941D2DB00ABCF10 /* Info.plist */,
+			);
+			path = SmartechNSE;
+			sourceTree = "<group>";
+		};
+		9D9C9FC729B10D6C00654732 /* SmartechNC */ = {
+			isa = PBXGroup;
+			children = (
+				9D9C9FD429B10E3200654732 /* SmartechNC.entitlements */,
+				9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */,
+				9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */,
+				9D9C9FCD29B10D6C00654732 /* Info.plist */,
+			);
+			path = SmartechNC;
+			sourceTree = "<group>";
+		};
+		9DECFD9B2A2DCAD100B6D045 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97093C622652A9A4006DF7D0 /* Main.storyboard */,
+				97093C672652A9B6006DF7D0 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C84B9AE4E06871E6A73F2FD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */,
+				0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */,
+				C5E1A6FFAFF928D5526740E6 /* Pods-SmartechNCE.debug.xcconfig */,
+				0F381077CD0805F3D3E12F39 /* Pods-SmartechNCE.release.xcconfig */,
+				AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */,
+				F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */,
+				823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */,
+				BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8B794B1E4C981D6E18F6C2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9720CAA3265697A2008DEA17 /* UserNotifications.framework */,
+				9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */,
+				0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */,
+				ABB242CFED15D9454A345DCA /* Pods_SmartechNCE.framework */,
+				673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */,
+				AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97093C582652A9A4006DF7D0 /* Smartech Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97093C832652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech Demo" */;
+			buildPhases = (
+				6CB7917D03AAE67FEEC66D65 /* [CP] Check Pods Manifest.lock */,
+				97093C552652A9A4006DF7D0 /* Sources */,
+				97093C562652A9A4006DF7D0 /* Frameworks */,
+				97093C572652A9A4006DF7D0 /* Resources */,
+				9720CA9A26569784008DEA17 /* Embed Foundation Extensions */,
+				9D2CBF09DEE6B1840A0C98B3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D456F402941D2DB00ABCF10 /* PBXTargetDependency */,
+				9D9C9FCF29B10D6C00654732 /* PBXTargetDependency */,
+			);
+			name = "Smartech Demo";
+			productName = "Smartech Demo";
+			productReference = 97093C592652A9A4006DF7D0 /* Smartech Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		97093C6E2652A9B6006DF7D0 /* Smartech DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97093C862652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech DemoTests" */;
+			buildPhases = (
+				97093C6B2652A9B6006DF7D0 /* Sources */,
+				97093C6C2652A9B6006DF7D0 /* Frameworks */,
+				97093C6D2652A9B6006DF7D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97093C712652A9B6006DF7D0 /* PBXTargetDependency */,
+			);
+			name = "Smartech DemoTests";
+			productName = "Smartech DemoTests";
+			productReference = 97093C6F2652A9B6006DF7D0 /* Smartech DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		97093C792652A9B6006DF7D0 /* Smartech DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97093C892652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech DemoUITests" */;
+			buildPhases = (
+				97093C762652A9B6006DF7D0 /* Sources */,
+				97093C772652A9B6006DF7D0 /* Frameworks */,
+				97093C782652A9B6006DF7D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97093C7C2652A9B6006DF7D0 /* PBXTargetDependency */,
+			);
+			name = "Smartech DemoUITests";
+			productName = "Smartech DemoUITests";
+			productReference = 97093C7A2652A9B6006DF7D0 /* Smartech DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9D456F392941D2DB00ABCF10 /* SmartechNSE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D456F442941D2DB00ABCF10 /* Build configuration list for PBXNativeTarget "SmartechNSE" */;
+			buildPhases = (
+				F0562B5E29CEF47168FA9799 /* [CP] Check Pods Manifest.lock */,
+				9D456F362941D2DB00ABCF10 /* Sources */,
+				9D456F372941D2DB00ABCF10 /* Frameworks */,
+				9D456F382941D2DB00ABCF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartechNSE;
+			productName = SmartechNSE;
+			productReference = 9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		9D9C9FC329B10D6B00654732 /* SmartechNC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D9C9FD129B10D6C00654732 /* Build configuration list for PBXNativeTarget "SmartechNC" */;
+			buildPhases = (
+				C89357FBF601C3B8B0D478D3 /* [CP] Check Pods Manifest.lock */,
+				9D9C9FC029B10D6B00654732 /* Sources */,
+				9D9C9FC129B10D6B00654732 /* Frameworks */,
+				9D9C9FC229B10D6B00654732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartechNC;
+			productName = SmartechNC;
+			productReference = 9D9C9FC429B10D6B00654732 /* SmartechNC.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97093C512652A9A4006DF7D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					97093C582652A9A4006DF7D0 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					97093C6E2652A9B6006DF7D0 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 97093C582652A9A4006DF7D0;
+					};
+					97093C792652A9B6006DF7D0 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 97093C582652A9A4006DF7D0;
+					};
+					9D456F392941D2DB00ABCF10 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					9D9C9FC329B10D6B00654732 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 97093C542652A9A4006DF7D0 /* Build configuration list for PBXProject "Smartech Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97093C502652A9A4006DF7D0;
+			productRefGroup = 97093C5A2652A9A4006DF7D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97093C582652A9A4006DF7D0 /* Smartech Demo */,
+				97093C6E2652A9B6006DF7D0 /* Smartech DemoTests */,
+				97093C792652A9B6006DF7D0 /* Smartech DemoUITests */,
+				9D456F392941D2DB00ABCF10 /* SmartechNSE */,
+				9D9C9FC329B10D6B00654732 /* SmartechNC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97093C572652A9A4006DF7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */,
+				97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */,
+				9720CAB82656A216008DEA17 /* SmartechConfig.plist in Resources */,
+				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
+				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
+				97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C6D2652A9B6006DF7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C782652A9B6006DF7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D456F382941D2DB00ABCF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9C9FC229B10D6B00654732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9C9FCC29B10D6C00654732 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CB7917D03AAE67FEEC66D65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smartech Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D2CBF09DEE6B1840A0C98B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C89357FBF601C3B8B0D478D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartechNC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0562B5E29CEF47168FA9799 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartechNSE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97093C552652A9A4006DF7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D4A89AF2945DDD600AC54B0 /* CEViewController.swift in Sources */,
+				9D6BC01C2951F46000D569E3 /* PXTableViewController.swift in Sources */,
+				9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */,
+				97093C922652DC21006DF7D0 /* Utilities.swift in Sources */,
+				97093C612652A9A4006DF7D0 /* ViewController.swift in Sources */,
+				97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */,
+				9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */,
+				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,
+				9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */,
+				97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */,
+				1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */,
+				9D09A913294D8739005E88C3 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C6B2652A9B6006DF7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97093C742652A9B6006DF7D0 /* Smartech_DemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97093C762652A9B6006DF7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97093C7F2652A9B6006DF7D0 /* Smartech_DemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D456F362941D2DB00ABCF10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D456F3D2941D2DB00ABCF10 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9C9FC029B10D6B00654732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9C9FC929B10D6C00654732 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97093C712652A9B6006DF7D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97093C582652A9A4006DF7D0 /* Smartech Demo */;
+			targetProxy = 97093C702652A9B6006DF7D0 /* PBXContainerItemProxy */;
+		};
+		97093C7C2652A9B6006DF7D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97093C582652A9A4006DF7D0 /* Smartech Demo */;
+			targetProxy = 97093C7B2652A9B6006DF7D0 /* PBXContainerItemProxy */;
+		};
+		9D456F402941D2DB00ABCF10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D456F392941D2DB00ABCF10 /* SmartechNSE */;
+			targetProxy = 9D456F3F2941D2DB00ABCF10 /* PBXContainerItemProxy */;
+		};
+		9D9C9FCF29B10D6C00654732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D9C9FC329B10D6B00654732 /* SmartechNC */;
+			targetProxy = 9D9C9FCE29B10D6C00654732 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		97093C622652A9A4006DF7D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97093C632652A9A4006DF7D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97093C672652A9B6006DF7D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97093C682652A9B6006DF7D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D9C9FCB29B10D6C00654732 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97093C812652A9B6006DF7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		97093C822652A9B6006DF7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97093C842652A9B6006DF7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Netcore;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Smartech Demo/Smartech Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Smartech Demo/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and In Use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Always;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application wants to use your location";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Smartech Demo/SmartechNudge-bridging-header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97093C852652A9B6006DF7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Netcore;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Smartech Demo/Smartech Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Smartech Demo/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and In Use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Always;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application wants to use your location";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Smartech Demo/SmartechNudge-bridging-header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		97093C872652A9B6006DF7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23JY7W62NA;
+				INFOPLIST_FILE = "Smartech DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Smartech-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smartech Demo.app/Smartech Demo";
+			};
+			name = Debug;
+		};
+		97093C882652A9B6006DF7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23JY7W62NA;
+				INFOPLIST_FILE = "Smartech DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Smartech-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smartech Demo.app/Smartech Demo";
+			};
+			name = Release;
+		};
+		97093C8A2652A9B6006DF7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23JY7W62NA;
+				INFOPLIST_FILE = "Smartech DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Smartech-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smartech Demo";
+			};
+			name = Debug;
+		};
+		97093C8B2652A9B6006DF7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23JY7W62NA;
+				INFOPLIST_FILE = "Smartech DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Smartech-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smartech Demo";
+			};
+			name = Release;
+		};
+		9D456F422941D2DB00ABCF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SmartechNSE/SmartechNSE.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartechNSE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartechNSE;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp.SmartechNSE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App_SmartechNSE;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D456F432941D2DB00ABCF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SmartechNSE/SmartechNSE.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartechNSE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartechNSE;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp.SmartechNSE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App_SmartechNSE;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9D9C9FD229B10D6C00654732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SmartechNC/SmartechNC.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartechNC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartechNC;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp.SmartechNCE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App_SmartechNCE;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D9C9FD329B10D6C00654732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SmartechNC/SmartechNC.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartechNC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartechNC;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.SmartechApp.SmartechNCE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App_SmartechNCE;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97093C542652A9A4006DF7D0 /* Build configuration list for PBXProject "Smartech Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97093C812652A9B6006DF7D0 /* Debug */,
+				97093C822652A9B6006DF7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		97093C832652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97093C842652A9B6006DF7D0 /* Debug */,
+				97093C852652A9B6006DF7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		97093C862652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97093C872652A9B6006DF7D0 /* Debug */,
+				97093C882652A9B6006DF7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		97093C892652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97093C8A2652A9B6006DF7D0 /* Debug */,
+				97093C8B2652A9B6006DF7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D456F442941D2DB00ABCF10 /* Build configuration list for PBXNativeTarget "SmartechNSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D456F422941D2DB00ABCF10 /* Debug */,
+				9D456F432941D2DB00ABCF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D9C9FD129B10D6C00654732 /* Build configuration list for PBXNativeTarget "SmartechNC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D9C9FD229B10D6C00654732 /* Debug */,
+				9D9C9FD329B10D6C00654732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97093C512652A9A4006DF7D0 /* Project object */;
+}
