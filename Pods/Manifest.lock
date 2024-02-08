@@ -779,7 +779,7 @@ PODS:
   - RecaptchaInterop (100.0.0)
   - Smartech-iOS-SDK (3.4.1)
   - SmartechAppInbox-iOS-SDK (3.2.10)
-  - SmartechNudges (9.0.4):
+  - SmartechNudges (9.0.6):
     - Smartech-iOS-SDK (>= 3.2.15)
   - SmartPush-iOS-SDK (3.4.1):
     - Smartech-iOS-SDK (>= 3.4.1)
@@ -791,7 +791,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Smartech-iOS-SDK
   - SmartechAppInbox-iOS-SDK
-  - SmartechNudges
+  - SmartechNudges (= 9.0.6)
   - SmartPush-iOS-SDK
 
 SPEC REPOS:
@@ -850,9 +850,9 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   Smartech-iOS-SDK: 76b077310e8d16ff3e0728ab17a4a487ca65f0d0
   SmartechAppInbox-iOS-SDK: 2852b4f990c60c10dbca1004efd19272c377a871
-  SmartechNudges: 194fd6b53c59a6243c32879f030b6b68b074c65c
+  SmartechNudges: 4c268340e92eb9ee55880f0f1bffa7163ab77abe
   SmartPush-iOS-SDK: 6bba832f369d8f7337474598a87e0c69c723002a
 
-PODFILE CHECKSUM: 6f7eba592a90edb3961e2af3435ccdcaa35d76b8
+PODFILE CHECKSUM: 0b139f9b9397ac1a824af6217d2d12fd9154af46
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.14.3

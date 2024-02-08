@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key></key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To send the location of stores</string>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -66,9 +68,12 @@
 		<key>SmartechUseAdvId</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TruenoRg.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>fetch</string>
 		<string>location</string>
 		<string>processing</string>
 		<string>remote-notification</string>

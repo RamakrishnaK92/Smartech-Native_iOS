@@ -36,6 +36,8 @@
 		9D9C9FD029B10D6C00654732 /* SmartechNC.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D9C9FC429B10D6B00654732 /* SmartechNC.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC618652950DAC400E670C5 /* InAppViewController.swift */; };
 		A9BDEB306C9DACCC40D920F7 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */; };
+		BB5270132B714D71004A459B /* TruenoRg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5270122B710F23004A459B /* TruenoRg.otf */; };
+		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
 		FA9B0D741C4B6543E678217F /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +136,8 @@
 		AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB242CFED15D9454A345DCA /* Pods_SmartechNCE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNCE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.debug.xcconfig"; sourceTree = "<group>"; };
+		BB5270122B710F23004A459B /* TruenoRg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TruenoRg.otf; sourceTree = "<group>"; };
+		BB5270142B715769004A459B /* HelperFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFonts.swift; sourceTree = "<group>"; };
 		BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.release.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.release.xcconfig"; sourceTree = "<group>"; };
 		C5E1A6FFAFF928D5526740E6 /* Pods-SmartechNCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.debug.xcconfig"; sourceTree = "<group>"; };
 		F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		97093C5B2652A9A4006DF7D0 /* Smartech Demo */ = {
 			isa = PBXGroup;
 			children = (
+				BB52700F2B6D4A1C004A459B /* Fonts */,
 				9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */,
 				18E1E0FF274C059F00751F85 /* SmartechNudge-bridging-header.h */,
 				97093C902652D438006DF7D0 /* ViewControllers */,
@@ -257,6 +262,7 @@
 				9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */,
 				9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */,
 				9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */,
+				BB5270142B715769004A459B /* HelperFonts.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -290,6 +296,14 @@
 				97093C672652A9B6006DF7D0 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BB52700F2B6D4A1C004A459B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BB5270122B710F23004A459B /* TruenoRg.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C84B9AE4E06871E6A73F2FD6 /* Pods */ = {
@@ -473,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */,
+				BB5270132B714D71004A459B /* TruenoRg.otf in Resources */,
 				97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */,
 				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
 				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
@@ -608,6 +623,7 @@
 				9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */,
 				97093C922652DC21006DF7D0 /* Utilities.swift in Sources */,
 				97093C612652A9A4006DF7D0 /* ViewController.swift in Sources */,
+				BB5270152B715769004A459B /* HelperFonts.swift in Sources */,
 				97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */,
 				9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */,
 				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,

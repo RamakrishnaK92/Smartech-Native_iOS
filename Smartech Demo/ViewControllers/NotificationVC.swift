@@ -30,7 +30,7 @@ class AppInboxController: UIViewController {
         fetchDataFromNetcore()
         //        setupPullToRefresh()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
     }
     
     @objc func appBecomeActive() {

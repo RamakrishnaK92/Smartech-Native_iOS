@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
         if isUserLoggedIn == true {
             
             print("Already logged in")
@@ -52,26 +53,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             //
         }
         
-        
+        UIFont.overrideInitialize()
+                
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
+        Hansel.setAppFont("Trueno")
+
         UNUserNotificationCenter.current().delegate = self
         
-    
+        
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
-        self.getLocations()
+        LocationManager.shared.requestLocationAuthorization()
         
-     //test deeplink
+        
+       
         
         if let url = launchOptions?[.url] as? URL {
-//                    handleDeepLink(url)
-                }
-//                return true
+            //                                handleDeepLink(url)
+        }
+        
+       
+            UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
+                                
 
+        
         
         return true
         
@@ -105,60 +114,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //        })
     }
     
-      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         print("SMT -BACKGROUND DELIVER", userInfo)
         
     }
-    //MARK:- SmartechDelegate Method
-//    func handleDeeplinkAction(withURLString deeplinkURLString: String, andCustomPayload customPayload: [AnyHashable : Any]?) {
-//        //...
-//        NSLog("DEEPLINK OLD: \(deeplinkURLString)")
-////        print("Deeplink: \(deeplinkURLString)")
-//        if customPayload != nil {
-//            print("Custom Payload: \(customPayload!)")
-//
-//        }
-//
-//        //...
-//    }
-//
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
-        print("URL:\(url)")
-        //            ....
-        if let scheme = url.scheme,
-           scheme.localizedCaseInsensitiveCompare("smartechdemo") == .orderedSame,
-           var finalHost = url.host {
-            print("Final Host: \(finalHost)")
-            var parameters: [String: String] = [:]
-            URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.forEach {
-                parameters[$0.name] = $0.value
-                print("TEST URL: ",parameters[$0.value!] as Any )
-            }
-            
-            if finalHost == "px"{
-                let tabBarController = UITabBarController()
-                
-                navigationVC?.pushViewController(tabBarController, animated: true)
-                
-                ////            smartechdemo://px
-                (rootController: tabBarController, window:UIApplication.shared.keyWindow)
-            }
-            
-        }
-        
-        
-        if(!handleBySmartech) {
-            //Handle the url by the app
-            
-        }else{
-            return handleBySmartech
-        }
-        
-        return ((GIDSignIn.sharedInstance.handle(url)) != nil)
-    }
+    /*
+     You can create an instance of your custom font in source code. To do this, you need to know the font name. However, the name of the font isn’t always obvious, and rarely matches the font file name. A quick way to find the font name is to get the list of fonts available to your app, which you can do with the following code:
+     
+     Once you know the font name, create an instance of the custom font using UIFont. If your app supports Dynamic Type, you can also get a scaled instance of your font, as shown here:
+     
+     
+     
+     */    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+         let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
+         print("URL:\(url)")
+         //            ....
+         if let scheme = url.scheme,
+            scheme.localizedCaseInsensitiveCompare("smartechdemo") == .orderedSame,
+            var finalHost = url.host {
+             print("Final Host: \(finalHost)")
+             var parameters: [String: String] = [:]
+             URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.forEach {
+                 parameters[$0.name] = $0.value
+                 print("TEST URL: ",parameters[$0.value!] as Any )
+             }
+             
+             if finalHost == "px"{
+                 let tabBarController = UITabBarController()
+                 
+                 navigationVC?.pushViewController(tabBarController, animated: true)
+                 
+                 ////            smartechdemo://px
+                 (rootController: tabBarController, window:UIApplication.shared.keyWindow)
+             }
+             
+         }
+         
+         
+         if(!handleBySmartech) {
+             //Handle the url by the app
+             
+         }else{
+             return handleBySmartech
+         }
+         
+         return ((GIDSignIn.sharedInstance.handle(url)) != nil)
+     }
     
     func moveToTabbar(_ withIndex : Int){
         let tabBarController = UITabBarController()
@@ -168,51 +170,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
         
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
-            NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
-//        })
-
-    }
-    
-    
-    func getLocations() -> Void {
-                locationManager.delegate = self
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            self.locationManager.requestWhenInUseAuthorization()
-        }
-        if CLLocationManager.authorizationStatus() == .restricted {
-            
-        }
-        if CLLocationManager.authorizationStatus() == .denied {
-            
-        }
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            
-        }
-       
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-    }
-    
-    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-                print("Error is ", error);
         
-                if CLLocationManager.authorizationStatus() == .restricted {
-                    print("restricted");
+        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
+        NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
+        //        })
+        
+    }
+    
+    
+}
+class LocationManager: NSObject, CLLocationManagerDelegate {
+    
+    static let shared = LocationManager()
+    private var locationManager: CLLocationManager = CLLocationManager()
+    private var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
+    
+    public func requestLocationAuthorization() {
+        self.locationManager.delegate = self
+        let currentStatus = CLLocationManager.authorizationStatus()
+        
+        // Only ask authorization if it was never asked before
+        guard currentStatus == .notDetermined else { return }
+        
+        // Starting on iOS 13.4.0, to get .authorizedAlways permission, you need to
+        // first ask for WhenInUse permission, then ask for Always permission to
+        // get to a second system alert
+        if #available(iOS 13.4, *) {
+            self.requestLocationAuthorizationCallback = { status in
+                if status == .authorizedWhenInUse {
+                    self.locationManager.requestAlwaysAuthorization()
+                    
                 }
-                if CLLocationManager.authorizationStatus() == .denied {
-                    print("denied");
-                }
-                if CLLocationManager.authorizationStatus() == .notDetermined {
-                    print("notDetermined");
-                }
-                if CLLocationManager.authorizationStatus() == .authorizedAlways {
-                    print("authorizedAlways");
-                }
-                if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-                    print("authorizedWhenInUse");
-                }
+            }
+            self.locationManager.requestWhenInUseAuthorization()
+        } else {
+            self.locationManager.requestAlwaysAuthorization()
+        }
+    }
+    // MARK: - CLLocationManagerDelegate
+    public func locationManager(_ manager: CLLocationManager,
+                                didChangeAuthorization status: CLAuthorizationStatus) {
+        self.requestLocationAuthorizationCallback?(status)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -222,17 +220,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         let location = CLLocationCoordinate2DMake(lat, long)
         Smartech.sharedInstance().setUserLocation(location)
-
+        
         print("lat", lat, "long", long)
         
     }
     
-    
-    
-    
-    
-    //MARK: Process to redirect to Notification settings page after user denied permissions initially
-    
+}
+
+
+//MARK: Process to redirect to Notification settings page after user denied permissions initially
+
 //    func goToAppNotificationSettings() {
 //        let alertController = UIAlertController(
 //            title: "Notification Permissions",
@@ -258,22 +255,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
 //        })
 //
 //    }
-    
+
 //    func applicationWillEnterForeground(_ application: UIApplication) {
-//        
+//
 //        let notificationCenter = UNUserNotificationCenter.current()
 //        notificationCenter.getNotificationSettings { [self] settings in
 //            if settings.authorizationStatus == .denied {
-//                
+//
 //                print("Selected Deny")
 //                goToAppNotificationSettings()
-//                
+//
 //            } else{
 //                print("Selected Allow")
 //            }
 //        }
-//        
+//
 //    }
-    
-    
-}
+
+
+

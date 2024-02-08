@@ -18,11 +18,20 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var mobileTF: UITextField!
     @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
+        guard let truenoRg = UIFont(name: "Truenorg", size: UIFont.labelFontSize) else {
+            fatalError("""
+                Failed to load the "CustomFont-Light" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        errorLabel.font = UIFontMetrics.default.scaledFont(for: truenoRg)
+        errorLabel.adjustsFontForContentSizeCategory = true
 //        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"Personal details Screen","next page": "main screen"])
 //        
 //        let fullName = fullNameTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
