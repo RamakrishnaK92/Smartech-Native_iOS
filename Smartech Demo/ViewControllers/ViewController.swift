@@ -53,7 +53,7 @@ class ViewController: UITableViewController{
             
         }else{
             UserDefaults.standard.setValue(email, forKey: "userLogged")
-            Smartech.sharedInstance().login(email)
+//            Smartech.sharedInstance().login(email)
 //            Smartech.sharedInstance().trackEvent("Login_success", andPayload: ["source":"app"])
             goToTabBar()
             UserDefaults.standard.synchronize()

@@ -54,14 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         }
         
         UIFont.overrideInitialize()
-                
+        
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
         Hansel.setAppFont("Trueno")
-
+        
         UNUserNotificationCenter.current().delegate = self
         
         
@@ -70,20 +70,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         LocationManager.shared.requestLocationAuthorization()
         
         
-       
-        
         if let url = launchOptions?[.url] as? URL {
-            //                                handleDeepLink(url)
+            
         }
-        
-       
-            UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
-                                
-
-        
-        
+        UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
         return true
-        
+    }
+    
+    func handleDeepLink(url:String){
+        if let webUrl = URL(string: url){
+            UIApplication.shared.canOpenURL(webUrl)
+        }
     }
     
     
@@ -144,14 +141,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
                  let tabBarController = UITabBarController()
                  
                  navigationVC?.pushViewController(tabBarController, animated: true)
-                 
                  ////            smartechdemo://px
                  (rootController: tabBarController, window:UIApplication.shared.keyWindow)
              }
-             
          }
-         
-         
          if(!handleBySmartech) {
              //Handle the url by the app
              
@@ -168,15 +161,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         (rootController: tabBarController, window:UIApplication.shared.keyWindow)
     }
+    
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
-        
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
         NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
+        handleDeepLink(url: deeplinkURLString)
         //        })
-        
     }
-    
     
 }
 class LocationManager: NSObject, CLLocationManagerDelegate {

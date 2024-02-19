@@ -468,6 +468,8 @@
 				Base,
 			);
 			mainGroup = 97093C502652A9A4006DF7D0;
+			packageReferences = (
+			);
 			productRefGroup = 97093C5A2652A9A4006DF7D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -855,8 +857,8 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y344Y7796A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Smartech Demo/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and In Use";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Always;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To send the location of stores";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application wants to use your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -899,8 +901,8 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Smartech Demo/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Always and In Use";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Always;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To send the location of stores";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application wants to use your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

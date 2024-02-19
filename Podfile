@@ -11,7 +11,7 @@ target 'Smartech Demo' do
   pod 'Smartech-iOS-SDK'
   pod 'SmartPush-iOS-SDK'
   
-  pod 'SmartechNudges', '9.0.6'
+  pod 'SmartechNudges', '9.0.7'
   #pod 'SmartechNudges', :path => '~/Downloads/SmartechNudges-PO1159'
   pod 'SmartechAppInbox-iOS-SDK'
   
