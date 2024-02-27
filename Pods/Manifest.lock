@@ -634,6 +634,9 @@ PODS:
   - AppAuth/Core (1.6.2)
   - AppAuth/ExternalUserAgent (1.6.2):
     - AppAuth/Core
+  - AppsFlyerFramework (6.13.0):
+    - AppsFlyerFramework/Main (= 6.13.0)
+  - AppsFlyerFramework/Main (6.13.0)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -779,25 +782,27 @@ PODS:
   - RecaptchaInterop (100.0.0)
   - Smartech-iOS-SDK (3.4.1)
   - SmartechAppInbox-iOS-SDK (3.2.10)
-  - SmartechNudges (9.0.7):
+  - SmartechNudges (9.0.8):
     - Smartech-iOS-SDK (>= 3.2.15)
   - SmartPush-iOS-SDK (3.4.1):
     - Smartech-iOS-SDK (>= 3.4.1)
 
 DEPENDENCIES:
+  - AppsFlyerFramework
   - Firebase/Auth
   - Firebase/Firestore
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - Smartech-iOS-SDK
   - SmartechAppInbox-iOS-SDK
-  - SmartechNudges (= 9.0.7)
+  - SmartechNudges (= 9.0.8)
   - SmartPush-iOS-SDK
 
 SPEC REPOS:
   trunk:
     - abseil
     - AppAuth
+    - AppsFlyerFramework
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAppCheckInterop
@@ -827,6 +832,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
+  AppsFlyerFramework: cb54b4f27d2da2b3e2b286800476ce3b2007c75f
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   Firebase: 63ce8ece0d43743dc28eacac0c6867a2d7fd5a9d
   FirebaseAppCheckInterop: 37884781f3e16a1ba47e7ec80a1e805f987788e3
@@ -850,9 +856,9 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   Smartech-iOS-SDK: 76b077310e8d16ff3e0728ab17a4a487ca65f0d0
   SmartechAppInbox-iOS-SDK: 2852b4f990c60c10dbca1004efd19272c377a871
-  SmartechNudges: bff2d33a70d20f94e8dc6f24c0e59ed533db2da6
+  SmartechNudges: 4cb8bb2aed711d92cdf0ecaaf75404db69c87392
   SmartPush-iOS-SDK: 6bba832f369d8f7337474598a87e0c69c723002a
 
-PODFILE CHECKSUM: 013ee50ff29a6dde3e25e75b5cc0d27e7c0da669
+PODFILE CHECKSUM: dc38453754bb15601c962554b7b1e8b30293c79d
 
 COCOAPODS: 1.14.3

@@ -13,6 +13,7 @@ import UserNotifications
 import UserNotificationsUI
 import IQKeyboardManagerSwift
 import GoogleSignIn
+import AppsFlyerLib
 
 
 @UIApplicationMain
@@ -74,6 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             
         }
         UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
+        
+        
+        AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
+        AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
+        
+//        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["af_push_link"])
+        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["smtPayload", "deeplink"])
+        
+        
+        //  Set isDebug to true to see AppsFlyer debug logs
+        AppsFlyerLib.shared().isDebug = true
+        AppsFlyerLib.shared().start()
+        
+//        application.registerForRemoteNotifications()
         return true
     }
     
@@ -162,15 +177,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         (rootController: tabBarController, window:UIApplication.shared.keyWindow)
     }
     
+    //MARK: SMT DEEPLINK CALLBACK
+    
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
-        NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
-        handleDeepLink(url: deeplinkURLString)
-        //        })
+        var newDeeplink = deeplinkURLString.components(separatedBy: "%")
+        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
+        
+        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["smtPayload", "deeplink"])
+        handleDeepLink(url: newDeeplink[0])
+        
+        
     }
     
 }
+
+
+
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     static let shared = LocationManager()

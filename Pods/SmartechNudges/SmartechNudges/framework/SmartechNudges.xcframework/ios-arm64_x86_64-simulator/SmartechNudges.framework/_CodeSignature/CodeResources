@@ -50,7 +50,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		CjEGh3bY9xT3Fizl/MrCe2dDZWM=
+		WofBJqsquhLLTL4M3FwEwQ0vEho=
+		</data>
+		<key>Modules/module.modulemap</key>
+		<data>
+		6jRCXP4VcNdw4wgHnoDiYoJECRs=
 		</data>
 		<key>allPublicViews.json</key>
 		<data>
@@ -358,6 +362,17 @@
 			<key>hash2</key>
 			<data>
 			TINGj17+o8Bll0ew6CgyqTxnisAeQXzW6sUHSFOxmbk=
+			</data>
+		</dict>
+		<key>Modules/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6jRCXP4VcNdw4wgHnoDiYoJECRs=
+			</data>
+			<key>hash2</key>
+			<data>
+			9W+HuDU6+4Md0/OkaKkqB/E+caCas/jAl1hWQ6gxSwI=
 			</data>
 		</dict>
 		<key>allPublicViews.json</key>

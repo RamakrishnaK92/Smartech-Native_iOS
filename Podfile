@@ -11,15 +11,16 @@ target 'Smartech Demo' do
   pod 'Smartech-iOS-SDK'
   pod 'SmartPush-iOS-SDK'
   
-  pod 'SmartechNudges', '9.0.7'
-  #pod 'SmartechNudges', :path => '~/Downloads/SmartechNudges-PO1159'
+  pod 'SmartechNudges', '9.0.8'
   pod 'SmartechAppInbox-iOS-SDK'
-  
   pod 'IQKeyboardManagerSwift'
   #pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
+  
+  pod 'AppsFlyerFramework'  #appsflyer SDK
+
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|
