@@ -10,6 +10,7 @@ import FirebaseAuth
 import SmartechAppInbox
 import Smartech
 import SmartPush
+import SmartechNudges
 
 
 class DashboardViewController: UIViewController {

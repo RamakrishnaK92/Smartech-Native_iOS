@@ -92,7 +92,6 @@
 		0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.release.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.release.xcconfig"; sourceTree = "<group>"; };
 		0F381077CD0805F3D3E12F39 /* Pods-SmartechNCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.release.xcconfig"; sourceTree = "<group>"; };
 		1862FB72280402A400EC3395 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
-		18E1E0FF274C059F00751F85 /* SmartechNudge-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartechNudge-bridging-header.h"; sourceTree = "<group>"; };
 		673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.debug.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,10 +191,10 @@
 			children = (
 				9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */,
 				97093C5B2652A9A4006DF7D0 /* Smartech Demo */,
-				97093C722652A9B6006DF7D0 /* Smartech DemoTests */,
-				97093C7D2652A9B6006DF7D0 /* Smartech DemoUITests */,
 				9D456F3B2941D2DB00ABCF10 /* SmartechNSE */,
 				9D9C9FC729B10D6C00654732 /* SmartechNC */,
+				97093C722652A9B6006DF7D0 /* Smartech DemoTests */,
+				97093C7D2652A9B6006DF7D0 /* Smartech DemoUITests */,
 				97093C5A2652A9A4006DF7D0 /* Products */,
 				C84B9AE4E06871E6A73F2FD6 /* Pods */,
 				E8B794B1E4C981D6E18F6C2F /* Frameworks */,
@@ -217,17 +216,10 @@
 		97093C5B2652A9A4006DF7D0 /* Smartech Demo */ = {
 			isa = PBXGroup;
 			children = (
-				BB52700F2B6D4A1C004A459B /* Fonts */,
 				9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */,
-				18E1E0FF274C059F00751F85 /* SmartechNudge-bridging-header.h */,
 				97093C902652D438006DF7D0 /* ViewControllers */,
-				97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */,
+				BB1F018D2B90D701004E856B /* SupportingFiles */,
 				9DECFD9B2A2DCAD100B6D045 /* Views */,
-				97093C652652A9B6006DF7D0 /* Assets.xcassets */,
-				9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */,
-				97093C6A2652A9B6006DF7D0 /* Info.plist */,
-				97093C912652DC21006DF7D0 /* Utilities.swift */,
-				9D09A912294D8739005E88C3 /* Helper.swift */,
 			);
 			path = "Smartech Demo";
 			sourceTree = "<group>";
@@ -296,6 +288,20 @@
 				97093C672652A9B6006DF7D0 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BB1F018D2B90D701004E856B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BB52700F2B6D4A1C004A459B /* Fonts */,
+				97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */,
+				9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */,
+				97093C912652DC21006DF7D0 /* Utilities.swift */,
+				9D09A912294D8739005E88C3 /* Helper.swift */,
+				97093C652652A9B6006DF7D0 /* Assets.xcassets */,
+				97093C6A2652A9B6006DF7D0 /* Info.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		BB52700F2B6D4A1C004A459B /* Fonts */ = {
@@ -876,7 +882,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Smartech Demo/SmartechNudge-bridging-header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -920,7 +926,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Smartech Demo/SmartechNudge-bridging-header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

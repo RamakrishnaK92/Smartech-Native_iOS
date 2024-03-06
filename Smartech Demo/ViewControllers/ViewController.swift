@@ -124,9 +124,6 @@ class ViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
-//        Smartech.sharedInstance().trackEvent("HOMEPAGE", andPayload: ["COUNTRY_CODE":"IN", "DEVICE_LANGUAGE":"EN"])
 //        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"Authentication Screen"])
     }
 }

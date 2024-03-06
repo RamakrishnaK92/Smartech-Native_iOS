@@ -6,7 +6,6 @@
 
 import UIKit
 import Firebase
-import CoreLocation
 import Smartech
 import SmartPush
 import UserNotifications
@@ -14,13 +13,20 @@ import UserNotificationsUI
 import IQKeyboardManagerSwift
 import GoogleSignIn
 import AppsFlyerLib
+import SmartechNudges
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener{
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate{
     func onLaunchURL(URLString: String!) {
         //
     }
+    func didResolveDeepLink(_ result: DeepLinkResult) {
+        
+        print("SMTLogg: \(String(describing: result.deepLink?.deeplinkValue))") // Step 3
+        
+    }
+    
     
     
     var window: UIWindow?
@@ -79,16 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
         AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
-        
-//        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["af_push_link"])
-        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["smtPayload", "deeplink"])
+        AppsFlyerLib.shared().deepLinkDelegate = self
         
         
         //  Set isDebug to true to see AppsFlyer debug logs
         AppsFlyerLib.shared().isDebug = true
         AppsFlyerLib.shared().start()
         
-//        application.registerForRemoteNotifications()
+        //        application.registerForRemoteNotifications()
         return true
     }
     
@@ -97,6 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             UIApplication.shared.canOpenURL(webUrl)
         }
     }
+    
+    
     
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -122,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
         SmartPush.sharedInstance().didReceive(response)
-        completionHandler()
+                completionHandler()
         //        })
     }
     
@@ -131,44 +137,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         print("SMT -BACKGROUND DELIVER", userInfo)
         
     }
-    /*
-     You can create an instance of your custom font in source code. To do this, you need to know the font name. However, the name of the font isn’t always obvious, and rarely matches the font file name. A quick way to find the font name is to get the list of fonts available to your app, which you can do with the following code:
-     
-     Once you know the font name, create an instance of the custom font using UIFont. If your app supports Dynamic Type, you can also get a scaled instance of your font, as shown here:
-     
-     
-     
-     */    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-         let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
-         print("URL:\(url)")
-         //            ....
-         if let scheme = url.scheme,
-            scheme.localizedCaseInsensitiveCompare("smartechdemo") == .orderedSame,
-            var finalHost = url.host {
-             print("Final Host: \(finalHost)")
-             var parameters: [String: String] = [:]
-             URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.forEach {
-                 parameters[$0.name] = $0.value
-                 print("TEST URL: ",parameters[$0.value!] as Any )
-             }
-             
-             if finalHost == "px"{
-                 let tabBarController = UITabBarController()
-                 
-                 navigationVC?.pushViewController(tabBarController, animated: true)
-                 ////            smartechdemo://px
-                 (rootController: tabBarController, window:UIApplication.shared.keyWindow)
-             }
-         }
-         if(!handleBySmartech) {
-             //Handle the url by the app
-             
-         }else{
-             return handleBySmartech
-         }
-         
-         return ((GIDSignIn.sharedInstance.handle(url)) != nil)
-     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
+        print("URL:\(url)")
+        //            ....
+        
+        if let scheme = url.scheme,
+           scheme.localizedCaseInsensitiveCompare("smartechdemo") == .orderedSame,
+           var finalHost = url.host {
+            print("Final Host: \(finalHost)")
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+                print("TEST URL: ",parameters[$0.value!] as Any )
+            }
+            
+            if finalHost == "px"{
+                let tabBarController = UITabBarController()
+                
+                navigationVC?.pushViewController(tabBarController, animated: true)
+                ////            smartechdemo://px
+                (rootController: tabBarController, window:UIApplication.shared.keyWindow)
+            }
+        }
+        if(!handleBySmartech) {
+            //Handle the url by the app
+            
+        }else{
+            return handleBySmartech
+        }
+        
+        return ((GIDSignIn.sharedInstance.handle(url)) != nil)
+    }
     
     func moveToTabbar(_ withIndex : Int){
         let tabBarController = UITabBarController()
@@ -178,114 +179,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     //MARK: SMT DEEPLINK CALLBACK
-    
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
+        if deeplinkURLString.starts(with: "https://onelink"){
+            let url = NSURL(string: deeplinkURLString)
+            AppsFlyerLib.shared().handleOpen(url as URL?, options: nil)
+            return
+        }
         
         var newDeeplink = deeplinkURLString.components(separatedBy: "%")
         NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
         
-        AppsFlyerLib.shared().addPushNotificationDeepLinkPath(["smtPayload", "deeplink"])
+        
         handleDeepLink(url: newDeeplink[0])
         
-        
-    }
-    
-}
-
-
-
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    
-    static let shared = LocationManager()
-    private var locationManager: CLLocationManager = CLLocationManager()
-    private var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
-    
-    public func requestLocationAuthorization() {
-        self.locationManager.delegate = self
-        let currentStatus = CLLocationManager.authorizationStatus()
-        
-        // Only ask authorization if it was never asked before
-        guard currentStatus == .notDetermined else { return }
-        
-        // Starting on iOS 13.4.0, to get .authorizedAlways permission, you need to
-        // first ask for WhenInUse permission, then ask for Always permission to
-        // get to a second system alert
-        if #available(iOS 13.4, *) {
-            self.requestLocationAuthorizationCallback = { status in
-                if status == .authorizedWhenInUse {
-                    self.locationManager.requestAlwaysAuthorization()
-                    
-                }
-            }
-            self.locationManager.requestWhenInUseAuthorization()
-        } else {
-            self.locationManager.requestAlwaysAuthorization()
+        // Convert OneLink to Deep Link
+        if let deepLinkURL = convertOneLinkToDeepLink(newDeeplink[0]) {
+            handleDeepLinkCode(deepLinkURL)
         }
     }
-    // MARK: - CLLocationManagerDelegate
-    public func locationManager(_ manager: CLLocationManager,
-                                didChangeAuthorization status: CLAuthorizationStatus) {
-        self.requestLocationAuthorizationCallback?(status)
+    //
+    func convertOneLinkToDeepLink(_ oneLinkURLString: String) -> URL? {
+        // Parse the OneLink URL
+        if let components = URLComponents(string: oneLinkURLString) {
+            
+            // Create the deep link URL
+            // You might want to use your own deep link URL structure
+            //          Onelink URL: https://netcore.onelink.me/Fqaw/fik922ai
+            //          Expected URL: https://demo1.netcoresmartech.com/pod2_email_rashmi/
+            var deepLinkComponents = URLComponents()
+            deepLinkComponents.scheme = "netcore"
+            deepLinkComponents.host = ""
+            // Add necessary query parameters if any
+            deepLinkComponents.queryItems = [
+                URLQueryItem(name: "param1", value: "value1"),
+                URLQueryItem(name: "param2", value: "value2")
+            ]
+            
+            if let deepLinkURL = deepLinkComponents.url {
+                return deepLinkURL
+            }
+        }
+        
+        return nil
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0]
-        let long = userLocation.coordinate.longitude;
-        let lat = userLocation.coordinate.latitude
-        
-        let location = CLLocationCoordinate2DMake(lat, long)
-        Smartech.sharedInstance().setUserLocation(location)
-        
-        print("lat", lat, "long", long)
-        
+    func handleDeepLinkCode(_ deepLinkURL: URL) {
+        // Handle the deep link URL in your app
+        // You might want to navigate to a specific view controller or perform other actions
+        // For example, you can use URL components to extract information from the deep link
+        if let queryItems = URLComponents(url: deepLinkURL, resolvingAgainstBaseURL: false)?.queryItems {
+            for item in queryItems {
+                print("Parameter \(item.name): \(item.value ?? "")")
+                // Handle each parameter as needed
+            }
+        }
     }
-    
 }
-
-
-//MARK: Process to redirect to Notification settings page after user denied permissions initially
-
-//    func goToAppNotificationSettings() {
-//        let alertController = UIAlertController(
-//            title: "Notification Permissions",
-//            message: "Please enable notifications for this app in Settings.",
-//            preferredStyle: .alert
-//        )
-//        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
-//            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-//                return
-//            }
-//            if UIApplication.shared.canOpenURL(settingsUrl) {
-//                UIApplication.shared.open(settingsUrl, completionHandler: nil)
-//            }
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//        alertController.addAction(settingsAction)
-//        alertController.addAction(cancelAction)
-//
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
-//
-//            self.window?.rootViewController?.present(alertController, animated: true)
-//        })
-//
-//    }
-
-//    func applicationWillEnterForeground(_ application: UIApplication) {
-//
-//        let notificationCenter = UNUserNotificationCenter.current()
-//        notificationCenter.getNotificationSettings { [self] settings in
-//            if settings.authorizationStatus == .denied {
-//
-//                print("Selected Deny")
-//                goToAppNotificationSettings()
-//
-//            } else{
-//                print("Selected Allow")
-//            }
-//        }
-//
-//    }
 
 
 
