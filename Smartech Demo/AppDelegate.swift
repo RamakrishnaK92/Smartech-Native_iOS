@@ -6,6 +6,9 @@
 
 import UIKit
 import Firebase
+import FirebaseAnalytics
+import FirebaseAuth
+import FirebaseCore
 import Smartech
 import SmartPush
 import UserNotifications
@@ -17,10 +20,16 @@ import SmartechNudges
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, TAGContainerOpenerNotifier{
     func onLaunchURL(URLString: String!) {
         //
     }
+    
+    func containerAvailable(container: TAGContainer!) {
+      container.refresh()
+    }
+
+    
     func didResolveDeepLink(_ result: DeepLinkResult) {
         
         print("SMTLogg: \(String(describing: result.deepLink?.deeplinkValue))") // Step 3
@@ -59,21 +68,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             UIApplication.shared.windows.first?.makeKeyAndVisible()
             //
         }
+    
         
         UIFont.overrideInitialize()
+        
+        FirebaseApp.configure()
+        let GTM = TAGManager.instance()
+        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
+
+        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
+            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
+            timeout: nil,
+            notifier: self)
         
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
+        Hansel.getUser()?.putAttribute(1, forKey: "test_attrib")
         Hansel.setAppFont("Trueno")
         
         UNUserNotificationCenter.current().delegate = self
         
         
         IQKeyboardManager.shared.enable = true
-        FirebaseApp.configure()
         LocationManager.shared.requestLocationAuthorization()
         
         
@@ -86,7 +105,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
         AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
         AppsFlyerLib.shared().deepLinkDelegate = self
-        
         
         //  Set isDebug to true to see AppsFlyer debug logs
         AppsFlyerLib.shared().isDebug = true
@@ -102,8 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         }
     }
     
-    
-    
+
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         SmartPush.sharedInstance().didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
@@ -178,26 +195,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         (rootController: tabBarController, window:UIApplication.shared.keyWindow)
     }
     
-    //MARK: SMT DEEPLINK CALLBACK
+    //MARK: SMT DEEPLINK CALLBAC
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
-        if deeplinkURLString.starts(with: "https://onelink"){
+        if deeplinkURLString.starts(with: "https://netcore.onelink"){
             let url = NSURL(string: deeplinkURLString)
             AppsFlyerLib.shared().handleOpen(url as URL?, options: nil)
+            
             return
         }
         
-        var newDeeplink = deeplinkURLString.components(separatedBy: "%")
-        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
+        NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
         
-        
-        handleDeepLink(url: newDeeplink[0])
-        
-        // Convert OneLink to Deep Link
-        if let deepLinkURL = convertOneLinkToDeepLink(newDeeplink[0]) {
-            handleDeepLinkCode(deepLinkURL)
-        }
     }
-    //
+//        var newDeeplink = deeplinkURLString.components(separatedBy: "?")
+//        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
+//        
+//        
+//        handleDeepLink(url: newDeeplink[0])
+//
+//        // Convert OneLink to Deep Link
+//        if let deepLinkURL = convertOneLinkToDeepLink(newDeeplink[0]) {
+//            handleDeepLinkCode(deepLinkURL)
+//        }
+//    }
+    
+    
     func convertOneLinkToDeepLink(_ oneLinkURLString: String) -> URL? {
         // Parse the OneLink URL
         if let components = URLComponents(string: oneLinkURLString) {

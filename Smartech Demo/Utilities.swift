@@ -87,6 +87,13 @@ extension String{
     func isUserLoggedIn(){
     }
 }
+extension Date {
+    func today(format : String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
 
 enum DeeplinkEnum:String{
     case Product

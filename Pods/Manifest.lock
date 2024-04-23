@@ -651,6 +651,24 @@ PODS:
   - Firebase/Firestore (10.19.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 10.19.0)
+  - FirebaseAnalytics (10.23.1):
+    - FirebaseAnalytics/AdIdSupport (= 10.23.1)
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - FirebaseAnalytics/AdIdSupport (10.23.1):
+    - FirebaseCore (~> 10.0)
+    - FirebaseInstallations (~> 10.0)
+    - GoogleAppMeasurement (= 10.23.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
   - FirebaseAppCheckInterop (10.19.0)
   - FirebaseAuth (10.19.0):
     - FirebaseAppCheckInterop (~> 10.17)
@@ -686,11 +704,41 @@ PODS:
     - "gRPC-C++ (~> 1.49.1)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseInstallations (10.23.0):
+    - FirebaseCore (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/UserDefaults (~> 7.8)
+    - PromisesObjC (~> 2.1)
   - FirebaseSharedSwift (10.19.0)
+  - GoogleAnalytics (3.23.0):
+    - GoogleUtilities/UserDefaults (~> 7.11)
+  - GoogleAppMeasurement (10.23.1):
+    - GoogleAppMeasurement/AdIdSupport (= 10.23.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (10.23.1):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.23.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.23.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
   - GoogleSignIn (7.0.0):
     - AppAuth (~> 1.5)
     - GTMAppAuth (< 3.0, >= 1.3)
     - GTMSessionFetcher/Core (< 4.0, >= 1.1)
+  - GoogleTagManager (7.4.6):
+    - FirebaseAnalytics (< 12.0, >= 10.0)
+    - GoogleAnalytics (~> 3.23)
   - GoogleUtilities/AppDelegateSwizzler (7.12.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -699,12 +747,16 @@ PODS:
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.12.0):
     - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.12.0):
+    - GoogleUtilities/Logger
   - GoogleUtilities/Network (7.12.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
   - "GoogleUtilities/NSData+zlib (7.12.0)"
   - GoogleUtilities/Reachability (7.12.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.12.0):
     - GoogleUtilities/Logger
   - "gRPC-C++ (1.49.1)":
     - "gRPC-C++/Implementation (= 1.49.1)"
@@ -780,23 +832,24 @@ PODS:
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.3.1)
   - RecaptchaInterop (100.0.0)
-  - Smartech-iOS-SDK (3.4.1)
+  - Smartech-iOS-SDK (3.5.2)
   - SmartechAppInbox-iOS-SDK (3.2.10)
-  - SmartechNudges (9.0.8):
-    - Smartech-iOS-SDK (>= 3.2.15)
-  - SmartPush-iOS-SDK (3.4.1):
-    - Smartech-iOS-SDK (>= 3.4.1)
+  - SmartechNudges (9.0.9):
+    - Smartech-iOS-SDK (>= 3.5.1)
+  - SmartPush-iOS-SDK (3.5.0):
+    - Smartech-iOS-SDK (>= 3.5.0)
 
 DEPENDENCIES:
   - AppsFlyerFramework
   - Firebase/Auth
   - Firebase/Firestore
   - GoogleSignIn
+  - GoogleTagManager
   - IQKeyboardManagerSwift
-  - Smartech-iOS-SDK
+  - Smartech-iOS-SDK (~> 3.5.2)
   - SmartechAppInbox-iOS-SDK
-  - SmartechNudges (= 9.0.8)
-  - SmartPush-iOS-SDK
+  - SmartechNudges (= 9.0.9)
+  - SmartPush-iOS-SDK (~> 3.5.0)
 
 SPEC REPOS:
   trunk:
@@ -805,6 +858,7 @@ SPEC REPOS:
     - AppsFlyerFramework
     - BoringSSL-GRPC
     - Firebase
+    - FirebaseAnalytics
     - FirebaseAppCheckInterop
     - FirebaseAuth
     - FirebaseCore
@@ -812,8 +866,12 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseFirestore
     - FirebaseFirestoreInternal
+    - FirebaseInstallations
     - FirebaseSharedSwift
+    - GoogleAnalytics
+    - GoogleAppMeasurement
     - GoogleSignIn
+    - GoogleTagManager
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -835,6 +893,7 @@ SPEC CHECKSUMS:
   AppsFlyerFramework: cb54b4f27d2da2b3e2b286800476ce3b2007c75f
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   Firebase: 63ce8ece0d43743dc28eacac0c6867a2d7fd5a9d
+  FirebaseAnalytics: fd35d51e6da86ef1aa2c3fe1f64ab2482cc01ba5
   FirebaseAppCheckInterop: 37884781f3e16a1ba47e7ec80a1e805f987788e3
   FirebaseAuth: 2492acdcd1245d841fabdf58a050d6aa07dfce3f
   FirebaseCore: dc5c7badf99d47613c52b2e3a57a64cd187f8554
@@ -842,8 +901,12 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: b444828ea7cfd594fca83046b95db98a2be4f290
   FirebaseFirestore: 9b9b21120c1a0cb4f2789ffb7fbb9138f94c47eb
   FirebaseFirestoreInternal: a15405fb607dfd14edd568bba77028f4c7a69688
+  FirebaseInstallations: 42d6ead4605d6eafb3b6683674e80e18eb6f2c35
   FirebaseSharedSwift: f34eeb7d3ea87a34497629b6ca41657beadef76a
+  GoogleAnalytics: 9e360c5cfffa536ff64dc383bc468577b7ba5c5d
+  GoogleAppMeasurement: 794d1d2f71fdf77a077a3986258a5c2dac0f9d48
   GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
+  GoogleTagManager: 9ef072dc46718db4b2ef5b801a32a6946efbaafb
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   "gRPC-C++": 2df8cba576898bdacd29f0266d5236fa0e26ba6a
   gRPC-Core: a21a60aefc08c68c247b439a9ef97174b0c54f96
@@ -854,11 +917,11 @@ SPEC CHECKSUMS:
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
-  Smartech-iOS-SDK: 76b077310e8d16ff3e0728ab17a4a487ca65f0d0
+  Smartech-iOS-SDK: 675a950ce4e7b19db2fa96b4d99216a453184ce0
   SmartechAppInbox-iOS-SDK: 2852b4f990c60c10dbca1004efd19272c377a871
-  SmartechNudges: 4cb8bb2aed711d92cdf0ecaaf75404db69c87392
-  SmartPush-iOS-SDK: 6bba832f369d8f7337474598a87e0c69c723002a
+  SmartechNudges: d08490eabb7a7e0972f0d15f5bfc46288071200d
+  SmartPush-iOS-SDK: de27807ef966b919ae237748a0cfadc8243ea9cd
 
-PODFILE CHECKSUM: dc38453754bb15601c962554b7b1e8b30293c79d
+PODFILE CHECKSUM: a8669d5c6c83c645c3c4be09812507b6c17c2111
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

@@ -35,9 +35,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.netcore.SmartechApp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mawgif</string>
+				<string>tagmanager.c.com.netcore.SmartechApp</string>
 			</array>
 		</dict>
 	</array>
@@ -60,9 +62,9 @@
 		<key>SmartechAppId</key>
 		<string>0e6fcbcb2600d8ea596051e8030be050</string>
 		<key>SmartechAutoFetchLocation</key>
-		<true/>
+		<false/>
 		<key>SmartechUseAdvId</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>

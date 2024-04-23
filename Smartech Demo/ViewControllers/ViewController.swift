@@ -8,6 +8,10 @@
 import UIKit
 import FirebaseAuth
 import Smartech
+import FirebaseAnalytics
+import SmartechNudges
+
+
 //import CoreLocation
 import LocalAuthentication
 
@@ -26,8 +30,7 @@ class ViewController: UITableViewController{
         
         Utilities.styleTextField(loginTF)
         Utilities.styleFilledButton(signInBtn)
-        
-        
+      
 
                
         // Do any additional setup after loading the view.
@@ -124,7 +127,19 @@ class ViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"Authentication Screen"])
+    
+        let todayDate = Date().today(format: "yyyy-MM-dd hh:mm:ss")
+        print("todayDate:", todayDate)
+        
+        let params = ["screen_name":"VC screen","trigger_time": todayDate] as [String : Any]
+        Analytics.logEvent("screen_view_GTM", parameters:  params)
+        Smartech.sharedInstance().trackEvent("screen_view_GTM", andPayload: params)
+        
+        H
+
+//        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"Authentication Screen", "subscriptionDate": "2"])
     }
+    
+    
 }
 

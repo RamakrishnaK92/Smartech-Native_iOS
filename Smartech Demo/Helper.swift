@@ -53,7 +53,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         let lat = userLocation.coordinate.latitude
         
         let location = CLLocationCoordinate2DMake(lat, long)
-        Smartech.sharedInstance().setUserLocation(location)
+//        Smartech.sharedInstance().setUserLocation(location)
         
         print("lat", lat, "long", long)
         

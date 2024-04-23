@@ -9,8 +9,6 @@
 		<string>group.com.netcore.SmartechApp</string>
 	</array>
 	<key>keychain-access-groups</key>
-	<array>
-		<string>$(AppIdentifierPrefix)hansel_public_key</string>
-	</array>
+	<array/>
 </dict>
 </plist>
