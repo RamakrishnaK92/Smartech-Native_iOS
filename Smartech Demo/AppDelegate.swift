@@ -20,14 +20,14 @@ import SmartechNudges
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, TAGContainerOpenerNotifier{
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate{
     func onLaunchURL(URLString: String!) {
         //
     }
     
-    func containerAvailable(container: TAGContainer!) {
-      container.refresh()
-    }
+//    func containerAvailable(container: TAGContainer!) {
+//      container.refresh()
+//    }
 
     
     func didResolveDeepLink(_ result: DeepLinkResult) {
@@ -73,13 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         UIFont.overrideInitialize()
         
         FirebaseApp.configure()
-        let GTM = TAGManager.instance()
-        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
-
-        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
-            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
-            timeout: nil,
-            notifier: self)
+//        let GTM = TAGManager.instance()
+//        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
+//
+//        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
+//            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
+//            timeout: nil,
+//            notifier: self)
         
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
@@ -151,8 +151,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        print("SMT -BACKGROUND DELIVER", userInfo)
-        
+        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
+            
+            print("SMT -BACKGROUND DELIVER", userInfo)
+        }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
