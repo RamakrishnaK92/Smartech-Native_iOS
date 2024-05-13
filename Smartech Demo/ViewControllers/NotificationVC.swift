@@ -61,6 +61,8 @@ class AppInboxController: UIViewController {
                 //                self.tableView.backgroundView = .appearance()
                 //
             }
+            print(self.appInboxArray as Any)
+            print(self.appInboxCategoryArray as Any)
         }
     }
     
@@ -89,7 +91,9 @@ class AppInboxController: UIViewController {
         }
         cell?.textLabel?.text = notificationPayload?.aps.alert.title
         cell?.detailTextLabel?.text = notificationPayload?.aps.alert.body
+        cell?.detailTextLabel?.text = notificationPayload?.smtPayload.publishedDate
         print(cell?.detailTextLabel?.text! ?? "EMPTY")
+        
         return cell!
     }
 }

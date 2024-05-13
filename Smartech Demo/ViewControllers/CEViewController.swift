@@ -15,7 +15,7 @@ class CEViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        Smartech.sharedInstance().login("test@gmail.com")
 //
         
         // Do any additional setup after loading the view.
