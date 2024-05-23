@@ -16,8 +16,8 @@ class NotificationService: UNNotificationServiceExtension {
   override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
     //...
   if SmartPush.sharedInstance().isNotification(fromSmartech:request.content.userInfo){
-      
-      NSLog("SMT - NSE CALLED", request.content.userInfo)
+
+      NSLog("SMTL-APP - NSE CALLED \(request.content.userInfo)")
       smartechServiceExtension.didReceive(request, withContentHandler: contentHandler)
     }
     //...

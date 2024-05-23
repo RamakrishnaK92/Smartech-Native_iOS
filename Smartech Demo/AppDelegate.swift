@@ -136,12 +136,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     //MARK:- UNUserNotificationCenterDelegate Methods
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        NSLog("SMTL-APP (foreground APN):- \(notification.request.content.userInfo)\n")
         SmartPush.sharedInstance().willPresentForegroundNotification(notification)
         completionHandler([.badge, .sound, .alert])
     }
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
+//        NSLog("SMTL-APP NEW METHOD BACKGROUND:: \(userInfo)")
+//
+//        return UIBackgroundFetchResult.newData
+//    }
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        
+//        
+//        NSLog("SMTL-APP BACKGROUND : \(userInfo)")
+//        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
+//            
+//            NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
+//
+//        }
+//        completionHandler(UIBackgroundFetchResult.newData)
+//    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        NSLog("SMT-APP (didReceive):- \(response)")
+        NSLog("SMTL-APP (didReceive):- \(response)")
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
         SmartPush.sharedInstance().didReceive(response)
@@ -149,13 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //        })
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
-            
-            print("SMT -BACKGROUND DELIVER", userInfo)
-        }
-    }
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
