@@ -15,7 +15,7 @@ class CEViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        Smartech.sharedInstance().login("test@gmail.com")
 //
         
         // Do any additional setup after loading the view.
@@ -81,6 +81,8 @@ class CEViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 //                Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"PushNotification", "next_page":"abc"])
-        
+        Smartech.sharedInstance().trackEvent("", andPayload: [:])
+
+
     }
 }

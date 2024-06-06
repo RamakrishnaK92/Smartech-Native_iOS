@@ -17,6 +17,7 @@ class AppInboxController: UIViewController {
     var appInboxArray: [SMTAppInboxMessage]?
     var appInboxCategoryArray: [SMTAppInboxCategoryModel]?
     var pullControl = UIRefreshControl()
+//    var firstViewed = false
     
     static let tableViewCellIdentifier = "appinboxCell"
     
@@ -27,28 +28,30 @@ class AppInboxController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        //        SmartechAppInbox.sharedInstance().getViewController()
         fetchDataFromNetcore()
-        //        setupPullToRefresh()
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
+        setupPullToRefresh()
+        messageTypes()
+        //        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
     }
     
     @objc func appBecomeActive() {
         //reload your Tableview here
         tableView.reloadData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         
         NSLog("SMTLOGGER WILL APPEAR :")
         setupPullToRefresh()
-        
+        var All = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
+        print("SMT ALL:: \(All.description)")
         
     }
     
     func fetchDataFromNetcore() {
         appInboxArray = []
-        appInboxCategoryArray = SmartechAppInbox.sharedInstance().getCategoryList ()
+        appInboxCategoryArray = SmartechAppInbox.sharedInstance().getCategoryList()
         appInboxArray = SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxCategoryArray as? NSMutableArray)
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -61,6 +64,8 @@ class AppInboxController: UIViewController {
                 //                self.tableView.backgroundView = .appearance()
                 //
             }
+            print(self.appInboxArray as Any)
+            print(self.appInboxCategoryArray as Any)
         }
     }
     
@@ -90,9 +95,22 @@ class AppInboxController: UIViewController {
         cell?.textLabel?.text = notificationPayload?.aps.alert.title
         cell?.detailTextLabel?.text = notificationPayload?.aps.alert.body
         print(cell?.detailTextLabel?.text! ?? "EMPTY")
+        
+        
         return cell!
     }
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        appInboxArray = SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxCategoryArray as? NSMutableArray)
+        
+        let selectedItem = appInboxArray?[indexPath.row] as? SMTAppInboxMessage
+        
+        
+        SmartechAppInbox.sharedInstance().markMessage(asViewed: selectedItem)
+        SmartechAppInbox.sharedInstance().markMessage(asClicked: selectedItem, withDeeplink: selectedItem?.payload?.smtPayload.deeplink)
+        
+    }
+    }
+
 
 
 extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
@@ -132,8 +150,20 @@ extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
         }
         
     }
+    
+    
+    func messageTypes(){
+        
+        var messageTypeAll = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
+        var messageTypeRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.read)
+        var messageTypeUNRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.unread)
+
+        NSLog("messageALL:: \(messageTypeAll.count) \n \(messageTypeAll) ,,, ")
+        
+        NSLog("messageREAD:: \(messageTypeRead.count) \n ,,,\(messageTypeRead)")
+        
+        NSLog("messageUNREAD:: \(messageTypeUNRead.count) \n ,,,\(messageTypeUNRead))")
+
+    }
+    
 }
-
-
-
-

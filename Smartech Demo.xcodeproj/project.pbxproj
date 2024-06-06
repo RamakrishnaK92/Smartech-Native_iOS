@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14273BD48C2CDF280605FC45 /* Pods_SmartechNSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */; };
+		1642CBEC319E9714685136AB /* Pods_SmartechNSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD4D339D8ACFC9E9257251C /* Pods_SmartechNSE.framework */; };
 		1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862FB72280402A400EC3395 /* NotificationVC.swift */; };
+		2702681A2E3688634FDEE584 /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DC6AAFC335674D6EEC4738 /* Pods_Smartech_Demo.framework */; };
+		30741334124DB4D6534F5529 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E27DE38D705EA6A7AF4A7C /* Pods_SmartechNC.framework */; };
 		97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */; };
 		97093C612652A9A4006DF7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C602652A9A4006DF7D0 /* ViewController.swift */; };
 		97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093C622652A9A4006DF7D0 /* Main.storyboard */; };
@@ -35,11 +37,9 @@
 		9D9C9FCC29B10D6C00654732 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */; };
 		9D9C9FD029B10D6C00654732 /* SmartechNC.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D9C9FC429B10D6B00654732 /* SmartechNC.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC618652950DAC400E670C5 /* InAppViewController.swift */; };
-		A9BDEB306C9DACCC40D920F7 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */; };
 		BB5270132B714D71004A459B /* TruenoRg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5270122B710F23004A459B /* TruenoRg.otf */; };
 		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
 		BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */ = {isa = PBXBuildFile; fileRef = BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */; };
-		FA9B0D741C4B6543E678217F /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,13 +89,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartech_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.release.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.release.xcconfig"; sourceTree = "<group>"; };
-		0F381077CD0805F3D3E12F39 /* Pods-SmartechNCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.release.xcconfig"; sourceTree = "<group>"; };
+		08DC6AAFC335674D6EEC4738 /* Pods_Smartech_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartech_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DD4D339D8ACFC9E9257251C /* Pods_SmartechNSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1862FB72280402A400EC3395 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
-		673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.debug.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.debug.xcconfig"; sourceTree = "<group>"; };
+		2964E42AC0A949E2E886468B /* Pods-SmartechNSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.release.xcconfig"; sourceTree = "<group>"; };
+		69B9C00A6906FF5BC3160C94 /* Pods-SmartechNSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.debug.xcconfig"; sourceTree = "<group>"; };
+		786C769D0561E65E34BFB8A1 /* Pods-SmartechNC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.debug.xcconfig"; sourceTree = "<group>"; };
 		97093C592652A9A4006DF7D0 /* Smartech Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smartech Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97093C602652A9A4006DF7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		9720CAA3265697A2008DEA17 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smartech Demo.entitlements"; sourceTree = "<group>"; };
+		98E27DE38D705EA6A7AF4A7C /* Pods_SmartechNC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D09A912294D8739005E88C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -133,16 +133,12 @@
 		9D9C9FCD29B10D6C00654732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9C9FD429B10E3200654732 /* SmartechNC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartechNC.entitlements; sourceTree = "<group>"; };
 		9DC618652950DAC400E670C5 /* InAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
-		AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABB242CFED15D9454A345DCA /* Pods_SmartechNCE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartechNCE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.debug.xcconfig"; sourceTree = "<group>"; };
 		BB5270122B710F23004A459B /* TruenoRg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TruenoRg.otf; sourceTree = "<group>"; };
 		BB5270142B715769004A459B /* HelperFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFonts.swift; sourceTree = "<group>"; };
-		BB9F545C2BD42E7B001D2B71 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-M6QRHT25.json"; sourceTree = "<group>"; };
-		BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.release.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.release.xcconfig"; sourceTree = "<group>"; };
-		C5E1A6FFAFF928D5526740E6 /* Pods-SmartechNCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNCE.debug.xcconfig"; path = "Target Support Files/Pods-SmartechNCE/Pods-SmartechNCE.debug.xcconfig"; sourceTree = "<group>"; };
-		F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNSE.release.xcconfig"; path = "Target Support Files/Pods-SmartechNSE/Pods-SmartechNSE.release.xcconfig"; sourceTree = "<group>"; };
+		C73A74CFCA6A6BA47A9C72E9 /* Pods-Smartech Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.release.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.release.xcconfig"; sourceTree = "<group>"; };
+		ECDE37E78DA2FE1D1313E86F /* Pods-SmartechNC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechNC.release.xcconfig"; path = "Target Support Files/Pods-SmartechNC/Pods-SmartechNC.release.xcconfig"; sourceTree = "<group>"; };
+		F9C535ECC0E2B6B753E996F3 /* Pods-Smartech Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartech Demo.debug.xcconfig"; path = "Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9B0D741C4B6543E678217F /* Pods_Smartech_Demo.framework in Frameworks */,
+				2702681A2E3688634FDEE584 /* Pods_Smartech_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14273BD48C2CDF280605FC45 /* Pods_SmartechNSE.framework in Frameworks */,
+				1642CBEC319E9714685136AB /* Pods_SmartechNSE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +178,7 @@
 			files = (
 				9D9C9FC629B10D6C00654732 /* UserNotificationsUI.framework in Frameworks */,
 				9D9C9FC529B10D6C00654732 /* UserNotifications.framework in Frameworks */,
-				A9BDEB306C9DACCC40D920F7 /* Pods_SmartechNC.framework in Frameworks */,
+				30741334124DB4D6534F5529 /* Pods_SmartechNC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */,
-				BB9F545C2BD42E7B001D2B71 /* BridgingHeader.h */,
 				97093C5B2652A9A4006DF7D0 /* Smartech Demo */,
 				9D456F3B2941D2DB00ABCF10 /* SmartechNSE */,
 				9D9C9FC729B10D6C00654732 /* SmartechNC */,
@@ -328,14 +323,12 @@
 		C84B9AE4E06871E6A73F2FD6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */,
-				0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */,
-				C5E1A6FFAFF928D5526740E6 /* Pods-SmartechNCE.debug.xcconfig */,
-				0F381077CD0805F3D3E12F39 /* Pods-SmartechNCE.release.xcconfig */,
-				AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */,
-				F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */,
-				823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */,
-				BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */,
+				F9C535ECC0E2B6B753E996F3 /* Pods-Smartech Demo.debug.xcconfig */,
+				C73A74CFCA6A6BA47A9C72E9 /* Pods-Smartech Demo.release.xcconfig */,
+				786C769D0561E65E34BFB8A1 /* Pods-SmartechNC.debug.xcconfig */,
+				ECDE37E78DA2FE1D1313E86F /* Pods-SmartechNC.release.xcconfig */,
+				69B9C00A6906FF5BC3160C94 /* Pods-SmartechNSE.debug.xcconfig */,
+				2964E42AC0A949E2E886468B /* Pods-SmartechNSE.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -345,10 +338,9 @@
 			children = (
 				9720CAA3265697A2008DEA17 /* UserNotifications.framework */,
 				9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */,
-				0B4BCBFA7680B3EB9039E3C9 /* Pods_Smartech_Demo.framework */,
-				ABB242CFED15D9454A345DCA /* Pods_SmartechNCE.framework */,
-				673EEA850D976E6DC4367902 /* Pods_SmartechNSE.framework */,
-				AA01C68EC353A087E98A28A8 /* Pods_SmartechNC.framework */,
+				08DC6AAFC335674D6EEC4738 /* Pods_Smartech_Demo.framework */,
+				98E27DE38D705EA6A7AF4A7C /* Pods_SmartechNC.framework */,
+				0DD4D339D8ACFC9E9257251C /* Pods_SmartechNSE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,12 +352,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97093C832652A9B6006DF7D0 /* Build configuration list for PBXNativeTarget "Smartech Demo" */;
 			buildPhases = (
-				6CB7917D03AAE67FEEC66D65 /* [CP] Check Pods Manifest.lock */,
+				A276FA6676EB466850BC0540 /* [CP] Check Pods Manifest.lock */,
 				9720CA9A26569784008DEA17 /* Embed Foundation Extensions */,
 				97093C552652A9A4006DF7D0 /* Sources */,
 				97093C562652A9A4006DF7D0 /* Frameworks */,
 				97093C572652A9A4006DF7D0 /* Resources */,
-				9D2CBF09DEE6B1840A0C98B3 /* [CP] Embed Pods Frameworks */,
+				48A26C184BF825B8534F824C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,7 +410,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D456F442941D2DB00ABCF10 /* Build configuration list for PBXNativeTarget "SmartechNSE" */;
 			buildPhases = (
-				F0562B5E29CEF47168FA9799 /* [CP] Check Pods Manifest.lock */,
+				44A1D4747D3EC149855C66FD /* [CP] Check Pods Manifest.lock */,
 				9D456F362941D2DB00ABCF10 /* Sources */,
 				9D456F372941D2DB00ABCF10 /* Frameworks */,
 				9D456F382941D2DB00ABCF10 /* Resources */,
@@ -436,7 +428,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D9C9FD129B10D6C00654732 /* Build configuration list for PBXNativeTarget "SmartechNC" */;
 			buildPhases = (
-				C89357FBF601C3B8B0D478D3 /* [CP] Check Pods Manifest.lock */,
+				0D4E09C13AC9EC699C8EB8CE /* [CP] Check Pods Manifest.lock */,
 				9D9C9FC029B10D6B00654732 /* Sources */,
 				9D9C9FC129B10D6B00654732 /* Frameworks */,
 				9D9C9FC229B10D6B00654732 /* Resources */,
@@ -487,8 +479,6 @@
 				Base,
 			);
 			mainGroup = 97093C502652A9A4006DF7D0;
-			packageReferences = (
-			);
 			productRefGroup = 97093C5A2652A9A4006DF7D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -550,46 +540,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6CB7917D03AAE67FEEC66D65 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Smartech Demo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D2CBF09DEE6B1840A0C98B3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C89357FBF601C3B8B0D478D3 /* [CP] Check Pods Manifest.lock */ = {
+		0D4E09C13AC9EC699C8EB8CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -611,7 +562,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0562B5E29CEF47168FA9799 /* [CP] Check Pods Manifest.lock */ = {
+		44A1D4747D3EC149855C66FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -627,6 +578,45 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SmartechNSE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48A26C184BF825B8534F824C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A276FA6676EB466850BC0540 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smartech Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -862,7 +852,7 @@
 		};
 		97093C842652A9B6006DF7D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D3073C00E799189876978FF /* Pods-Smartech Demo.debug.xcconfig */;
+			baseConfigurationReference = F9C535ECC0E2B6B753E996F3 /* Pods-Smartech Demo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Netcore;
@@ -896,9 +886,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ramakrishnakasuba/_GitLocal/Smartech-Native_iOS/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -906,7 +894,7 @@
 		};
 		97093C852652A9B6006DF7D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CBF928067587B0CB507B08E /* Pods-Smartech Demo.release.xcconfig */;
+			baseConfigurationReference = C73A74CFCA6A6BA47A9C72E9 /* Pods-Smartech Demo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Netcore;
@@ -941,9 +929,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Dev_Smartech_App;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ramakrishnakasuba/_GitLocal/Smartech-Native_iOS/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1043,7 +1029,7 @@
 		};
 		9D456F422941D2DB00ABCF10 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFCF3E90DB1EE9D9E6B34540 /* Pods-SmartechNSE.debug.xcconfig */;
+			baseConfigurationReference = 69B9C00A6906FF5BC3160C94 /* Pods-SmartechNSE.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = SmartechNSE/SmartechNSE.entitlements;
@@ -1077,7 +1063,7 @@
 		};
 		9D456F432941D2DB00ABCF10 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5D897E880650BE6ECE941DE /* Pods-SmartechNSE.release.xcconfig */;
+			baseConfigurationReference = 2964E42AC0A949E2E886468B /* Pods-SmartechNSE.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = SmartechNSE/SmartechNSE.entitlements;
@@ -1111,7 +1097,7 @@
 		};
 		9D9C9FD229B10D6C00654732 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 823414B4BEDC53AE23B67F98 /* Pods-SmartechNC.debug.xcconfig */;
+			baseConfigurationReference = 786C769D0561E65E34BFB8A1 /* Pods-SmartechNC.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = SmartechNC/SmartechNC.entitlements;
@@ -1145,7 +1131,7 @@
 		};
 		9D9C9FD329B10D6C00654732 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD507826A83274674CC0F2AF /* Pods-SmartechNC.release.xcconfig */;
+			baseConfigurationReference = ECDE37E78DA2FE1D1313E86F /* Pods-SmartechNC.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = SmartechNC/SmartechNC.entitlements;

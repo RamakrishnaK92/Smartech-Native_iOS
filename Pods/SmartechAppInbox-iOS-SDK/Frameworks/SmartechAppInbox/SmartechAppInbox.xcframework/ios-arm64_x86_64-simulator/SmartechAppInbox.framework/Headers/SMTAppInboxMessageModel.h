@@ -53,10 +53,22 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 
 @end
 
+API_AVAILABLE(ios(12.0))
+/**
+ @brief The SMTAppInboxMessageModelValueTransformer class is used to custom object of coredata which is SMTAppInboxMessageModel. It contains full notification payload.
+ */
+@interface SMTAppInboxMessageModelValueTransformer : NSSecureUnarchiveFromDataTransformer
+
++ (void)register;
++ (id)transformedValue:(id)value;
++ (id)reverseTransformedValue:(id)value;
+
+@end
+
 /**
  @brief This model class contains complete payload of Push Notification.
  */
-@interface SMTAppInboxMessageModel : SMTAIBase <NSCoding>
+@interface SMTAppInboxMessageModel : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, strong) SMTAIAps *aps;
 @property (nonatomic, copy) NSString *source;
@@ -65,20 +77,10 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 
 @end
 
-///**
-// @brief This model class contains complete payload of Push Notification.
-// */
-//@interface SMTNotificationCategoryModel : SMTAIBase <NSCoding>
-//
-//@property (nonatomic) NSInteger categoryId;
-//@property (nonatomic, copy) NSString *categoryName;
-//
-//@end
-
 /**
  @brief This model class contains APS.
  */
-@interface SMTAIAps : SMTAIBase <NSCoding>
+@interface SMTAIAps : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, strong) SMTAIAlert *alert;
 @property (nonatomic, copy) NSString *category;
@@ -89,7 +91,7 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 /**
  @brief This model class contains Alert.
  */
-@interface SMTAIAlert : SMTAIBase <NSCoding>
+@interface SMTAIAlert : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
@@ -100,7 +102,7 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 /**
  @brief This model class contains the actual payload.
  */
-@interface SMTAIPayload : SMTAIBase <NSCoding>
+@interface SMTAIPayload : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *type;
@@ -132,7 +134,7 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 /**
  @brief This model class contains the attribution parameters.
  */
-@interface SMTAIAttributionParameter : SMTAIBase <NSCoding>
+@interface SMTAIAttributionParameter : SMTAIBase <NSSecureCoding>
 
 // This is used to store the complete attrParams which is used by the smartech server for PN attribution.
 @property (nonatomic, copy) NSDictionary *attrParams;
@@ -145,7 +147,7 @@ typedef NS_ENUM(NSUInteger, SMTInboxMessageStatus) {
 /**
  @brief This model class contains the action buttons.
  */
-@interface SMTAIActionButton : SMTAIBase <NSCoding>
+@interface SMTAIActionButton : SMTAIBase <NSSecureCoding>
 
 typedef NS_ENUM(NSUInteger, SMTActionType) {
     SMTActionTypeNone = 1,
@@ -165,7 +167,7 @@ typedef NS_ENUM(NSUInteger, SMTActionType) {
 /**
  @brief This model class contains the action buttons configurations.
  */
-@interface SMTAIActionButtonConfiguration : SMTAIBase <NSCoding>
+@interface SMTAIActionButtonConfiguration : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *promoCode;
 @property (nonatomic, copy) NSString *snoozeInterval;
@@ -175,7 +177,7 @@ typedef NS_ENUM(NSUInteger, SMTActionType) {
 /**
  @brief This model class contains the carousel.
  */
-@interface SMTAICarousel : SMTAIBase <NSCoding>
+@interface SMTAICarousel : SMTAIBase <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *imgUrl;
 @property (nonatomic, copy) NSString *imgUrlPath;
