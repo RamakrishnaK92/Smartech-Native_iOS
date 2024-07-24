@@ -28,10 +28,10 @@ class AppInboxController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //        SmartechAppInbox.sharedInstance().getViewController()
+//                SmartechAppInbox.sharedInstance().getViewController()
         fetchDataFromNetcore()
-        setupPullToRefresh()
-        messageTypes()
+//        setupPullToRefresh()
+//        messageTypes()
         //        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
     }
     
@@ -64,7 +64,7 @@ class AppInboxController: UIViewController {
                 //                self.tableView.backgroundView = .appearance()
                 //
             }
-            print(self.appInboxArray as Any)
+            print("APPINBOX ARRAY:", self.appInboxArray as Any)
             print(self.appInboxCategoryArray as Any)
         }
     }
@@ -73,7 +73,7 @@ class AppInboxController: UIViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the table view
         
-        return self.appInboxArray?.count ?? 1
+        return self.appInboxArray?.count ?? 0
         
     }
     
@@ -92,7 +92,9 @@ class AppInboxController: UIViewController {
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: AppInboxCellTableViewCell.identifier)
         }
-        cell?.textLabel?.text = notificationPayload?.aps.alert.title
+        var htmlTitle = notificationPayload?.smtPayload.htTitle
+
+//        cell?.textLabel?.text = NSAttributedString(htmlString: (htmlTitle ?? ""))
         cell?.detailTextLabel?.text = notificationPayload?.aps.alert.body
         print(cell?.detailTextLabel?.text! ?? "EMPTY")
         
@@ -157,13 +159,15 @@ extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
         var messageTypeAll = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
         var messageTypeRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.read)
         var messageTypeUNRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.unread)
-
+        
         NSLog("messageALL:: \(messageTypeAll.count) \n \(messageTypeAll) ,,, ")
         
         NSLog("messageREAD:: \(messageTypeRead.count) \n ,,,\(messageTypeRead)")
         
         NSLog("messageUNREAD:: \(messageTypeUNRead.count) \n ,,,\(messageTypeUNRead))")
-
-    }
+        
+        
+        
     
+    }
 }

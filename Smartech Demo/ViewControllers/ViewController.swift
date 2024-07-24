@@ -38,7 +38,7 @@ class ViewController: UITableViewController{
 //                Analytics.logEvent("screen_view_GTM", parameters:  params)
 //                Smartech.sharedInstance().trackEvent("screen_view_GTM", andPayload: params)
 //        
-//                
+//           
 
                        
         // Do any additional setup after loading the view.
@@ -64,7 +64,7 @@ class ViewController: UITableViewController{
             
         }else{
             UserDefaults.standard.setValue(email, forKey: "userLogged")
-//            Smartech.sharedInstance().login(email)
+            Smartech.sharedInstance().login(email)
 //            Smartech.sharedInstance().trackEvent("Login_success", andPayload: ["source":"app"])
             goToTabBar()
             UserDefaults.standard.synchronize()
@@ -132,11 +132,9 @@ class ViewController: UITableViewController{
         loginTF.text = ""
         errorLabel.text = ""
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//
-//
+        
+        
+       
 //        Hansel.getUser()?.setUserId("62123456788")
     
 //        HanselTracker.logEvent("Home_Login_Success", vendor: "smt", withProperties: ["app_language":"English"])
@@ -150,8 +148,12 @@ class ViewController: UITableViewController{
 //        
         
 //        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"Authentication Screen", "subscriptionDate": "2"])
+        
+        
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+//        Smartech.sharedInstance().trackEvent("Product Purchase", andPayload: ["amount": 500.00])
+    }
     
 }
 

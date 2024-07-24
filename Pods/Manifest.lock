@@ -833,7 +833,7 @@ PODS:
   - PromisesObjC (2.3.1)
   - RecaptchaInterop (100.0.0)
   - Smartech-iOS-SDK (3.5.3)
-  - SmartechAppInbox-iOS-SDK (3.5.1)
+  - SmartechAppInbox-iOS-SDK (3.5.2)
   - SmartechNudges (9.0.10):
     - Smartech-iOS-SDK (>= 3.5.3)
   - SmartPush-iOS-SDK (3.5.1):
@@ -847,7 +847,7 @@ DEPENDENCIES:
   - GoogleTagManager
   - IQKeyboardManagerSwift
   - Smartech-iOS-SDK (~> 3.5.3)
-  - SmartechAppInbox-iOS-SDK (~> 3.5.1)
+  - SmartechAppInbox-iOS-SDK (~> 3.5.2)
   - SmartechNudges (= 9.0.10)
   - SmartPush-iOS-SDK (~> 3.5.1)
 
@@ -918,10 +918,10 @@ SPEC CHECKSUMS:
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   Smartech-iOS-SDK: 81069bfc22656c182d2f8deeb89b49534754e373
-  SmartechAppInbox-iOS-SDK: 05faabc756c6f7e1ec5065ee75ed63d6a363b57f
+  SmartechAppInbox-iOS-SDK: c3ea0f114c8e49cd3d16934b48d26bbb46a232d6
   SmartechNudges: 3135f0b1899f76dc4240eb86aef56382270c801b
   SmartPush-iOS-SDK: a3a49936fd6936dfa361a822d43e35525b799434
 
-PODFILE CHECKSUM: 86fb5661939f69cc7f3d45db646ebd8ca5a4f813
+PODFILE CHECKSUM: ca3850137000d56b1bbdc2f70125ee80c29cbff4
 
 COCOAPODS: 1.15.2

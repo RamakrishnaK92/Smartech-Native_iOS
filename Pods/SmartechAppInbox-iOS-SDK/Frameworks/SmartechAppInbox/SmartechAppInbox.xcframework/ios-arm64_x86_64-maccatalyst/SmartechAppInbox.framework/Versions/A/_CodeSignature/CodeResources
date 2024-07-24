@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/Assets.car</key>
 		<data>
-		4NzTPQYED986OXSFo7tb6WJsnKM=
+		ZA4YVk5ARIIFOBEZe5H9cCLo7Ts=
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		xvvRZzN9RAXHG1se1BMmMwDFVsQ=
+		/zLzR48U3UokBmEa5pD/pIix4GY=
 		</data>
 		<key>Resources/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Resources/SmartechAppInbox.momd/SmartechAppInbox 2.mom</key>
 		<data>
-		00RM5Kb4lq1A60D3kwcUlsG6zbQ=
+		cNbbkGTJKry9OlGKr82UJHiCAAY=
 		</data>
 		<key>Resources/SmartechAppInbox.momd/SmartechAppInbox 2.omo</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Resources/SmartechAppInbox.momd/SmartechAppInbox.mom</key>
 		<data>
-		WEYOgtNYfm1pOzxx+D8ZiTDuI0Q=
+		GhNAKFfd2/xR6+A7VaJUilPIxBY=
 		</data>
 		<key>Resources/SmartechAppInbox.momd/VersionInfo.plist</key>
 		<data>
@@ -102,7 +102,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LRZErcpdw7Cchyn/502KvtfLwW/h3x7nT2EQnexBNdo=
+			ftxU6CV3CSAvn+pl1Svzrh8nf2bgvq5cUj9zYdR0g88=
 			</data>
 		</dict>
 		<key>Headers/SMTAppInboxViewController.h</key>
@@ -130,14 +130,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dmwOBt4EqHL51gRNwE9l3PuFXxQfA1PqTyWO4q5bn+A=
+			ZCR8jov/MwyYt9lTJHowfDpbvmTpdCvGhF5m+xravOw=
 			</data>
 		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WAV3tPSmQkQfBc2tIyLV92TzoilrI4eF9nzMGfNhmVI=
+			HCB+FKIidFA+Es6Q3irgK2qP68jorR/ZsMI0W7LOtm0=
 			</data>
 		</dict>
 		<key>Resources/PrivacyInfo.xcprivacy</key>
@@ -200,7 +200,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9VjqMZ6fOISuE8hqZjjwNlB82k4NiDfLJoGowLvp9Uc=
+			Q200Mftobpr1a51UsOaMwORENqkz1929wgxUUY8h9dI=
 			</data>
 		</dict>
 		<key>Resources/SmartechAppInbox.momd/SmartechAppInbox 2.omo</key>
@@ -214,7 +214,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NoWEm0Sn41PoOnymMy9WX3trmRKzBR2lZLbr/xoqwLI=
+			jXbmff/slV+FSuJjOXdXz7FxxjKGwNCfBtk7CIMyyxE=
 			</data>
 		</dict>
 		<key>Resources/SmartechAppInbox.momd/VersionInfo.plist</key>

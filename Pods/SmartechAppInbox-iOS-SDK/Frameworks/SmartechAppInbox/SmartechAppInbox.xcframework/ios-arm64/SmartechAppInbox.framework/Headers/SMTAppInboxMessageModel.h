@@ -125,6 +125,9 @@ API_AVAILABLE(ios(12.0))
 @property (nonatomic, copy) NSString *appInBoxCategory;
 @property (nonatomic, copy) NSString *appInBoxTimestamp;
 @property (nonatomic, copy) NSString *aappInBoxTtl;
+@property (nonatomic, copy) NSString *htTitle;
+@property (nonatomic, copy) NSString *htSubtitle;
+@property (nonatomic, copy) NSString *htBody;
 
 
 - (void)deleteStoredMedia;

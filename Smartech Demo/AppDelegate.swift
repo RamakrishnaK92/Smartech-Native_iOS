@@ -86,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
-        Hansel.getUser()?.putAttribute(1, forKey: "test_attrib")
         Hansel.setAppFont("Trueno")
         
         UNUserNotificationCenter.current().delegate = self
@@ -111,6 +110,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         AppsFlyerLib.shared().start()
         
         //        application.registerForRemoteNotifications()
+//        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
+
+
         return true
     }
     
@@ -219,7 +221,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         }
         
         NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
-        
+        handleDeepLink(url: deeplinkURLString)
     }
 //        var newDeeplink = deeplinkURLString.components(separatedBy: "?")
 //        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")

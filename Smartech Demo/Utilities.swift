@@ -82,6 +82,38 @@ extension String
     
 }
 
+extension NSAttributedString {
+    convenience init?(htmlString: String) {
+        guard let data = htmlString.data(using: .utf8) else {
+            return nil
+        }
+        
+        try? self.init(data: data, options: [.documentType: NSAttributedString.DocumentType.html,
+                                            .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+    }
+}
+
+
+extension UILabel {
+    func setHTMLFromString(htmlText: String) {
+        guard let data = htmlText.data(using: .utf8) else {
+            self.text = htmlText
+            return
+        }
+
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+
+        if let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) {
+            self.attributedText = attributedString
+        } else {
+            self.text = htmlText
+        }
+    }
+}
+
 
 extension String{
     func isUserLoggedIn(){
@@ -100,3 +132,5 @@ enum DeeplinkEnum:String{
     case NotifVC
     
 }
+
+
