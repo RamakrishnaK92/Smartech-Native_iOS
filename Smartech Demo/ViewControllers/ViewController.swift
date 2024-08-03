@@ -19,6 +19,7 @@ class ViewController: UITableViewController{
 
     
     var dashVC:DashboardViewController!
+    var email:String!
     
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
@@ -49,7 +50,7 @@ class ViewController: UITableViewController{
         // TODO: Validate Text Fields
         
         // Create cleaned \versions of the text field
-        let email = loginTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        email = loginTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
         //MARK: SMARTECH USER LOGIN
@@ -123,7 +124,7 @@ class ViewController: UITableViewController{
         
         
         self.present(nextViewController, animated: true)
-        self.tabBarController?.selectedIndex = 2
+        self.tabBarController?.selectedIndex = 0
     }
     
     
@@ -131,8 +132,6 @@ class ViewController: UITableViewController{
         super.viewWillAppear(animated)
         loginTF.text = ""
         errorLabel.text = ""
-        
-        
         
        
 //        Hansel.getUser()?.setUserId("62123456788")

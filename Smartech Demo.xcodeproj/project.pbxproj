@@ -38,6 +38,7 @@
 		BB5270132B714D71004A459B /* TruenoRg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5270122B710F23004A459B /* TruenoRg.otf */; };
 		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
 		BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */ = {isa = PBXBuildFile; fileRef = BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */; };
+		BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */; };
 		C85E0CAE5895F26408EEB0D8 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887EFF279FA8CE62199CC995 /* Pods_SmartechNC.framework */; };
 		C9972B8C10FB93CEEC9D3415 /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8C9B1A3A3E4CDA87C1006 /* Pods_Smartech_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 		BB5270122B710F23004A459B /* TruenoRg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TruenoRg.otf; sourceTree = "<group>"; };
 		BB5270142B715769004A459B /* HelperFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFonts.swift; sourceTree = "<group>"; };
 		BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-M6QRHT25.json"; sourceTree = "<group>"; };
+		BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,9 +219,9 @@
 			children = (
 				BBAA66602BC8310B00DB86D6 /* Container */,
 				9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */,
+				9DECFD9B2A2DCAD100B6D045 /* Views */,
 				97093C902652D438006DF7D0 /* ViewControllers */,
 				BB1F018D2B90D701004E856B /* SupportingFiles */,
-				9DECFD9B2A2DCAD100B6D045 /* Views */,
 			);
 			path = "Smartech Demo";
 			sourceTree = "<group>";
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				97093C602652A9A4006DF7D0 /* ViewController.swift */,
+				BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */,
 				97093C8C2652D404006DF7D0 /* RegisterViewController.swift */,
 				97093C8E2652D428006DF7D0 /* DashboardVC.swift */,
 				1862FB72280402A400EC3395 /* NotificationVC.swift */,
@@ -639,6 +642,7 @@
 				97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */,
 				9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */,
 				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,
+				BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */,
 				9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */,
 				97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */,
 				1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */,

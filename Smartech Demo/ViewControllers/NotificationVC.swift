@@ -13,11 +13,11 @@ class AppInboxController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var label: UILabel?
     var appInboxArray: [SMTAppInboxMessage]?
     var appInboxCategoryArray: [SMTAppInboxCategoryModel]?
     var pullControl = UIRefreshControl()
-//    var firstViewed = false
+    //    var firstViewed = false
     
     static let tableViewCellIdentifier = "appinboxCell"
     
@@ -28,10 +28,11 @@ class AppInboxController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-//                SmartechAppInbox.sharedInstance().getViewController()
+        
+        //                SmartechAppInbox.sharedInstance().getViewController()
         fetchDataFromNetcore()
-//        setupPullToRefresh()
-//        messageTypes()
+        setupPullToRefresh()
+        messageTypes()
         //        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
     }
     
@@ -43,9 +44,14 @@ class AppInboxController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         NSLog("SMTLOGGER WILL APPEAR :")
-        setupPullToRefresh()
-        var All = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
-        print("SMT ALL:: \(All.description)")
+       
+        var all = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
+        var allCount = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
+        
+        print("SMT ALL:: \(all.description.utf8)")
+        
+        print("SMT ALL COUNT:: \(allCount.count)")
+        
         
     }
     
@@ -64,8 +70,8 @@ class AppInboxController: UIViewController {
                 //                self.tableView.backgroundView = .appearance()
                 //
             }
-            print("APPINBOX ARRAY:", self.appInboxArray as Any)
-            print(self.appInboxCategoryArray as Any)
+            print("APPINBOX ARRAY:", self.appInboxArray!)
+            print(self.appInboxCategoryArray! as Any)
         }
     }
     
@@ -89,31 +95,54 @@ class AppInboxController: UIViewController {
         var cell = tableView.dequeueReusableCell(withIdentifier: AppInboxCellTableViewCell.identifier)
         
         
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: AppInboxCellTableViewCell.identifier)
-        }
-        var htmlTitle = notificationPayload?.smtPayload.htTitle
+        // HTML string
+//        let htmlTitle = notificationPayload?.smtPayload.htTitle
+//        
+//       
+        // Convert HTML string to NSAttributedString
+//        if let attributedString = htmlTitle!.htmlToAttributedString {
+//            
+//            label?.attributedText = attributedString as? NSAttributedString
+//            
+//        } else {
+//            cell?.textLabel?.text = "Failed to load HTML string"
+//            
+//        }
+        
+    
+    if cell == nil {
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: AppInboxCellTableViewCell.identifier)
+    }
+        
+    let status = appInboxArray?[indexPath.row].status
+    let item = appInboxArray?[indexPath.row]
+    
+    if status != "viewed"{
+        SmartechAppInbox.sharedInstance().markMessage(asViewed: item)
+    }
+    
 
-//        cell?.textLabel?.text = NSAttributedString(htmlString: (htmlTitle ?? ""))
+        cell?.textLabel?.text = notificationPayload?.aps.alert.title
         cell?.detailTextLabel?.text = notificationPayload?.aps.alert.body
-        print(cell?.detailTextLabel?.text! ?? "EMPTY")
-        
-        
-        return cell!
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        appInboxArray = SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxCategoryArray as? NSMutableArray)
-        
-        let selectedItem = appInboxArray?[indexPath.row] as? SMTAppInboxMessage
-        
-        
-        SmartechAppInbox.sharedInstance().markMessage(asViewed: selectedItem)
+    
+    
+    return cell!
+    
+}
+
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    appInboxArray = SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxCategoryArray as? NSMutableArray)
+    
+    let selectedItem = appInboxArray?[indexPath.row] as? SMTAppInboxMessage
+    let status = appInboxArray?[indexPath.row].status
+    
+    if status != "clicked"{
         SmartechAppInbox.sharedInstance().markMessage(asClicked: selectedItem, withDeeplink: selectedItem?.payload?.smtPayload.deeplink)
-        
     }
-    }
-
-
+    
+    
+}
+}
 
 extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
     
@@ -135,7 +164,7 @@ extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
                     self.pullControl.endRefreshing()
                     
                 }
-                print("status:\(status)")
+                NSLog("status:\(status)")
             }
             
         }
@@ -150,24 +179,33 @@ extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
             self.tableView.contentOffset = CGPoint.zero
             
         }
-        
     }
     
     
     func messageTypes(){
         
-        var messageTypeAll = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
-        var messageTypeRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.read)
-        var messageTypeUNRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.unread)
+        let messageTypeAll = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
+        let messageTypeRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.read)
+        let messageTypeUNRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.unread)
         
-        NSLog("messageALL:: \(messageTypeAll.count) \n \(messageTypeAll) ,,, ")
+        NSLog("messageALL:: \(messageTypeAll.count) \n \(messageTypeAll)")
         
-        NSLog("messageREAD:: \(messageTypeRead.count) \n ,,,\(messageTypeRead)")
+        NSLog("messageREAD:: \(messageTypeRead.count) \n \(messageTypeRead)")
         
-        NSLog("messageUNREAD:: \(messageTypeUNRead.count) \n ,,,\(messageTypeUNRead))")
+        NSLog("messageUNREAD:: \(messageTypeUNRead.count) \n \(messageTypeUNRead))")
         
-        
-        
+    }
     
+}
+
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = self.data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            print("Error converting HTML to NSAttributedString: \(error.localizedDescription)")
+            return nil
+        }
     }
 }

@@ -32,8 +32,7 @@ class RegisterViewController: UIViewController {
         }
         errorLabel.font = UIFontMetrics.default.scaledFont(for: truenoRg)
         errorLabel.adjustsFontForContentSizeCategory = true
-//        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"Personal details Screen","next page": "main screen"])
-//        
+//
 //        let fullName = fullNameTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 //        let mobile = mobileTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 //        let email = emailTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -66,7 +65,6 @@ class RegisterViewController: UIViewController {
             
 //            Smartech.sharedInstance().login(email)
            
-            
             
             let alert = UIAlertController(title: "Done!", message: "User Profile pushed successfully", preferredStyle: UIAlertController.Style.alert)
             

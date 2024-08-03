@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "smardges new.png",
+      "filename" : "SmardgesLaunch.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "SmardgesLaunch 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "SmardgesLaunch 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

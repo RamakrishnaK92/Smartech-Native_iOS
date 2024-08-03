@@ -25,17 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //
     }
     
-//    func containerAvailable(container: TAGContainer!) {
-//      container.refresh()
-//    }
-
+    //    func containerAvailable(container: TAGContainer!) {
+    //      container.refresh()
+    //    }
     
+    //Onelink deeplink case
     func didResolveDeepLink(_ result: DeepLinkResult) {
         
         print("SMTLogg: \(String(describing: result.deepLink?.deeplinkValue))") // Step 3
         
     }
-    
     
     
     var window: UIWindow?
@@ -57,29 +56,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         if isUserLoggedIn == true {
             
             print("Already logged in")
-            moveToTabbar(0)
+            moveToTabbar(2)
             //
             print("\(UserDefaults.standard.value(forKey: "userLogged")!)")
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let tabBar = storyBoard.instantiateViewController(withIdentifier: "tabBarSegue") as! UITabBarController
             tabBar.modalPresentationStyle = .fullScreen
             
+            
+            Smartech.sharedInstance().setUserIdentity(VC?.email ?? "")
+            print(VC?.email)
+            
             UIApplication.shared.windows.first?.rootViewController? = tabBar
             UIApplication.shared.windows.first?.makeKeyAndVisible()
             //
         }
-    
+        
         
         UIFont.overrideInitialize()
         
         FirebaseApp.configure()
-//        let GTM = TAGManager.instance()
-//        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
-//
-//        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
-//            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
-//            timeout: nil,
-//            notifier: self)
+        //        let GTM = TAGManager.instance()
+        //        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
+        //
+        //        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
+        //            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
+        //            timeout: nil,
+        //            notifier: self)
         
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
@@ -101,28 +104,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
         
         
-        AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
-        AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
-        AppsFlyerLib.shared().deepLinkDelegate = self
-        
+        //        AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
+        //        AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
+        //        AppsFlyerLib.shared().deepLinkDelegate = self
+        //
         //  Set isDebug to true to see AppsFlyer debug logs
         AppsFlyerLib.shared().isDebug = true
         AppsFlyerLib.shared().start()
         
         //        application.registerForRemoteNotifications()
-//        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
-
-
+        //
+        
+        
         return true
     }
     
-    func handleDeepLink(url:String){
-        if let webUrl = URL(string: url){
-            UIApplication.shared.canOpenURL(webUrl)
-        }
-    }
     
-
+    
+    
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         SmartPush.sharedInstance().didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
@@ -143,29 +142,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         SmartPush.sharedInstance().willPresentForegroundNotification(notification)
         completionHandler([.badge, .sound, .alert])
     }
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
-//        NSLog("SMTL-APP NEW METHOD BACKGROUND:: \(userInfo)")
-//
-//        return UIBackgroundFetchResult.newData
-//    }
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        
-//        
-//        NSLog("SMTL-APP BACKGROUND : \(userInfo)")
-//        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
-//            
-//            NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
-//
-//        }
-//        completionHandler(UIBackgroundFetchResult.newData)
-//    }
+    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
+    //        NSLog("SMTL-APP NEW METHOD BACKGROUND:: \(userInfo)")
+    //
+    //        return UIBackgroundFetchResult.newData
+    //    }
+    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    //
+    //
+    //        NSLog("SMTL-APP BACKGROUND : \(userInfo)")
+    //        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
+    //
+    //            NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
+    //
+    //        }
+    //        completionHandler(UIBackgroundFetchResult.newData)
+    //    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         NSLog("SMTL-APP (didReceive):- \(response)")
         
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
         SmartPush.sharedInstance().didReceive(response)
-                completionHandler()
+        completionHandler()
         //        })
     }
     
@@ -206,9 +205,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     func moveToTabbar(_ withIndex : Int){
         let tabBarController = UITabBarController()
-        tabBarController.selectedIndex = 2
+        tabBarController.selectedIndex = withIndex
         
         (rootController: tabBarController, window:UIApplication.shared.keyWindow)
+        
     }
     
     //MARK: SMT DEEPLINK CALLBAC
@@ -223,17 +223,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
         handleDeepLink(url: deeplinkURLString)
     }
-//        var newDeeplink = deeplinkURLString.components(separatedBy: "?")
-//        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
-//        
-//        
-//        handleDeepLink(url: newDeeplink[0])
-//
-//        // Convert OneLink to Deep Link
-//        if let deepLinkURL = convertOneLinkToDeepLink(newDeeplink[0]) {
-//            handleDeepLinkCode(deepLinkURL)
-//        }
-//    }
+    
+    func handleDeepLink(url:String){
+        if let webUrl = URL(string: url){
+            UIApplication.shared.canOpenURL(webUrl)
+        }
+    }
+    
+    //        var newDeeplink = deeplinkURLString.components(separatedBy: "?")
+    //        NSLog("SMTLogger DEEPLINK NEW CALL: \(newDeeplink[0])")
+    //
+    //
+    //        handleDeepLink(url: newDeeplink[0])
+    //
+    //        // Convert OneLink to Deep Link
+    //        if let deepLinkURL = convertOneLinkToDeepLink(newDeeplink[0]) {
+    //            handleDeepLinkCode(deepLinkURL)
+    //        }
+    //    }
     
     
     func convertOneLinkToDeepLink(_ oneLinkURLString: String) -> URL? {

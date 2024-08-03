@@ -33,12 +33,19 @@ class DashboardViewController: UIViewController {
         removeCurrentUser()
         
 //        Smartech.sharedInstance().trackEvent("Logout_success", andPayload: nil)
-        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
-        Hansel.getUser()?.clear()
-        self.dismiss(animated: true)
-        
+//        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
+//        Hansel.getUser()?.clear()
+      
+        transitionToLoginPage()
     }
     
+    func transitionToLoginPage() {
+        
+        let VC = self.storyboard?.instantiateViewController(identifier: "ViewController") as? ViewController
+        VC?.modalPresentationStyle = .fullScreen
+        present(VC!, animated: true, completion: nil)
+        
+    }
         func removeCurrentUser(){
             if UserDefaults.standard.value(forKey: "userLogged") != nil {
                 UserDefaults.standard.removeObject(forKey: "userLogged")

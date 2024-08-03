@@ -8,11 +8,11 @@ target 'Smartech Demo' do
   
   
   # Pods for Smartech Demo
-  pod 'Smartech-iOS-SDK', '~> 3.5.3'
-  pod 'SmartPush-iOS-SDK', '~> 3.5.1'
+  pod 'Smartech-iOS-SDK', '~> 3.5.5'
+  pod 'SmartPush-iOS-SDK', '~> 3.5.5'
   
-  pod 'SmartechNudges', '9.0.10'
-  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.2'
+  pod 'SmartechNudges', '9.0.12'
+  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.5'
   pod 'IQKeyboardManagerSwift'
   #pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
@@ -42,7 +42,7 @@ end
     use_frameworks!
     # Pods for 'YourServiceExtensionTarget'
     
-    pod 'SmartPush-iOS-SDK', '~> 3.5.1'
+    pod 'SmartPush-iOS-SDK', '~> 3.5.5'
 
   end
   
@@ -52,7 +52,7 @@ end
     use_frameworks!
     #  # Pods for 'YourContentExtensionTarget'
     
-    pod 'SmartPush-iOS-SDK', '~> 3.5.1'
+    pod 'SmartPush-iOS-SDK', '~> 3.5.5'
 
   end
 

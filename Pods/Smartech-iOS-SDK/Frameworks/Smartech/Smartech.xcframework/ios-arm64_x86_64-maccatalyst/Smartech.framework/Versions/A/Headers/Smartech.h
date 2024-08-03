@@ -27,6 +27,8 @@ FOUNDATION_EXPORT const unsigned char SmartechVersionString[];
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString *kSmartechPartnerParameter = @"ncPartnerParameter";
+
 @class SmartechHandler;
 
 typedef NS_ENUM(NSUInteger, SMTLogLevel) {
@@ -424,6 +426,33 @@ typedef NS_ENUM(NSUInteger, SMTLogLevel) {
  @return NSString The current Smartech SDK version.
  */
 - (NSString *)getSDKVersion;
+
+/**
+ @brief This method is used to get the ncExternalIdentity of the current device user.
+ 
+ @discussion If you call this method you will get the ncExternalIdentity of the current device user.
+
+ @return NSString - the ncExternalIdentity.
+*/
+- (NSString *)getNCExternalIdentity;
+
+/**
+ @brief This method is used to get all the partner parameters.
+
+ @discussion If you call this method you will get the partner parameter that you will need to send to any third party SDK's.
+ 
+ @return NSDictionary - the partner parameters
+*/
+- (NSDictionary *)getPartnerParameters;
+
+/**
+ @brief This method is used to get all the partner parameters in JSON string.
+
+ @discussion If you call this method you will get the partner parameter that you will need to send to any third party SDK's.
+ 
+ @return NSString - the partner parameter string
+*/
+- (NSString *)getPartnerParametersString;
 
 /**
  @brief This method is used to set the device advertiser id to be shared with Smartech backend.
