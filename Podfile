@@ -21,6 +21,7 @@ target 'Smartech Demo' do
   pod 'GoogleTagManager'
   
   pod 'AppsFlyerFramework'  #appsflyer SDK
+  pod 'MoEngage-iOS-SDK'
 
   
   post_install do |installer|

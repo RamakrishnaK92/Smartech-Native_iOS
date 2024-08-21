@@ -17,10 +17,25 @@ import IQKeyboardManagerSwift
 import GoogleSignIn
 import AppsFlyerLib
 import SmartechNudges
+import MoEngageSDK
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, MoEngageMessagingDelegate{
+    
+    var window: UIWindow?
+    
+    var VC:ViewController?
+    var navigationVC:UINavigationController?
+    var tabBar:UITabBarController?
+    
+    var locationManager = CLLocationManager()
+    var isUserLoggedIn: Bool {
+        return UserDefaults.standard.value(forKey: "userLogged") != nil
+    }
+    
+    
+    
     func onLaunchURL(URLString: String!) {
         //
     }
@@ -37,21 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     
-    var window: UIWindow?
-    
-    var VC:ViewController?
-    var navigationVC:UINavigationController?
-    var tabBar:UITabBarController?
-    
-    var locationManager = CLLocationManager()
-    var isUserLoggedIn: Bool {
-        return UserDefaults.standard.value(forKey: "userLogged") != nil
-    }
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        // Override point for customization after application launch.
         
         if isUserLoggedIn == true {
             
@@ -72,9 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             //
         }
         
-        
         UIFont.overrideInitialize()
         
+        
+        //MARK: FIREBASE SDK INIT
         FirebaseApp.configure()
         //        let GTM = TAGManager.instance()
         //        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
@@ -84,36 +88,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //            timeout: nil,
         //            notifier: self)
         
+        
+        //MARK: SMARTECH SDK INIT
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         Smartech.sharedInstance().setDebugLevel(.verbose)
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
         Hansel.setAppFont("Trueno")
-        
-        UNUserNotificationCenter.current().delegate = self
-        
+
         
         IQKeyboardManager.shared.enable = true
         LocationManager.shared.requestLocationAuthorization()
         
         
-        if let url = launchOptions?[.url] as? URL {
-            
-        }
-        UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
+//        if let url = launchOptions?[.url] as? URL {
+//            
+//        }
+//        UIFont.preferredFont(forTextStyle: UIFont.TextStyle(rawValue: "Trueno"))
         
+//        MARK: APPSFLYER SDK INIT
+//                AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
+//                AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
+//                AppsFlyerLib.shared().deepLinkDelegate = self
+//        
+//          Set isDebug to true to see AppsFlyer debug logs
+//
+//        AppsFlyerLib.shared().isDebug = true
+//        AppsFlyerLib.shared().start()
         
-        //        AppsFlyerLib.shared().appsFlyerDevKey = "gSN6uycoztm9E4dH6EbdZK"
-        //        AppsFlyerLib.shared().appleAppID = "Y344Y7796A.com.netcore.SmartechApp"
-        //        AppsFlyerLib.shared().deepLinkDelegate = self
-        //
-        //  Set isDebug to true to see AppsFlyer debug logs
-        AppsFlyerLib.shared().isDebug = true
-        AppsFlyerLib.shared().start()
+        //MARK: MOENGAGE SDK INIT
+        let sdkConfig = MoEngageSDKConfig(appId: "892S3LHOIZHLLNQ8DUXQNL83", dataCenter: .data_center_01);
         
-        //        application.registerForRemoteNotifications()
-        //
+        // MoEngage SDK Initialization
+        // Separate initialization methods for Dev and Prod initializations
+//#if DEBUG
+        MoEngage.sharedInstance.initializeDefaultTestInstance(sdkConfig)
+//#else
+//        MoEngage.sharedInstance.initializeDefaultLiveInstance(sdkConfig)
+//#endif
+      
+        MoEngageSDKMessaging.sharedInstance.registerForRemoteNotification(withCategories: nil, andUserNotificationCenterDelegate: self)
+        
+        UNUserNotificationCenter.current().delegate = self
         
         
         return true
@@ -125,9 +142,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         SmartPush.sharedInstance().didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+        
+        //Call only if MoEngageAppDelegateProxyEnabled is NO
+        MoEngageSDKMessaging.sharedInstance.setPushToken(deviceToken)
+        
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         SmartPush.sharedInstance().didFailToRegisterForRemoteNotificationsWithError(error)
+        
+        //Call only if MoEngageAppDelegateProxyEnabled is NO
+        MoEngageSDKMessaging.sharedInstance.didFailToRegisterForPush()
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -142,30 +166,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         SmartPush.sharedInstance().willPresentForegroundNotification(notification)
         completionHandler([.badge, .sound, .alert])
     }
-    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
-    //        NSLog("SMTL-APP NEW METHOD BACKGROUND:: \(userInfo)")
-    //
-    //        return UIBackgroundFetchResult.newData
-    //    }
-    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    //
-    //
-    //        NSLog("SMTL-APP BACKGROUND : \(userInfo)")
-    //        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
-    //
-    //            NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
-    //
-    //        }
-    //        completionHandler(UIBackgroundFetchResult.newData)
-    //    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         NSLog("SMTL-APP (didReceive):- \(response)")
         
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(0.5 * Double(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
-        SmartPush.sharedInstance().didReceive(response)
+        
+        if SmartPush.sharedInstance().isNotification(fromSmartech: response.notification.request.content.userInfo){
+            SmartPush.sharedInstance().didReceive(response)
+            NSLog("SMTL-APP (didReceive SMT):- \(response)")
+            
+        }else{
+            //Call only if MoEngageAppDelegateProxyEnabled is NO
+            MoEngageSDKMessaging.sharedInstance.userNotificationCenter(center, didReceive: response)
+            
+            //Custom Handling of notification if Any
+            let pushDictionary = response.notification.request.content.userInfo
+            print(pushDictionary)
+            NSLog("SMTL-APP (didReceive MOE):- \(response)")
+        }
+        
+        //Validate if the notification belongs to MoEngage
+        //        let isPushFromMoEngage = MoEngageSDKMessaging.sharedInstance.isPushFromMoEngage(withPayload: notification.request.content.userInfo))
+        
         completionHandler()
-        //        })
     }
     
     
@@ -279,6 +302,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             }
         }
     }
+    
+    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
+    //        NSLog("SMTL-APP NEW METHOD BACKGROUND:: \(userInfo)")
+    //
+    //        return UIBackgroundFetchResult.newData
+    //    }
+    //    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    //
+    //
+    //        NSLog("SMTL-APP BACKGROUND : \(userInfo)")
+    //        if SmartPush.sharedInstance().isNotification(fromSmartech: userInfo){
+    //
+    //            NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
+    //
+    //        }
+    //        completionHandler(UIBackgroundFetchResult.newData)
+    //    }
+    
 }
 
 

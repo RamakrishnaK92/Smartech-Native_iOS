@@ -22,6 +22,12 @@ ${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework
 ${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework
 ${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageAnalytics/MoEngageAnalytics.framework/MoEngageAnalytics
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageCore/MoEngageCore.framework/MoEngageCore
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageMessaging/MoEngageMessaging.framework/MoEngageMessaging
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageObjCUtils/MoEngageObjCUtils.framework/MoEngageObjCUtils
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageSDK/MoEngageSDK.framework/MoEngageSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MoEngageSecurity/MoEngageSecurity.framework/MoEngageSecurity
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/SmartPush-iOS-SDK/SmartPush.framework/SmartPush
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/Smartech-iOS-SDK/Smartech.framework/Smartech
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/SmartechAppInbox-iOS-SDK/SmartechAppInbox.framework/SmartechAppInbox

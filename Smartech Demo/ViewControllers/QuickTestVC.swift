@@ -48,6 +48,7 @@ class QuickTestVC: UIViewController{
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         let jsonArrayBanner = HanselConfigs.getJSONArray("banners_for_city", withDefaultValue: banners_for_city)
         
         NSLog("jsonArrayBanner Dict: \(jsonArrayBanner!)")

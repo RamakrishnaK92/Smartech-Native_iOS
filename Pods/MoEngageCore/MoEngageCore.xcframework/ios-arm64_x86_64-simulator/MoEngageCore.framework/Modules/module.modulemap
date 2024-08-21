@@ -1,0 +1,11 @@
+framework module MoEngageCore {
+  umbrella header "MoEngageCore-framework-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MoEngageCore.Swift {
+  header "MoEngageCore-Swift.h"
+  requires objc
+}
