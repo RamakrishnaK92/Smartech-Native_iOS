@@ -889,6 +889,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diw-VX-ESe">
+                                <rect key="frame" x="292" y="25" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Refresh"/>
+                                <connections>
+                                    <action selector="setupPullToRefresh" destination="eoP-J4-pwz" eventType="touchUpInside" id="P1I-TQ-LR8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k5k-Rk-YHd"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -910,7 +919,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahl-fD-3wW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5004.6153846153848" y="1393.3649289099526"/>
+            <point key="canvasLocation" x="5258" y="1404"/>
         </scene>
         <!--Navigation Scene-->
         <scene sceneID="wxs-1X-heX">

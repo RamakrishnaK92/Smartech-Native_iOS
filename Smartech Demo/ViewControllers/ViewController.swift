@@ -31,6 +31,7 @@ class ViewController: UITableViewController{
         
         Utilities.styleTextField(loginTF)
         Utilities.styleFilledButton(signInBtn)
+        
       
 //        let todayDate = Date().today(format: "yyyy-MM-dd hh:mm:ss")
 //                print("todayDate:", todayDate)

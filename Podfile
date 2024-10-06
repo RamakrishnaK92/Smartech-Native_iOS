@@ -8,10 +8,10 @@ target 'Smartech Demo' do
   
   
   # Pods for Smartech Demo
-  pod 'Smartech-iOS-SDK', '~> 3.5.5'
+  pod 'Smartech-iOS-SDK', '~> 3.5.6'
   pod 'SmartPush-iOS-SDK', '~> 3.5.5'
   
-  pod 'SmartechNudges', '9.0.12'
+  pod 'SmartechNudges', '9.0.14'
   pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.5'
   pod 'IQKeyboardManagerSwift'
   #pod 'Firebase/Analytics'

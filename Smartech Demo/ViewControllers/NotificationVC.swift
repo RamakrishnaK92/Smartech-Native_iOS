@@ -13,6 +13,7 @@ class AppInboxController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var label: UILabel?
     var appInboxArray: [SMTAppInboxMessage]?
     var appInboxCategoryArray: [SMTAppInboxCategoryModel]?
@@ -31,9 +32,9 @@ class AppInboxController: UIViewController {
         
         //                SmartechAppInbox.sharedInstance().getViewController()
         fetchDataFromNetcore()
-        setupPullToRefresh()
-        messageTypes()
-        //        NotificationCenter.default.addObserver(self, selector: #selector(self.appBecomeActive), name: NSNotification.Name.UIApplication.willEnterForeground, object: nil )
+        
+//        messageTypes()
+       
     }
     
     @objc func appBecomeActive() {
@@ -49,9 +50,9 @@ class AppInboxController: UIViewController {
         var allCount = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
         
         print("SMT ALL:: \(all.description.utf8)")
-        
         print("SMT ALL COUNT:: \(allCount.count)")
         
+        setupPullToRefresh()
         
     }
     
@@ -113,7 +114,7 @@ class AppInboxController: UIViewController {
     if cell == nil {
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: AppInboxCellTableViewCell.identifier)
     }
-        
+    
     let status = appInboxArray?[indexPath.row].status
     let item = appInboxArray?[indexPath.row]
     
@@ -121,7 +122,6 @@ class AppInboxController: UIViewController {
         SmartechAppInbox.sharedInstance().markMessage(asViewed: item)
     }
     
-
         cell?.textLabel?.text = notificationPayload?.aps.alert.title
         cell?.detailTextLabel?.text = notificationPayload?.aps.alert.body
     
@@ -131,6 +131,9 @@ class AppInboxController: UIViewController {
 }
 
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    appInboxArray = []
+    appInboxCategoryArray = SmartechAppInbox.sharedInstance().getCategoryList()
+
     appInboxArray = SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxCategoryArray as? NSMutableArray)
     
     let selectedItem = appInboxArray?[indexPath.row] as? SMTAppInboxMessage
@@ -146,13 +149,15 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 extension AppInboxController: UITableViewDelegate, UITableViewDataSource{
     
-    func setupPullToRefresh(){
+  @IBAction func setupPullToRefresh(){
         
         SmartechAppInbox.sharedInstance().getMessage(SmartechAppInbox.sharedInstance().getPullToRefreshParameter()) { [] error, status in
             
             if (status) {
                 
                 // Refresh your data
+                
+                print(status)
                 
                 self.fetchDataFromNetcore()
                 self.refreshViews()

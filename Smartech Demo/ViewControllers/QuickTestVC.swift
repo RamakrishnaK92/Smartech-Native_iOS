@@ -62,7 +62,9 @@ class QuickTestVC: UIViewController{
         NSLog("attribCEKey:\(attribCEKey!)")
         NSLog("attribCEValue:\(attribCEValue!)")
         
-        Smartech.sharedInstance().updateUserProfile([attribCEKey:attribCEValue!] as [AnyHashable:Any])
+//        var payload : [String:Any] =
+  
+        Smartech.sharedInstance().updateUserProfile([attribCEKey!:attribCEValue!])
         
     }
     
