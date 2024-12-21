@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>24A335</string>
+	<string>24B83</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.5.6</string>
+	<string>3.5.7</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
@@ -50,7 +50,7 @@
 		<dict/>
 	</dict>
 	<key>Smartech</key>
-	<string>3.5.6</string>
+	<string>3.5.7</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>2</integer>

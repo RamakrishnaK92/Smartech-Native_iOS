@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>MoEngageAppDelegateProxyEnabled</key>
-	<false/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -23,7 +21,7 @@
 			<string>com.netcore.SmartechApp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>SmartechDemo</string>
+				<string>smartechapp</string>
 			</array>
 		</dict>
 		<dict>
@@ -56,10 +54,12 @@
 	<key>HanselKeys</key>
 	<dict>
 		<key>HanselAppId</key>
-		<string>HG7WKEM8KK3V8LVNGGDDO04D4</string>
+		<string></string>
 		<key>HanselAppKey</key>
-		<string>XAP23PIPEI1V1BEZZE5PPZ0YSWQFN45SQTV9MO353OODNSUSU0</string>
+		<string></string>
 	</dict>
+	<key>MoEngageAppDelegateProxyEnabled</key>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -70,9 +70,9 @@
 		<key>SmartechAppGroup</key>
 		<string>group.com.netcore.SmartechApp</string>
 		<key>SmartechAppId</key>
-		<string>0e6fcbcb2600d8ea596051e8030be050</string>
+		<string></string>
 		<key>SmartechAutoFetchLocation</key>
-		<false/>
+		<true/>
 		<key>SmartechUseAdvId</key>
 		<false/>
 	</dict>
@@ -83,7 +83,6 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
-		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 </dict>

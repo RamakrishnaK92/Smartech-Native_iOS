@@ -317,6 +317,7 @@ SWIFT_CLASS("_TtC12MoEngageCore19MoEngageAccountMeta")
 /// :nodoc:
 ///
 - (nonnull instancetype)initWithInstanceID:(NSString * _Nonnull)instanceID OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 @end
 
 @class NSUUID;
@@ -352,7 +353,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageAnal
 - (void)applicationWillResignActiveWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)applicationDidEnterForegroundWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)applicationDidEnterBackgroundWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
-- (void)flushWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
@@ -411,20 +411,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCard
 - (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
-@class MoEngageSDKConfig;
-
-/// :nodoc:
-SWIFT_CLASS("_TtC12MoEngageCore25MoEngageConfigCoordinator")
-@interface MoEngageConfigCoordinator : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageConfigCoordinator * _Nonnull sharedInstance;)
-+ (MoEngageConfigCoordinator * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)getSdkInstanceForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig withCompletionHandler:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completionHandler;
-- (void)getSdkInstance:(NSString * _Nullable)instanceId completionHandler:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completionHandler;
-- (void)getDefaultSdkInstance:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completionHandler;
-@end
-
 
 /// This class is used for internal purpose. Do not use any of the methods explicitly.
 /// :nodoc:
@@ -474,6 +460,7 @@ SWIFT_CLASS("_TtC12MoEngageCore17MoEngageCoreCache")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class MoEngageSDKConfig;
 
 /// :nodoc:
 SWIFT_CLASS("_TtC12MoEngageCore19MoEngageCoreHandler")
@@ -484,7 +471,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) dispatch_que
 + (dispatch_queue_t _Nonnull)globalQueue SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)initializeInstanceWithSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isDefaultInstance:(BOOL)isDefaultInstance withCompletionBlock:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completion;
+- (MoEngageSDKInstance * _Nullable)initializeInstanceWithSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isDefaultInstance:(BOOL)isDefaultInstance SWIFT_WARN_UNUSED_RESULT;
 - (MoEngageSDKConfig * _Nullable)getDefaultSDKConfiguration SWIFT_WARN_UNUSED_RESULT;
 - (MoEngageSDKConfig * _Nullable)getSDKConfigForAppID:(NSString * _Nonnull)appID SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<MoEngageSDKConfig *> * _Nonnull)getAllSDKConfigs SWIFT_WARN_UNUSED_RESULT;
@@ -507,7 +494,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCore
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)addIntergrationInfoWithInfo:(MoEngageIntegrationInfo * _Nonnull)info appId:(NSString * _Nullable)appId;
-- (void)getCoreCache:(MoEngageSDKInstance * _Nonnull)sdkInstance completionHandler:(void (^ _Nonnull)(MoEngageCoreCache * _Nonnull))completionHandler;
+- (MoEngageCoreCache * _Nonnull)getCoreCache:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 - (void)enableSDKForSegmentWithInstanceID:(NSString * _Nonnull)instanceID;
 @end
 
@@ -1174,18 +1161,19 @@ typedef SWIFT_ENUM(NSInteger, MoEngageNetworkService, open) {
   MoEngageNetworkServiceInAppGetPayload = 4,
   MoEngageNetworkServiceInAppGetTestPayload = 5,
   MoEngageNetworkServiceInAppSendStats = 6,
-  MoEngageNetworkServiceInboxFetch = 7,
-  MoEngageNetworkServiceSendCategories = 8,
-  MoEngageNetworkServiceRealTimeTriggersFetch = 9,
-  MoEngageNetworkServiceCheckUserInSegment = 10,
-  MoEngageNetworkServiceGeofenceHit = 11,
-  MoEngageNetworkServiceGeofencesFetch = 12,
-  MoEngageNetworkServiceCardsFetch = 13,
-  MoEngageNetworkServiceCardsDelete = 14,
-  MoEngageNetworkServiceCardsUserActivity = 15,
-  MoEngageNetworkServiceCrashLake = 16,
-  MoEngageNetworkServiceRegister = 17,
-  MoEngageNetworkServiceUnregister = 18,
+  MoEngageNetworkServiceInAppTemplatesPayload = 7,
+  MoEngageNetworkServiceInboxFetch = 8,
+  MoEngageNetworkServiceSendCategories = 9,
+  MoEngageNetworkServiceRealTimeTriggersFetch = 10,
+  MoEngageNetworkServiceCheckUserInSegment = 11,
+  MoEngageNetworkServiceGeofenceHit = 12,
+  MoEngageNetworkServiceGeofencesFetch = 13,
+  MoEngageNetworkServiceCardsFetch = 14,
+  MoEngageNetworkServiceCardsDelete = 15,
+  MoEngageNetworkServiceCardsUserActivity = 16,
+  MoEngageNetworkServiceCrashLake = 17,
+  MoEngageNetworkServiceRegister = 18,
+  MoEngageNetworkServiceUnregister = 19,
 };
 
 @class NSURLSession;
@@ -1555,6 +1543,20 @@ SWIFT_CLASS("_TtC12MoEngageCore19MoEngageSDKInstance")
 @end
 
 
+
+/// :nodoc:
+SWIFT_CLASS("_TtC12MoEngageCore27MoEngageSDKInstanceProvider")
+@interface MoEngageSDKInstanceProvider : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKInstanceProvider * _Nonnull sharedInstance;)
++ (MoEngageSDKInstanceProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (MoEngageSDKInstance * _Nullable)getSdkInstanceForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
+- (MoEngageSDKInstance * _Nullable)getSdkInstance:(NSString * _Nullable)instanceId SWIFT_WARN_UNUSED_RESULT;
+- (MoEngageSDKInstance * _Nullable)getDefaultSdkInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 /// Enum to set the SDK State
 typedef SWIFT_ENUM(NSInteger, MoEngageSDKState, open) {
 /// To enable the SDK
@@ -1709,11 +1711,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageStor
 + (MoEngageStorageProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-/// creates common UserDefaults
-///
-/// returns:
-/// instance of type <code>MoEngageStandardUserDefaults</code>.
-@property (nonatomic, strong) MoEngageStandardUserDefaults * _Nonnull commonUserDefault;
 /// creates instance specific userdefault based on encryption status
 /// \param sdkConfig <code>MoEngageSDKConfig</code> instance
 ///

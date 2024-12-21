@@ -27,14 +27,17 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+
+    }
     
     
     @IBAction func logoutUser(_ sender: UIButton) {
         removeCurrentUser()
         
-//        Smartech.sharedInstance().trackEvent("Logout_success", andPayload: nil)
-//        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
-//        Hansel.getUser()?.clear()
+        Smartech.sharedInstance().trackEvent("Logout_success", andPayload: [:])
+        Smartech.sharedInstance().logoutAndClearUserIdentity(true)
+        Hansel.getUser()?.clear()
       
         transitionToLoginPage()
     }
@@ -52,6 +55,4 @@ class DashboardViewController: UIViewController {
                 UserDefaults.standard.synchronize()
             }
         }
-    
-    
 }

@@ -41,10 +41,22 @@ class ViewController: UITableViewController{
 //                Smartech.sharedInstance().trackEvent("screen_view_GTM", andPayload: params)
 //        
 //           
-
-                       
+   
         // Do any additional setup after loading the view.
         
+    }
+    
+    //MARK: Alert View Controller to show in-app message alerts
+    func showAlert(withValue value: String) {
+        // Create an alert controller
+        let alert = UIAlertController(title: "URL", message: "The value is: \(value)", preferredStyle: .alert)
+        
+        // Add an OK action button to dismiss the alert
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // Present the alert on the specified view controller
+        present(alert, animated: true, completion: nil)
+
     }
     
     @IBAction func signInUser(_ sender: UIButton) {
@@ -136,9 +148,8 @@ class ViewController: UITableViewController{
         
        
 //        Hansel.getUser()?.setUserId("62123456788")
-    
-//        HanselTracker.logEvent("Home_Login_Success", vendor: "smt", withProperties: ["app_language":"English"])
-//        let todayDate = Date().today(format: "yyyy-MM-dd hh:mm:ss")
+//    
+        //        let todayDate = Date().today(format: "yyyy-MM-dd hh:mm:ss")
     
 //        print("todayDate:", todayDate)
 //        

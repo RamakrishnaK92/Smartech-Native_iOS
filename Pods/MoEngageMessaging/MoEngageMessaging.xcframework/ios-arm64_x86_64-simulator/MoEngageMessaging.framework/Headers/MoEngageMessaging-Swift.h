@@ -335,6 +335,23 @@ SWIFT_PROTOCOL("_TtP17MoEngageMessaging25MoEngageMessagingDelegate_")
 - (void)notificationClickedWithScreenName:(NSString * _Nullable)screenName kvPairs:(NSDictionary * _Nullable)kvPairs andPushPayload:(NSDictionary * _Nonnull)userInfo;
 @end
 
+@class MoEngageSDKInstance;
+
+SWIFT_CLASS("_TtC17MoEngageMessaging34MoEngageMessagingPermissionHandler")
+@interface MoEngageMessagingPermissionHandler : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageMessagingPermissionHandler * _Nonnull shared;)
++ (MoEngageMessagingPermissionHandler * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Check if device opted-in for push notification.
+/// \param sdkInstance The instance of SDK push permission checked for.
+///
+///
+/// returns:
+/// Whether push permission is provided.
+- (BOOL)isPushOptedInForInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 /// :nodoc:
 SWIFT_CLASS("_TtC17MoEngageMessaging22MoEngageMessagingUtils")
@@ -363,7 +380,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKM
 ///
 /// \param delegate The interface for handling incoming notifications and notification-related actions.
 ///
-- (void)registerForRemoteNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(tvos,unavailable);
+- (void)registerForRemoteNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(ios_app_extension,unavailable) SWIFT_AVAILABILITY(tvos,unavailable);
+/// Method to register for provisional push permission.
+/// \param categories A type of notification your app supports and the custom actions that the system displays.
+///
+/// \param delegate The interface for handling incoming notifications and notification-related actions.
+///
+- (void)registerForRemoteProvisionalNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(ios,introduced=12.0) SWIFT_AVAILABILITY(tvos,unavailable);
 /// Method to add the notification categories to the existing list of <code>MOE_DISMISS_CATEGORY</code> and <code>MOE_PUSH_TEMPLATE</code> category.
 /// \param categories Set of categories.
 ///
@@ -440,6 +463,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKM
 /// returns:
 /// true if notification belongs to MoEngage else false.
 - (BOOL)isPushFromMoEngageWithPayload:(NSDictionary * _Nonnull)payload SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(tvos,unavailable);
+/// Navigate to push permission settings page
+- (void)navigateToPushSettings SWIFT_AVAILABILITY(ios_app_extension,unavailable);
 @end
 
 #endif
@@ -787,6 +812,23 @@ SWIFT_PROTOCOL("_TtP17MoEngageMessaging25MoEngageMessagingDelegate_")
 - (void)notificationClickedWithScreenName:(NSString * _Nullable)screenName kvPairs:(NSDictionary * _Nullable)kvPairs andPushPayload:(NSDictionary * _Nonnull)userInfo;
 @end
 
+@class MoEngageSDKInstance;
+
+SWIFT_CLASS("_TtC17MoEngageMessaging34MoEngageMessagingPermissionHandler")
+@interface MoEngageMessagingPermissionHandler : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageMessagingPermissionHandler * _Nonnull shared;)
++ (MoEngageMessagingPermissionHandler * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Check if device opted-in for push notification.
+/// \param sdkInstance The instance of SDK push permission checked for.
+///
+///
+/// returns:
+/// Whether push permission is provided.
+- (BOOL)isPushOptedInForInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 /// :nodoc:
 SWIFT_CLASS("_TtC17MoEngageMessaging22MoEngageMessagingUtils")
@@ -815,7 +857,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKM
 ///
 /// \param delegate The interface for handling incoming notifications and notification-related actions.
 ///
-- (void)registerForRemoteNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(tvos,unavailable);
+- (void)registerForRemoteNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(ios_app_extension,unavailable) SWIFT_AVAILABILITY(tvos,unavailable);
+/// Method to register for provisional push permission.
+/// \param categories A type of notification your app supports and the custom actions that the system displays.
+///
+/// \param delegate The interface for handling incoming notifications and notification-related actions.
+///
+- (void)registerForRemoteProvisionalNotificationWithCategories:(NSSet<UNNotificationCategory *> * _Nullable)categories andUserNotificationCenterDelegate:(id <UNUserNotificationCenterDelegate> _Nullable)delegate SWIFT_AVAILABILITY(ios,introduced=12.0) SWIFT_AVAILABILITY(tvos,unavailable);
 /// Method to add the notification categories to the existing list of <code>MOE_DISMISS_CATEGORY</code> and <code>MOE_PUSH_TEMPLATE</code> category.
 /// \param categories Set of categories.
 ///
@@ -892,6 +940,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKM
 /// returns:
 /// true if notification belongs to MoEngage else false.
 - (BOOL)isPushFromMoEngageWithPayload:(NSDictionary * _Nonnull)payload SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(tvos,unavailable);
+/// Navigate to push permission settings page
+- (void)navigateToPushSettings SWIFT_AVAILABILITY(ios_app_extension,unavailable);
 @end
 
 #endif

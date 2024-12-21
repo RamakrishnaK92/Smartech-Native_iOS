@@ -33,5 +33,8 @@
 /// Handle callback for environment change.
 /// - Parameter sdkInstance: The instance to migrate.
 -(void)migrateEnvironmentForSDK:(MoEngageSDKInstance*)sdkInstance;
+/// Handle callback for SDK deinitialization.
+/// - Parameter sdkInstance: The instance to deinitialize.
+-(void)deinitialize:(MoEngageSDKInstance*)sdkInstance;
 @end
 

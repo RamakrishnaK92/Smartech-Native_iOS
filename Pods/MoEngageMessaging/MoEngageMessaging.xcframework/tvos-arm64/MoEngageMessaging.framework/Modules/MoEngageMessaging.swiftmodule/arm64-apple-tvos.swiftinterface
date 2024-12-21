@@ -21,10 +21,11 @@ public class MoEngageMessageDelegateHandler : MoEngageCore.MoEngageMessagingHand
   @objc public func applicationDidReceiveRemoteNotification(_ userInfo: [Swift.AnyHashable : Any]?)
   @objc public func userNotificationCenterWillPresent(_ notification: UserNotifications.UNNotification?)
   override public func applicationDidEnterForeground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  override public func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func deinitialize(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public struct MoEngageMessagingConstants {
@@ -33,6 +34,9 @@ public struct MoEngageMessagingConstants {
     public static let notificationScheduleFailed: Swift.String
     public static let notificationScheduleSuccess: Swift.String
     public static let notificationShownInOffline: Swift.String
+  }
+  public struct EventAttributeNames {
+    public static let pushOptInMode: Swift.String
   }
   public struct PushPayloadKeys {
     public static let aps: Swift.String
@@ -105,6 +109,15 @@ public struct MoEngageMessagingConstants {
       public static let button: Swift.String
     }
   }
+  public enum PushPermissionFlow : Swift.String {
+    case `self`
+    case twoStepOptIn
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
 }
 @objc public protocol MoEngageMessagingDelegate {
   @objc optional func notificationRegistered(withDeviceToken deviceToken: Swift.String)
@@ -113,10 +126,23 @@ public struct MoEngageMessagingConstants {
   @objc optional func notificationClicked(withScreenName screenName: Swift.String?, andKVPairs kvPairs: [Swift.AnyHashable : Any]?)
   @objc optional func notificationClicked(withScreenName screenName: Swift.String?, kvPairs: [Swift.AnyHashable : Any]?, andPushPayload userInfo: [Swift.AnyHashable : Any])
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class MoEngageMessagingPermissionHandler : ObjectiveC.NSObject {
+  @objc public static let shared: MoEngageMessaging.MoEngageMessagingPermissionHandler
+  @available(iOSApplicationExtension, unavailable)
+  @available(tvOS, unavailable)
+  final public func registerForRemoteNotification(inFlow flow: MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow, categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil, redirectToSettingsOnFailure redirect: Swift.Bool = false)
+  @available(iOS 12.0, *)
+  @available(tvOS, unavailable)
+  final public func registerForRemoteProvisionalNotification(inFlow flow: MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow, categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
+  @objc final public func isPushOptedIn(forInstance sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.Bool
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc public class MoEngageMessagingUtils : ObjectiveC.NSObject {
   public static func getStatsAttributes(fromPayloadDict payloadDict: [Swift.AnyHashable : Any]) -> [Swift.String : Any]
   public static func addEntryToInbox(payload: MoEngageMessaging.MoEngagePushPayload, sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public static func fetchAppIdFromPushPayload(payload: [Swift.AnyHashable : Any]) -> Swift.String?
+  public static func checkPushPreferenceAndAuthorizationStatus(authorizationStatus: @escaping (UserNotifications.UNAuthorizationStatus, UserNotifications.UNNotificationSetting) -> (Swift.Void))
+  public static func fetchProvisionalStatusString(authorizationStatus: UserNotifications.UNAuthorizationStatus) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -227,7 +253,11 @@ public class MoEngageRichPush {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageSDKMessaging : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MoEngageMessaging.MoEngageSDKMessaging
   @available(tvOS, unavailable)
+  @available(iOSApplicationExtension, unavailable)
   @objc public func registerForRemoteNotification(withCategories categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil, andUserNotificationCenterDelegate delegate: (any UserNotifications.UNUserNotificationCenterDelegate)? = nil)
+  @available(iOS 12.0, *)
+  @available(tvOS, unavailable)
+  @objc public func registerForRemoteProvisionalNotification(withCategories categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil, andUserNotificationCenterDelegate delegate: (any UserNotifications.UNUserNotificationCenterDelegate)? = nil)
   @available(tvOS, unavailable)
   @objc public func setUserNotificationCategories(_ categories: Swift.Set<UserNotifications.UNNotificationCategory>? = nil)
   @available(tvOS, unavailable)
@@ -265,8 +295,13 @@ public class MoEngageRichPush {
   @objc public func logNotificationClicked(withPayload payload: [Swift.AnyHashable : Any])
   @available(tvOS, unavailable)
   @objc public func isPushFromMoEngage(withPayload payload: [Swift.AnyHashable : Any]) -> Swift.Bool
+  @available(iOSApplicationExtension, unavailable)
+  @objc public func navigateToPushSettings()
   @objc deinit
 }
+extension MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow : Swift.Equatable {}
+extension MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow : Swift.Hashable {}
+extension MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow : Swift.RawRepresentable {}
 extension MoEngageMessaging.MoEngageActionName : Swift.Equatable {}
 extension MoEngageMessaging.MoEngageActionName : Swift.Hashable {}
 extension MoEngageMessaging.MoEngageActionType : Swift.Equatable {}

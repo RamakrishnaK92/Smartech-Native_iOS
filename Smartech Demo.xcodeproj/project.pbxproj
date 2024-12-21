@@ -37,6 +37,8 @@
 		9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC618652950DAC400E670C5 /* InAppViewController.swift */; };
 		BB5270132B714D71004A459B /* TruenoRg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5270122B710F23004A459B /* TruenoRg.otf */; };
 		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
+		BBA4ADEA2CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */; };
+		BBA4ADEB2CE5FC5000A937B0 /* CollectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */; };
 		BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */ = {isa = PBXBuildFile; fileRef = BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */; };
 		BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */; };
 		C85E0CAE5895F26408EEB0D8 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887EFF279FA8CE62199CC995 /* Pods_SmartechNC.framework */; };
@@ -139,6 +141,8 @@
 		B2D8C9B1A3A3E4CDA87C1006 /* Pods_Smartech_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartech_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB5270122B710F23004A459B /* TruenoRg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TruenoRg.otf; sourceTree = "<group>"; };
 		BB5270142B715769004A459B /* HelperFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFonts.swift; sourceTree = "<group>"; };
+		BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPage.swift; sourceTree = "<group>"; };
+		BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPageCollectionViewController.xib; sourceTree = "<group>"; };
 		BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-M6QRHT25.json"; sourceTree = "<group>"; };
 		BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +256,8 @@
 				97093C8C2652D404006DF7D0 /* RegisterViewController.swift */,
 				97093C8E2652D428006DF7D0 /* DashboardVC.swift */,
 				1862FB72280402A400EC3395 /* NotificationVC.swift */,
+				BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */,
+				BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */,
 				9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */,
 				9DC618652950DAC400E670C5 /* InAppViewController.swift */,
 				9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */,
@@ -361,6 +367,7 @@
 				97093C562652A9A4006DF7D0 /* Frameworks */,
 				97093C572652A9A4006DF7D0 /* Resources */,
 				ADBDC119C794F597349491FC /* [CP] Embed Pods Frameworks */,
+				F7C0FD28AE502CEDE93E73D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -507,6 +514,7 @@
 				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
 				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
 				97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */,
+				BBA4ADEA2CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +634,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F7C0FD28AE502CEDE93E73D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smartech Demo/Pods-Smartech Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -644,6 +669,7 @@
 				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,
 				BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */,
 				9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */,
+				BBA4ADEB2CE5FC5000A937B0 /* CollectionPage.swift in Sources */,
 				97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */,
 				1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */,
 				9D09A913294D8739005E88C3 /* Helper.swift in Sources */,

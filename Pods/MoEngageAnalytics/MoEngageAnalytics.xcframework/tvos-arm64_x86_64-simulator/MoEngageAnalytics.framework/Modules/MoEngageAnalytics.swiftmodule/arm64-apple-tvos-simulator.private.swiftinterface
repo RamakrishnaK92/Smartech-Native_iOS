@@ -11,6 +11,12 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public struct MoEngageAnalyticsConstants {
+  public struct DeviceAttributeNames {
+    public static let pushOpted: Swift.String
+    public static let provisionalOpted: Swift.String
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MoEngageAnalyticsDelegateHandler : MoEngageCore.MoEngageAnalyticsDelegate, MoEngageObjCUtils.MoEngageAppDelegateAnalyticsProxyProtocol {
   public static var sharedInstance: MoEngageAnalytics.MoEngageAnalyticsDelegateHandler?
   override public func initializeAnalytics(sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -20,18 +26,21 @@ import _SwiftConcurrencyShims
   override public func applicationWillResignActive(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func applicationDidEnterForeground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func applicationDidEnterBackground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  override public func flush(sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  public static func trackEventForRichNotification(name: Swift.String, properties: MoEngageAnalytics.MoEngageProperties? = nil, appID: Swift.String? = nil, completionBlock: (() -> Swift.Void)? = nil)
+  public static func trackEventForRichNotification(name: Swift.String, properties: MoEngageAnalytics.MoEngageProperties? = nil, sdkInstance: MoEngageCore.MoEngageSDKInstance, completionBlock: (() -> Swift.Void)? = nil)
   override public func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func resetDataAfterUnRegistration(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func syncExistingDataBeforeUnRegisteration(sdkInstance: MoEngageCore.MoEngageSDKInstance, withCompletionBlock completionBlock: ((Swift.Bool) -> Swift.Void)? = nil)
   override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func deinitialize(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class MoEngageAnalyticsHandler : ObjectiveC.NSObject {
   @objc public static func setUserAttributeBool(_ value: Swift.Bool, withAttributeName attributeName: Swift.String, forAppID appID: Swift.String? = nil)
+  @objc public static func pushOptInStatusUpdated(to status: Swift.Bool, forSdkInstance sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc public static func pushProvisionalStatusUpdated(to status: Swift.Bool, forSdkInstance sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  public static func getUserUniqueId(for sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.String?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -65,6 +74,7 @@ import _SwiftConcurrencyShims
 }
 @_hasMissingDesignatedInitializers public class MoEngageAnalyticsUtils {
   public class func getIDFA() -> Swift.String?
+  public static func trackSDKVersion()
   @objc deinit
 }
 @objc public class MoEngageGeoLocation : ObjectiveC.NSObject {
@@ -91,6 +101,7 @@ import _SwiftConcurrencyShims
   @objc public func updateSessionSource(withURL url: Foundation.URL)
   @objc public func pushTokenUpdated(appId: Swift.String)
   @objc public func appStatus(_ appStatus: MoEngageAnalytics.MoEngageAppStatus, forAppID appID: Swift.String? = nil)
+  @objc public func appStatus(_ appStatus: MoEngageAnalytics.MoEngageAppStatus)
   @objc public func trackEvent(_ name: Swift.String, withProperties properties: MoEngageAnalytics.MoEngageProperties? = nil)
   @objc public func trackEvent(_ name: Swift.String, withProperties properties: MoEngageAnalytics.MoEngageProperties? = nil, forAppID appID: Swift.String? = nil)
   @objc public func flush(forAppID appID: Swift.String? = nil, withCompletionBlock completionBlock: ((Swift.Bool) -> Swift.Void)? = nil)

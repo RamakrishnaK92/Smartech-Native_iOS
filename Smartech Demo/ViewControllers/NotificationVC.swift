@@ -31,10 +31,10 @@ class AppInboxController: UIViewController {
         
         
         //                SmartechAppInbox.sharedInstance().getViewController()
-        fetchDataFromNetcore()
-        
-//        messageTypes()
+//        fetchDataFromNetcore()
        
+        
+        
     }
     
     @objc func appBecomeActive() {
@@ -42,17 +42,22 @@ class AppInboxController: UIViewController {
         tableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        NSLog("SMTLOGGER VIEW DID APPEAR :")
+        appInboxArray = []
+
+        SmartechAppInbox.sharedInstance().getMessageWithCategory(appInboxArray as? NSMutableArray)
+        print("DID APPEAR")
+
         
         NSLog("SMTLOGGER WILL APPEAR :")
-       
         var all = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
-        var allCount = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.all)
-        
+        var unRead = SmartechAppInbox.sharedInstance().getMessages(SMTAppInboxMessageType.unread)
+//
         print("SMT ALL:: \(all.description.utf8)")
-        print("SMT ALL COUNT:: \(allCount.count)")
+        print("SMT UNREAD COUNT:: \(unRead.count)")
         
-        setupPullToRefresh()
+//        setupPullToRefresh()
         
     }
     

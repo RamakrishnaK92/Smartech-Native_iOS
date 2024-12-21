@@ -312,6 +312,7 @@ SWIFT_PROTOCOL("_TtP17MoEngageAnalytics25MoEngageAnalyticsCallBack_")
 @end
 
 @class NSString;
+@class MoEngageSDKInstance;
 
 /// :nodoc:
 SWIFT_CLASS("_TtC17MoEngageAnalytics24MoEngageAnalyticsHandler")
@@ -324,6 +325,18 @@ SWIFT_CLASS("_TtC17MoEngageAnalytics24MoEngageAnalyticsHandler")
 /// \param appID MoEngage Account Identifier
 ///
 + (void)setUserAttributeBool:(BOOL)value withAttributeName:(NSString * _Nonnull)attributeName forAppID:(NSString * _Nullable)appID;
+/// Update push opt-in device attribute status.
+/// \param status The updated status.
+///
+/// \param appId The application identifier update is perfomed for.
+///
++ (void)pushOptInStatusUpdatedTo:(BOOL)status forSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Update provisional push opt-in device attribute status.
+/// \param status The updated status.
+///
+/// \param appId The application identifier update is perfomed for.
+///
++ (void)pushProvisionalStatusUpdatedTo:(BOOL)status forSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -428,6 +441,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKA
 /// \param appID MoEngage Account Identifier.
 ///
 - (void)appStatus:(enum MoEngageAppStatus)appStatus forAppID:(NSString * _Nullable)appID;
+/// This method tells the default SDK instance whether it is a fresh install or an existing application was updated.
+/// \param appStatus Enum of type <code>MoEngageAppStatus</code>
+///
+- (void)appStatus:(enum MoEngageAppStatus)appStatus;
 /// Track Event for Default MoEngage Instance.
 /// \param name name of the event
 ///
@@ -1064,6 +1081,7 @@ SWIFT_PROTOCOL("_TtP17MoEngageAnalytics25MoEngageAnalyticsCallBack_")
 @end
 
 @class NSString;
+@class MoEngageSDKInstance;
 
 /// :nodoc:
 SWIFT_CLASS("_TtC17MoEngageAnalytics24MoEngageAnalyticsHandler")
@@ -1076,6 +1094,18 @@ SWIFT_CLASS("_TtC17MoEngageAnalytics24MoEngageAnalyticsHandler")
 /// \param appID MoEngage Account Identifier
 ///
 + (void)setUserAttributeBool:(BOOL)value withAttributeName:(NSString * _Nonnull)attributeName forAppID:(NSString * _Nullable)appID;
+/// Update push opt-in device attribute status.
+/// \param status The updated status.
+///
+/// \param appId The application identifier update is perfomed for.
+///
++ (void)pushOptInStatusUpdatedTo:(BOOL)status forSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Update provisional push opt-in device attribute status.
+/// \param status The updated status.
+///
+/// \param appId The application identifier update is perfomed for.
+///
++ (void)pushProvisionalStatusUpdatedTo:(BOOL)status forSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1180,6 +1210,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageSDKA
 /// \param appID MoEngage Account Identifier.
 ///
 - (void)appStatus:(enum MoEngageAppStatus)appStatus forAppID:(NSString * _Nullable)appID;
+/// This method tells the default SDK instance whether it is a fresh install or an existing application was updated.
+/// \param appStatus Enum of type <code>MoEngageAppStatus</code>
+///
+- (void)appStatus:(enum MoEngageAppStatus)appStatus;
 /// Track Event for Default MoEngage Instance.
 /// \param name name of the event
 ///

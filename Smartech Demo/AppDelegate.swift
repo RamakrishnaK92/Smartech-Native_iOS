@@ -18,11 +18,32 @@ import GoogleSignIn
 import AppsFlyerLib
 import SmartechNudges
 import MoEngageSDK
+import SmartechAppInbox
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, MoEngageMessagingDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, MoEngageMessagingDelegate, HanselActionListener{
+   
     
+   
+    
+    // MARK: PX - ActionListener
+    func onActionPerformed(action: String!) {
+        if action == "Test"{
+            
+        }
+    }
+    
+    // MARK: PX - Deeplink Listener
+    func onLaunchURL(URLString: String!) {
+        
+        
+        NSLog("URL Nudge: \(URLString)")
+        //
+    }
+    
+   
+
     var window: UIWindow?
     
     var VC:ViewController?
@@ -35,25 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     
-    
-    func onLaunchURL(URLString: String!) {
-        
-        NSLog("URL Nudge: \(URLString)")
-        //
-    }
-    
-    //    func containerAvailable(container: TAGContainer!) {
-    //      container.refresh()
-    //    }
-    
-    //Onelink deeplink case
+
+    // MARK: Onelink deeplink case
     func didResolveDeepLink(_ result: DeepLinkResult) {
         
         print("SMTLogg: \(String(describing: result.deepLink?.deeplinkValue))") // Step 3
         
     }
     
-    
+    // MARK: DIDFINISH LAUNCH
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
@@ -82,26 +93,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         //MARK: FIREBASE SDK INIT
         FirebaseApp.configure()
-        //        let GTM = TAGManager.instance()
-        //        GTM.logger.setLogLevel(kTAGLoggerLogLevelVerbose)
-        //
-        //        TAGContainerOpener.openContainerWithId("GTM-M6QRHT25",  // change the container ID "GTM-PT3L9Z" to yours
-        //            tagManager: GTM, openType: kTAGOpenTypePreferFresh,
-        //            timeout: nil,
-        //            notifier: self)
-        
-        
+       
         //MARK: SMARTECH SDK INIT
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
+        
         Smartech.sharedInstance().setDebugLevel(.verbose)
         SmartPush.sharedInstance().registerForPushNotificationWithDefaultAuthorizationOptions()
         Smartech.sharedInstance().trackAppInstallUpdateBySmartech()
         Hansel.enableDebugLogs()
+        
         //        Hansel.setAppFont("Trueno")
         Hansel.setAppFont("")
         
         
-        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.isEnabled = true
         LocationManager.shared.requestLocationAuthorization()
         
         Hansel.registerHanselDeeplinkListener(listener: self)
@@ -189,9 +194,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             print(pushDictionary)
             NSLog("SMTL-APP (didReceive MOE):- \(response)")
         }
-        
-        //Validate if the notification belongs to MoEngage
-        //        let isPushFromMoEngage = MoEngageSDKMessaging.sharedInstance.isPushFromMoEngage(withPayload: notification.request.content.userInfo))
+    
         
         completionHandler()
     }
@@ -199,6 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
         
         let handleBySmartech:Bool = Smartech.sharedInstance().application(app, open: url, options: options)
         print("URL:\(url)")
@@ -241,56 +245,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     //Universal link handling
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
-        
+    fileprivate func emailAPITracking(emailURL: String ) {
         //https://cedocs.netcorecloud.com/docs/universal-links-for-email-engagement#implementing-link-resolution
+
+        let netcoreURL = URL(string: emailURL)
         
-        //    https://elink.savmoney.me/vtrack?
-        //        let netcoreURL = URL(string: "https://elink.savmoney.me/vtrack?clientid=170681&ul=BgVRBlNEBR5TX15DB154R1VASw4KWVYdTx4=&ml=BA9VSFJEA1MESw==&sl=dUolSDdrSTF9Y0tUClBWXxpFBBUIWF0BSkwLU0xQ&pp=0&c=0000&fl=X0ISRBECGk1DVkFQFkkWVURGSw8MWVhLew88UHkiXFZrI1M=&ext=")!
-        //
-        if let referralURL = userActivity.referrerURL, let netcoreURL = URL(string: String(describing: referralURL)) {
-            // Now use netcoreURL safely
-            print("URL: \(netcoreURL)")
+        //        if let referralURL = userActivity.webpageURL, let netcoreURL = URL(string: String(describing: referralURL)){
+        print("URL: \(netcoreURL!)")
+        
+        let task = URLSession.shared.dataTask(with: netcoreURL!) { data, response, error in
+            guard error == nil else {
+                print("Universal Error resolving link: \(error!)")
+                return
+            }
             
-            let task = URLSession.shared.dataTask(with: netcoreURL) { data, response, error in
-                guard error == nil else {
-                    print("Universal Error resolving link: \(error!)")
-                    return
-                }
-                
-                print("Universal data: \(data!))")
-
-                print("Universal response: \(response!))")
-               
-                if let httpResponse = response as? HTTPURLResponse {
-                    if let originalURL = httpResponse.url {
-                        let responseValue = originalURL.absoluteString // Convert the URL to a string
-                        print("Response URL: \(responseValue)")
-                    } else {
-                        print("HTTP response was not successful: \(httpResponse.statusCode)")
-                    }
-                } else if response == nil {
-                    print("Response is nil")
+            if let httpResponse = response as? HTTPURLResponse {
+                if let originalURL = httpResponse.url {
+                    let responseValue = originalURL.absoluteString // Convert the URL to a string
+                    print("Response URL: \(responseValue)")
+                    self.VC?.showAlert(withValue: responseValue)
+                    
                 } else {
-                    print("Invalid or unsuccessful HTTP response")
+                    print("HTTP response was not successful: \(httpResponse.statusCode)")
+                    
                 }
-
+            } else if response == nil {
+                print("Response is nil")
+            } else {
+                print("Invalid or unsuccessful HTTP response")
                 
             }
-            task.resume()
-        }
         
-        else {
-            print("Invalid referral URL")
             
+            
+            
+            //        else {
+            //            print("Invalid referral URL")
+            //
+            //        }
+           
+                        
         }
+        task.resume()
+        
     
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
+        
+//        emailAPITracking(emailURL: "https://google.com")
+        emailAPITracking(emailURL: String(describing: userActivity.webpageURL!))
+        
         return true
     }
     
     
     //MARK: SMT DEEPLINK CALLBACK
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
+        
         
         //OneLink step 2
         if deeplinkURLString.starts(with: "https://netcore.onelink"){

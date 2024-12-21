@@ -59,7 +59,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("USER ENTERED REGION")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("USER EXITED REGION")
+    }
+    
 }
+
 
 
 

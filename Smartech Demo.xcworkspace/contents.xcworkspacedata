@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Netcore.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:GDT Indonesia.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:File.txt">
+   </FileRef>
+   <FileRef
+      location = "group:Office.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Smartech Demo.xcodeproj">
    </FileRef>
    <FileRef
