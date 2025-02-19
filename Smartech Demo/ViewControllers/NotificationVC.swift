@@ -30,10 +30,8 @@ class AppInboxController: UIViewController {
         tableView.delegate = self
         
         
-        //                SmartechAppInbox.sharedInstance().getViewController()
-//        fetchDataFromNetcore()
+        fetchDataFromNetcore()
        
-        
         
     }
     

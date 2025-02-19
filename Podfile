@@ -10,9 +10,9 @@ target 'Smartech Demo' do
   # Pods for Smartech Demo
   pod 'Smartech-iOS-SDK', '~> 3.5.6'
   pod 'SmartPush-iOS-SDK', '~> 3.5.5'
-  
   pod 'SmartechNudges', '9.0.15'
-  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.6'
+  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.6'\
+  
   pod 'IQKeyboardManagerSwift'
   #pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
@@ -22,13 +22,14 @@ target 'Smartech Demo' do
   
   pod 'AppsFlyerFramework'  #appsflyer SDK
   pod 'MoEngage-iOS-SDK'
+  pod 'Alamofire'
 
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
         config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
-        config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'No'
+        config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
         
       end

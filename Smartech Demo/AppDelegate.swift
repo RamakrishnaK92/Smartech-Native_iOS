@@ -22,9 +22,17 @@ import SmartechAppInbox
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, MoEngageMessagingDelegate, HanselActionListener{
-   
+class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocationManagerDelegate,  UNUserNotificationCenterDelegate, UINavigationBarDelegate, HanselDeepLinkListener, DeepLinkDelegate, MoEngageMessagingDelegate, HanselActionListener, HanselEventsListener{
     
+    
+    func fireHanselEventwithName(eventName: String, properties: [AnyHashable : Any]?) {
+        
+        // hansel_nudge_show_event, hansel_nudge_event, hansel_branch_tracker
+        Smartech.sharedInstance().trackEvent(eventName, andPayload: properties)
+    }
+    
+   
+    let defaults = UserDefaults(suiteName: "group.com.netcore.SmartechApp") // Use your App Group here
    
     
     // MARK: PX - ActionListener
@@ -42,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //
     }
     
-   
 
     var window: UIWindow?
     
@@ -67,8 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     // MARK: DIDFINISH LAUNCH
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
-        
+
+                    
         if isUserLoggedIn == true {
             
             print("Already logged in")
@@ -109,8 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         IQKeyboardManager.shared.isEnabled = true
         LocationManager.shared.requestLocationAuthorization()
         
+        HanselTracker.registerListener(self)
         Hansel.registerHanselDeeplinkListener(listener: self)
         
+        Hansel.getUser()?.putAttribute("Value", forKey: "Key")
         //        if let url = launchOptions?[.url] as? URL {
         //
         //        }
@@ -174,6 +183,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     //MARK:- UNUserNotificationCenterDelegate Methods
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
+        defaults?.set(0, forKey: "badgeCount")
+
+
         NSLog("SMTL-APP (foreground APN):- \(notification.request.content.userInfo)\n")
         SmartPush.sharedInstance().willPresentForegroundNotification(notification)
         completionHandler([.badge, .sound, .alert])
@@ -181,8 +193,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
+
         if SmartPush.sharedInstance().isNotification(fromSmartech: response.notification.request.content.userInfo){
+            
             SmartPush.sharedInstance().didReceive(response)
+            defaults?.set(0, forKey: "badgeCount")
             NSLog("SMTL-APP (didReceive SMT):- \(response)")
             
         }else{
@@ -200,7 +215,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     
-    
+//    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
         
@@ -235,7 +250,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         return ((GIDSignIn.sharedInstance.handle(url)) != nil)
     }
-    
+//    
     func moveToTabbar(_ withIndex : Int){
         let tabBarController = UITabBarController()
         tabBarController.selectedIndex = withIndex
@@ -388,7 +403,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
      
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        var badgeCount = defaults?.integer(forKey: "badgeCount") ?? 0
+        defaults?.setValue(0, forKey: "badgeCount")
+        application.applicationIconBadgeNumber = 0
+    }
+
+    
     
 }
+
+
 
 

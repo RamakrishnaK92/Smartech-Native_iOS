@@ -35,10 +35,10 @@
 		9D9C9FCC29B10D6C00654732 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9C9FCA29B10D6C00654732 /* MainInterface.storyboard */; };
 		9D9C9FD029B10D6C00654732 /* SmartechNC.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D9C9FC429B10D6B00654732 /* SmartechNC.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC618652950DAC400E670C5 /* InAppViewController.swift */; };
+		BB0DF1142D314B8100A77D63 /* test.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB0DF1132D314B8100A77D63 /* test.wav */; };
+		BB0DF1162D314C0500A77D63 /* vibration.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB0DF1152D314C0500A77D63 /* vibration.wav */; };
 		BB5270132B714D71004A459B /* TruenoRg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB5270122B710F23004A459B /* TruenoRg.otf */; };
 		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
-		BBA4ADEA2CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */; };
-		BBA4ADEB2CE5FC5000A937B0 /* CollectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */; };
 		BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */ = {isa = PBXBuildFile; fileRef = BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */; };
 		BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */; };
 		C85E0CAE5895F26408EEB0D8 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887EFF279FA8CE62199CC995 /* Pods_SmartechNC.framework */; };
@@ -139,12 +139,14 @@
 		9D9C9FD429B10E3200654732 /* SmartechNC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartechNC.entitlements; sourceTree = "<group>"; };
 		9DC618652950DAC400E670C5 /* InAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
 		B2D8C9B1A3A3E4CDA87C1006 /* Pods_Smartech_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartech_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0DF1132D314B8100A77D63 /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test.wav; sourceTree = "<group>"; };
+		BB0DF1152D314C0500A77D63 /* vibration.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vibration.wav; sourceTree = "<group>"; };
 		BB5270122B710F23004A459B /* TruenoRg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TruenoRg.otf; sourceTree = "<group>"; };
 		BB5270142B715769004A459B /* HelperFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFonts.swift; sourceTree = "<group>"; };
 		BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPage.swift; sourceTree = "<group>"; };
-		BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPageCollectionViewController.xib; sourceTree = "<group>"; };
 		BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-M6QRHT25.json"; sourceTree = "<group>"; };
 		BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTestVC.swift; sourceTree = "<group>"; };
+		BBDBD1F32D5346960040DBA8 /* Smartech Demo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Smartech Demo copy-Info.plist"; path = "/Users/ramakrishnakasuba/_GitLocal/Smartech-Native_iOS/Smartech Demo copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				97093C5A2652A9A4006DF7D0 /* Products */,
 				C84B9AE4E06871E6A73F2FD6 /* Pods */,
 				E8B794B1E4C981D6E18F6C2F /* Frameworks */,
+				BBDBD1F32D5346960040DBA8 /* Smartech Demo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,7 +260,6 @@
 				97093C8E2652D428006DF7D0 /* DashboardVC.swift */,
 				1862FB72280402A400EC3395 /* NotificationVC.swift */,
 				BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */,
-				BBA4ADE92CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib */,
 				9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */,
 				9DC618652950DAC400E670C5 /* InAppViewController.swift */,
 				9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */,
@@ -302,6 +304,8 @@
 		BB1F018D2B90D701004E856B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BB0DF1152D314C0500A77D63 /* vibration.wav */,
+				BB0DF1132D314B8100A77D63 /* test.wav */,
 				BB52700F2B6D4A1C004A459B /* Fonts */,
 				97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */,
 				9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */,
@@ -513,8 +517,9 @@
 				97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */,
 				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
 				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
+				BB0DF1142D314B8100A77D63 /* test.wav in Resources */,
 				97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */,
-				BBA4ADEA2CE5FC5000A937B0 /* CollectionPageCollectionViewController.xib in Resources */,
+				BB0DF1162D314C0500A77D63 /* vibration.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +674,6 @@
 				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,
 				BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */,
 				9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */,
-				BBA4ADEB2CE5FC5000A937B0 /* CollectionPage.swift in Sources */,
 				97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */,
 				1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */,
 				9D09A913294D8739005E88C3 /* Helper.swift in Sources */,

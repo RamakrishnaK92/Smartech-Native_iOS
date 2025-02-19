@@ -8,6 +8,8 @@
 import UIKit
 import Smartech
 import SmartechNudges
+import Alamofire
+
 
 class CEViewController: UIViewController {
     
@@ -16,7 +18,8 @@ class CEViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Smartech.sharedInstance().setUserIdentity("test@gmail.com")
+        postALamofireTest()
+        //        Smartech.sharedInstance().setUserIdentity("test@gmail.com")
         
         
         // Do any additional setup after loading the view.
@@ -80,9 +83,59 @@ class CEViewController: UIViewController {
      }
      */
     
-//    override func viewDidAppear(_ animated: Bool) {
-//                        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"PushNotification", "next_page":"abc"])
-//       
-//        
-//    }
+    //    override func viewDidAppear(_ animated: Bool) {
+    //                        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"PushNotification", "next_page":"abc"])
+    //
+    //
+    //    }
+    
+
+    func postALamofireTest() {
+        // Parameters for the POST request
+        let parameters: [String: Any] = [
+            "title": "Test Product",
+            "price": 29.99,
+            "description": "This is a test product.",
+            "image": "https://example.com/image.png",
+            "category": "electronics"
+        ]
+
+        // Make the API request
+        AF.request(
+            "https://fakestoreapi.com/products",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+        ).response { response in
+            switch response.result {
+            case .success(let data):
+                // Ensure data is not nil
+                guard let data = data else {
+                    print("No data received")
+                    return
+                }
+
+                // Parse the response JSON
+                do {
+                    // Convert JSON data to a dictionary
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    if let jsonDict = json as? [String: Any] {
+                        print("Response JSON: \(jsonDict)")
+                    } else {
+                        print("Response format unexpected")
+                    }
+                } catch {
+                    print("Error parsing JSON: \(error)")
+                }
+
+            case .failure(let error):
+                // Handle request failure
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
+
 }
+
+
+

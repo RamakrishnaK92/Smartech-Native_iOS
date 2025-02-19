@@ -60,15 +60,53 @@ class QuickTestVC: UIViewController{
                    formatButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
                ])
         
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let jsonArrayBanner = HanselConfigs.getJSONArray("banners_for_city", withDefaultValue: banners_for_city)
+//        let jsonArrayBanner = HanselConfigs.getJSONArray("banners_for_city", withDefaultValue: banners_for_city)
+//        
+//        NSLog("jsonArrayBanner Dict: \(jsonArrayBanner!)")
+//        NSLog("Banner Dict: \(banners_for_city)")
         
-        NSLog("jsonArrayBanner Dict: \(jsonArrayBanner!)")
-        NSLog("Banner Dict: \(banners_for_city)")
+        
+//        datapack_info
+        var datapack_json: [Dictionary] = [[
+            "category": "DataPacks",
+            "planName": "",
+            "packageName": "Data Pack local",
+            "product_url": "",
+            "image_url": "",
+            "packageID": "",
+            "tenure": "",
+            "price": 0.0
+        ]]
+                
+        var recharge_json: [Dictionary] = [[
+                "category": "Recharge",
+                "packageName": "Voice Pack local",
+                "product_url": "",
+                "image_url": "",
+                "packageID": "",
+                "tenure": "",
+                "price": 0.0
+        ]]
+        
+        let rechargeJsonGP = HanselConfigs.getJSONArray("recharge_info", withDefaultValue: recharge_json)
+        let dataJsonGP = HanselConfigs.getJSONArray("datapack_info", withDefaultValue: datapack_json)
+
+        NSLog("jsonArrayBanner Dict: \(dataJsonGP!)")
+        NSLog("jsonArrayBanner Dict: \(rechargeJsonGP!)")
+        
+       
+    
+        showAlert("Recharge Info", (rechargeJsonGP?.description ?? "No info available")) {
+            // Show second alert after first one is dismissed
+            self.showAlert("Datapack_info", (dataJsonGP?.description ?? "No info available"))
+        }
+        
     }
     
     @IBAction func attribCE(){
@@ -168,12 +206,20 @@ class QuickTestVC: UIViewController{
                 }
             }
             
-            // Helper method to display alerts
-            func showAlert(_ title: String, _ message: String) {
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                present(alertController, animated: true)
-            }
+            
+    
+    func showAlert(_ title: String, _ message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            completion?()  // Call the completion handler after dismiss
+        }
+        
+        alert.addAction(okAction)
+        if let topVC = UIApplication.shared.keyWindow?.rootViewController {
+            topVC.present(alert, animated: true, completion: nil)
+        }
+    }
+
     }
     
 

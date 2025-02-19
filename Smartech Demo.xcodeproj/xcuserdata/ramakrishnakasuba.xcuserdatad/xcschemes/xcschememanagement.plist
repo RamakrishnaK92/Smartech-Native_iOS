@@ -4,10 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NewNSE.xcscheme_^#shared#^_</key>
+		<key>NewNSE.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>Smartech Demo copy.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>86</integer>
 		</dict>
 		<key>Smartech Demo.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,12 +24,12 @@
 		<key>SmartechNC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>82</integer>
+			<integer>84</integer>
 		</dict>
 		<key>SmartechNSE.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>83</integer>
+			<integer>85</integer>
 		</dict>
 	</dict>
 </dict>

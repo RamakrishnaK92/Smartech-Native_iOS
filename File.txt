@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<gpx version="1.1" creator="Xcode">
-  <wpt lat="12.924962" lon="77.6197">
-    <name>BLR - Netcore Cloud</name>
-  </wpt>
-</gpx>

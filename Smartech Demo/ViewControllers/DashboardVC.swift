@@ -27,9 +27,7 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-
-    }
+  
     
     
     @IBAction func logoutUser(_ sender: UIButton) {
@@ -55,4 +53,14 @@ class DashboardViewController: UIViewController {
                 UserDefaults.standard.synchronize()
             }
         }
-}
+    
+ 
+    @IBAction func inboxDefault(_ sender: UIButton) {
+
+        let appInboxVC = SmartechAppInbox.sharedInstance().getViewController()
+//                appInboxVC.modalPresentationStyle = .fullScreen
+            
+        present(appInboxVC, animated: true, completion: nil)
+
+        }
+    }

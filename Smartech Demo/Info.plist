@@ -54,9 +54,9 @@
 	<key>HanselKeys</key>
 	<dict>
 		<key>HanselAppId</key>
-		<string></string>
+		<string>HG7WKEM8KK3V8LVNGGDDO04D4</string>
 		<key>HanselAppKey</key>
-		<string></string>
+		<string>XAP23PIPEI1V1BEZZE5PPZ0YSWQFN45SQTV9MO353OODNSUSU0</string>
 	</dict>
 	<key>MoEngageAppDelegateProxyEnabled</key>
 	<false/>
@@ -70,7 +70,7 @@
 		<key>SmartechAppGroup</key>
 		<string>group.com.netcore.SmartechApp</string>
 		<key>SmartechAppId</key>
-		<string></string>
+		<string>0e6fcbcb2600d8ea596051e8030be050</string>
 		<key>SmartechAutoFetchLocation</key>
 		<true/>
 		<key>SmartechUseAdvId</key>

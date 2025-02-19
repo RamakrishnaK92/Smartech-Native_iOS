@@ -8,8 +8,6 @@ import UIKit
 
 class Utilities {
     
-    
-    
     static func styleTextField(_ textfield:UITextField) {
         
         var customFont = UIFont(name: "Trueno", size: UIFont.labelFontSize)
@@ -95,6 +93,7 @@ extension NSAttributedString {
 
 
 extension UILabel {
+
     func setHTMLFromString(htmlText: String) {
         guard let data = htmlText.data(using: .utf8) else {
             self.text = htmlText
@@ -132,5 +131,23 @@ enum DeeplinkEnum:String{
     case NotifVC
     
 }
+
+// Create a struct for to encode and decode
+struct User: Codable {
+    let id: Int
+    let title: String
+    let price: Float
+    let description: String
+    let category: String
+    let image: String
+    let rating: Rating
+}
+
+// Define a nested struct for the rating field
+struct Rating: Codable {
+    let rate: Float
+    let count: Int
+}
+
 
 

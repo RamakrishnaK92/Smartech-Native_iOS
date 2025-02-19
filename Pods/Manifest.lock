@@ -1145,6 +1145,7 @@ PODS:
     - abseil/meta/type_traits
     - abseil/xcprivacy
   - abseil/xcprivacy (1.20240116.2)
+  - Alamofire (5.10.2)
   - AppAuth (1.7.5):
     - AppAuth/Core (= 1.7.5)
     - AppAuth/ExternalUserAgent (= 1.7.5)
@@ -1465,6 +1466,7 @@ PODS:
     - Smartech-iOS-SDK (>= 3.5.5)
 
 DEPENDENCIES:
+  - Alamofire
   - AppsFlyerFramework
   - Firebase/Auth
   - Firebase/Firestore
@@ -1480,6 +1482,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - AppAuth
     - AppCheckCore
     - AppsFlyerFramework
@@ -1530,6 +1533,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: d121da9ef7e2ff4cab7666e76c5a3e0915ae08c3
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   AppsFlyerFramework: ad7ff0d22aa36c7f8cc4f71a5424e19b89ccb8ae
@@ -1578,6 +1582,6 @@ SPEC CHECKSUMS:
   SmartechNudges: b47eff26f8275d937614eed7113495bf566fc8d5
   SmartPush-iOS-SDK: e5f21bbd7aae14a7e49e03bf1223220146bf3fa6
 
-PODFILE CHECKSUM: 150a228d0350ea81034a1741f56b4bd204106a85
+PODFILE CHECKSUM: 51bc9bf2078f75c0464d314ace814ede2651464f
 
 COCOAPODS: 1.16.2

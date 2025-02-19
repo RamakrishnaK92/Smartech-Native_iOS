@@ -17,6 +17,8 @@ import LocalAuthentication
 
 class ViewController: UITableViewController{
 
+    let themeSwitch = UISwitch()
+    
     
     var dashVC:DashboardViewController!
     var email:String!
@@ -26,13 +28,16 @@ class ViewController: UITableViewController{
     @IBOutlet weak var errorLabel: UILabel!
   
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Utilities.styleTextField(loginTF)
         Utilities.styleFilledButton(signInBtn)
         
-      
+        
+
+        
 //        let todayDate = Date().today(format: "yyyy-MM-dd hh:mm:ss")
 //                print("todayDate:", todayDate)
 //        
@@ -45,7 +50,11 @@ class ViewController: UITableViewController{
         // Do any additional setup after loading the view.
         
     }
+   
     
+
+
+
     //MARK: Alert View Controller to show in-app message alerts
     func showAlert(withValue value: String) {
         // Create an alert controller
@@ -167,4 +176,5 @@ class ViewController: UITableViewController{
     }
     
 }
+
 
