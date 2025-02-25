@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		2B7gKY6aY/ApXseOE08aydaRZQc=
+		0SNNuf+H8F0bQ5d3jPp8q80MSD4=
 		</data>
 		<key>Headers/HanselProtocol.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/Smartech.h</key>
 		<data>
-		Rz/DvKCiHZ6fhL8vglDQugLE5pM=
+		fRCV0Z+//cSA2Sr4AAtdLAoE+WA=
 		</data>
 		<key>Headers/SmartechAdapter.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		amZVPkAD0bn7vrBDAKmJCFNpsyc=
+		nHRrNcUtYiEcnyRyrxOPCagMVMY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -94,27 +94,27 @@
 		</data>
 		<key>SmartechDB.momd/SmartechDB 2.mom</key>
 		<data>
-		zwQksCdGHWWk59DtmjCSsBPMewM=
+		LaSOsDLi5DnsM4fbeJ3QWLYEaGs=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 3.mom</key>
 		<data>
-		Ndoc8HEEdTQmQ3UtPB05la0kYvg=
+		DQdCcQqRmTr5l2aVrOEmDwxPBF0=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 4.mom</key>
 		<data>
-		Ndoc8HEEdTQmQ3UtPB05la0kYvg=
+		DQdCcQqRmTr5l2aVrOEmDwxPBF0=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 5.mom</key>
 		<data>
-		1WCcVHpqtTtWmvkI5N0HmXd8Y80=
+		5HaEou2XPc70a+2N1O7lNd8E2cg=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 6.mom</key>
 		<data>
-		xa+F23yTapRWIZA8EstLh+WxmJ8=
+		pINwR18sCsZ1k4sw1FI8AGhbfak=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 7.mom</key>
 		<data>
-		PoqaW/MuQGZfOdxOJPrnQWthHno=
+		2cYofMehGyX3xjwNFlKsy4Oe1hQ=
 		</data>
 		<key>SmartechDB.momd/SmartechDB 7.omo</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>SmartechDB.momd/SmartechDB.mom</key>
 		<data>
-		uqC1JP9bl1PF/DEZqf0KPRVIz4U=
+		wLZx4bgaEbElwc8HOwIQCs1IUYU=
 		</data>
 		<key>SmartechDB.momd/VersionInfo.plist</key>
 		<data>
@@ -135,11 +135,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2B7gKY6aY/ApXseOE08aydaRZQc=
+			0SNNuf+H8F0bQ5d3jPp8q80MSD4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2v+Yrun/lJHup37FncITgqNlJpWW++KYzi/RtZZpy44=
+			sIUWWim5FPn/LxMrfkgnGL+A9O4G0sKWVOne5x8Mn+Q=
 			</data>
 		</dict>
 		<key>Headers/HanselProtocol.h</key>
@@ -300,11 +300,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Rz/DvKCiHZ6fhL8vglDQugLE5pM=
+			fRCV0Z+//cSA2Sr4AAtdLAoE+WA=
 			</data>
 			<key>hash2</key>
 			<data>
-			0XMrXgMW1dzTcJ+cIYg3s26NN/PyzZ7IsOjz9uy5g9Q=
+			9tFCGnrn89uyivnER6CyUu6enYqmpqlQDrS5HvpKGlA=
 			</data>
 		</dict>
 		<key>Headers/SmartechAdapter.h</key>
@@ -366,66 +366,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zwQksCdGHWWk59DtmjCSsBPMewM=
+			LaSOsDLi5DnsM4fbeJ3QWLYEaGs=
 			</data>
 			<key>hash2</key>
 			<data>
-			pOzshF2042KnPqiZRWmGUL3fuOW9B7u2tUC1bbdZiq0=
+			IQjiKz+dQx1Rs6Ps2mfIHBRuawvlvYunt89aJwAjDGw=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 3.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ndoc8HEEdTQmQ3UtPB05la0kYvg=
+			DQdCcQqRmTr5l2aVrOEmDwxPBF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			BieySuAfxfX2+wCWDt1hGSuOjXIoocndp2Mj3K3QA2k=
+			AtAZH5DdtjLrk08eveXoigZCzgAyJ1y3XOAwB0/2oqk=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 4.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ndoc8HEEdTQmQ3UtPB05la0kYvg=
+			DQdCcQqRmTr5l2aVrOEmDwxPBF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			BieySuAfxfX2+wCWDt1hGSuOjXIoocndp2Mj3K3QA2k=
+			AtAZH5DdtjLrk08eveXoigZCzgAyJ1y3XOAwB0/2oqk=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 5.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1WCcVHpqtTtWmvkI5N0HmXd8Y80=
+			5HaEou2XPc70a+2N1O7lNd8E2cg=
 			</data>
 			<key>hash2</key>
 			<data>
-			R+wSDQJjcatpOha6hCgwSEQ3MVHLnhbqf22FwzY6r2Y=
+			IaUwEBXYebZ7GQsW3B1gJ8Nk0+D5sKecI+viDnY0pew=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 6.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xa+F23yTapRWIZA8EstLh+WxmJ8=
+			pINwR18sCsZ1k4sw1FI8AGhbfak=
 			</data>
 			<key>hash2</key>
 			<data>
-			UFg/IFq4j++w8DSp2UGADoJ2r7tJIN5Y1NG05vZeoCc=
+			yC9vzsWwZxYHvkqahW+CwXhhlKMTETYwxibULzUXfpE=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 7.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PoqaW/MuQGZfOdxOJPrnQWthHno=
+			2cYofMehGyX3xjwNFlKsy4Oe1hQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			8BuqBUkoX6qaRes4Ttvei3XdQVnFcV9BAHWmQ2TeEA4=
+			BxRXhInfsQAZZIqBxaVJFdJ4kY20sG1aeeA7WYK82Mo=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/SmartechDB 7.omo</key>
@@ -443,11 +443,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uqC1JP9bl1PF/DEZqf0KPRVIz4U=
+			wLZx4bgaEbElwc8HOwIQCs1IUYU=
 			</data>
 			<key>hash2</key>
 			<data>
-			8ZIkEdQwhkM2SZIIMFUTKUpz6NeNT9Osc3dBOn1fc0Q=
+			oHXoKFlcQLJmli5MZG0p3I5OQCUNVJlxWHNYKodCpXM=
 			</data>
 		</dict>
 		<key>SmartechDB.momd/VersionInfo.plist</key>

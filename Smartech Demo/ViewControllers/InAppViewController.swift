@@ -10,6 +10,10 @@ import Smartech
 
 class InAppViewController: UITableViewController {
     
+//    var featureMgmt: FeatureVC!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

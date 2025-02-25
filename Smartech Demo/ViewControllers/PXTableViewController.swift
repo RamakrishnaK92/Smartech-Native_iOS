@@ -10,12 +10,10 @@ import Smartech
 
 class PXViewController: UITableViewController {
     
-    
-    
+//    let feature: FeatureVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -47,8 +45,11 @@ class PXViewController: UITableViewController {
         Smartech.sharedInstance().trackEvent("Nudge test", andPayload: ["type":"spotlight with CTA"])
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"ProductExperience"])
+    @IBAction func featureManagement(_ sender: UIButton) {
+       
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "featureVC") as FeatureVC
     }
+    
+    
+   
 }

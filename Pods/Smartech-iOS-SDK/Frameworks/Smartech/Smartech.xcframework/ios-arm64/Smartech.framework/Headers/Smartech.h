@@ -549,28 +549,38 @@ typedef NS_ENUM(NSUInteger, SMTLogLevel) {
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 
 /*
- @brief This method adds app info and device info to webview.
- 
- @param appDictionary Add users parameter.
- 
+ @brief This method creates javascript with Smartech SDK info to webview.
  */
-- (WKUserScript *)getSmartechAppWebScript:(NSDictionary * _Nullable)appDictionary;
+- (WKUserScript *)getSmartechAppSdkJsScript;
 
 /**
  @brief This method sets messageHandler name.
- 
  @return messageHandler name.
- 
  */
 - (NSString *)getSmartechAppWebMessageHandler;
 
 /**
  @brief Track a event when script message is received from a webpage.
- 
  @param message The script message received from webpage.
- 
  */
 - (void)appWebDidReceiveScriptMessage:(WKScriptMessage *)message;
+
+/**
+ @brief Function to set any app level dictionary to the In-App Message.
+ @param inAppAppData The dictionary with custom key value.
+ */
+- (void)setInAppAppData:(NSDictionary *)inAppAppData;
+
+/**
+ @brief Function to get any app level dictionary to the In-App Message.
+ */
+- (NSDictionary *)getInAppAppData;
+
+/**
+ @brief Function to remove already set app level dictionary to the In-App Message.
+ */
+- (void)removeInAppAppData;
+
 
 @end
 

@@ -319,6 +319,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
         
         
+        
         //OneLink step 2
         if deeplinkURLString.starts(with: "https://netcore.onelink"){
             // receive actual link from panel
@@ -328,7 +329,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             return
         }
         
+//        let deeplinkURLString = "arguments={\"route\":\"live Test\",\"key\":\"value\"}"
+
+//             MARK: Extract the JSON substring
+//        if let range = deeplinkURLString.range(of: "arguments=") {
+//            let jsonSubstring = deeplinkURLString[range.upperBound...].trimmingCharacters(in: .whitespaces)
+//            
+//            if let jsonData = jsonSubstring.data(using: .utf8),
+//               let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+//               let jsonDataFormatted = try? JSONSerialization.data(withJSONObject: jsonObject, options: []),
+//               let jsonString = String(data: jsonDataFormatted, encoding: .utf8) {
+//                print(jsonString) // Output: {"route":"live Test","key":"value"}
+//                NSLog("SMTLogger JSON CALL: \(jsonString)")
+//
+//            }
+//        }
+        
         NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
+        NSLog("SMTLogger CUSTOM PAYLOAD CALL: \(notificationPayload)")
+        
+        if let custDict = notificationPayload!["smtCustomPayload"] {
+            print("Name: \(custDict)") // Output: Name: John
+        } else {
+            print("Key not found")
+        }
+
         handleDeepLink(url: deeplinkURLString)
     }
     

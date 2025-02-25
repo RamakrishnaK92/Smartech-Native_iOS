@@ -8,7 +8,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -446,7 +445,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ra-HF-Voj">
-                                                <rect key="frame" x="0.0" y="940.33333333333326" width="330" height="34.333333333333485"/>
+                                                <rect key="frame" x="0.0" y="940.33333333333337" width="330" height="34.333333333333371"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Carousel Landscape"/>
                                                 <connections>
@@ -495,84 +494,16 @@
             </objects>
             <point key="canvasLocation" x="1066" y="658"/>
         </scene>
-        <!--View Controller-->
+        <!--FeatureVC-->
         <scene sceneID="08h-nB-fDF">
             <objects>
-                <viewController storyboardIdentifier="CarouselCell" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tvu-o1-fL0" customClass="FMViewController" customModule="Smartech_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeatureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tvu-o1-fL0" customClass="FeatureVC" customModule="Smartech_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2DF-3w-DqT">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="guc-WI-Iyc">
-                                <rect key="frame" x="16" y="70" width="358" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="ply-eS-Ite"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c01-FH-MuA">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OgO-y0-4yc">
-                                        <rect key="frame" x="0.0" y="61" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sHX-kf-HM3">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="2DF-3w-DqT" id="cKd-pf-xue"/>
-                                    <outlet property="delegate" destination="2DF-3w-DqT" id="rIe-He-QN8"/>
-                                </connections>
-                            </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mMc-wa-8Qf">
-                                <rect key="frame" x="16" y="413" width="358" height="293"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="293" id="uVF-bd-UKZ"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lpU-1v-rJl">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3hO-6L-Zjh">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PhV-BE-hNe">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="2DF-3w-DqT" id="Rl7-Qv-JIt"/>
-                                    <outlet property="delegate" destination="2DF-3w-DqT" id="hMw-ql-BBL"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Gmd-eD-Nx1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="guc-WI-Iyc" firstAttribute="top" secondItem="Gmd-eD-Nx1" secondAttribute="top" constant="70" id="5GT-Al-7iT"/>
-                            <constraint firstItem="Gmd-eD-Nx1" firstAttribute="bottom" secondItem="mMc-wa-8Qf" secondAttribute="bottom" constant="128" id="9Ul-7S-Jaf"/>
-                            <constraint firstItem="mMc-wa-8Qf" firstAttribute="leading" secondItem="Gmd-eD-Nx1" secondAttribute="leading" constant="16" id="YWP-Ho-csF"/>
-                            <constraint firstItem="guc-WI-Iyc" firstAttribute="leading" secondItem="Gmd-eD-Nx1" secondAttribute="leading" constant="16" id="ldF-uL-YR6"/>
-                            <constraint firstItem="Gmd-eD-Nx1" firstAttribute="trailing" secondItem="guc-WI-Iyc" secondAttribute="trailing" constant="16" id="qww-gE-OT8"/>
-                            <constraint firstItem="Gmd-eD-Nx1" firstAttribute="trailing" secondItem="mMc-wa-8Qf" secondAttribute="trailing" constant="16" id="z0P-13-Lvj"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="carousel1" destination="guc-WI-Iyc" id="KBX-ud-624"/>
-                        <outlet property="carousel2" destination="mMc-wa-8Qf" id="eIe-6J-tHr"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uu-QO-3xC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -925,9 +856,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Feature Management"/>
                                                     <connections>
-                                                        <segue destination="Tvu-o1-fL0" kind="popoverPresentation" popoverAnchorView="EXg-nP-71R" id="Lp7-0v-Ou9">
-                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                        </segue>
+                                                        <action selector="featureManagement:" destination="Hk8-kf-UdX" eventType="touchUpInside" id="ysK-aw-78W"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1061,28 +990,28 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

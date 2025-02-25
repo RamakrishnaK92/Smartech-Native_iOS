@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,6 @@
 		97093C7F2652A9B6006DF7D0 /* Smartech_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C7E2652A9B6006DF7D0 /* Smartech_DemoUITests.swift */; };
 		97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8C2652D404006DF7D0 /* RegisterViewController.swift */; };
 		97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C8E2652D428006DF7D0 /* DashboardVC.swift */; };
-		97093C922652DC21006DF7D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093C912652DC21006DF7D0 /* Utilities.swift */; };
-		9D09A913294D8739005E88C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09A912294D8739005E88C3 /* Helper.swift */; };
 		9D456F3D2941D2DB00ABCF10 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */; };
 		9D456F412941D2DB00ABCF10 /* SmartechNSE.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D456F5B2941D78800ABCF10 /* GoogleService-Info.plist */; };
@@ -27,8 +25,6 @@
 		9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */; };
 		9D6BC01C2951F46000D569E3 /* PXTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */; };
 		9D7771C72B375230004DFA8F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7771C62B375230004DFA8F /* Media.xcassets */; };
-		9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */; };
-		9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */; };
 		9D9C9FC529B10D6C00654732 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720CAA3265697A2008DEA17 /* UserNotifications.framework */; };
 		9D9C9FC629B10D6C00654732 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */; };
 		9D9C9FC929B10D6C00654732 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */; };
@@ -41,6 +37,8 @@
 		BB5270152B715769004A459B /* HelperFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5270142B715769004A459B /* HelperFonts.swift */; };
 		BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */ = {isa = PBXBuildFile; fileRef = BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */; };
 		BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */; };
+		BBCA3AC32D6738F900ED0CC0 /* AppInboxCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCA3AC22D6738F900ED0CC0 /* AppInboxCellTableViewCell.xib */; };
+		BBCA3AC42D6738F900ED0CC0 /* AppInboxCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3AC12D6738F900ED0CC0 /* AppInboxCellTableViewCell.swift */; };
 		C85E0CAE5895F26408EEB0D8 /* Pods_SmartechNC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887EFF279FA8CE62199CC995 /* Pods_SmartechNC.framework */; };
 		C9972B8C10FB93CEEC9D3415 /* Pods_Smartech_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8C9B1A3A3E4CDA87C1006 /* Pods_Smartech_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -116,11 +114,9 @@
 		97093C802652A9B6006DF7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97093C8C2652D404006DF7D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		97093C8E2652D428006DF7D0 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
-		97093C912652DC21006DF7D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9720CAA3265697A2008DEA17 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		9720CAA5265697A2008DEA17 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smartech Demo.entitlements"; sourceTree = "<group>"; };
-		9D09A912294D8739005E88C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		9D456F3A2941D2DB00ABCF10 /* SmartechNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D456F3C2941D2DB00ABCF10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9D456F3E2941D2DB00ABCF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,8 +126,6 @@
 		9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXTableViewController.swift; sourceTree = "<group>"; };
 		9D7771C62B375230004DFA8F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInboxCellTableViewCell.swift; sourceTree = "<group>"; };
-		9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInboxCellTableViewCell.xib; sourceTree = "<group>"; };
 		9D9C9FC429B10D6B00654732 /* SmartechNC.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartechNC.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9C9FC829B10D6C00654732 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		9D9C9FCB29B10D6C00654732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -146,8 +140,14 @@
 		BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPage.swift; sourceTree = "<group>"; };
 		BBAA66612BC8311A00DB86D6 /* GTM-M6QRHT25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-M6QRHT25.json"; sourceTree = "<group>"; };
 		BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTestVC.swift; sourceTree = "<group>"; };
+		BBCA3AC12D6738F900ED0CC0 /* AppInboxCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInboxCellTableViewCell.swift; sourceTree = "<group>"; };
+		BBCA3AC22D6738F900ED0CC0 /* AppInboxCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInboxCellTableViewCell.xib; sourceTree = "<group>"; };
 		BBDBD1F32D5346960040DBA8 /* Smartech Demo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Smartech Demo copy-Info.plist"; path = "/Users/ramakrishnakasuba/_GitLocal/Smartech-Native_iOS/Smartech Demo copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BBCA3ABE2D6735CD00ED0CC0 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		97093C562652A9A4006DF7D0 /* Frameworks */ = {
@@ -227,6 +227,7 @@
 				BBAA66602BC8310B00DB86D6 /* Container */,
 				9720CAB42656981F008DEA17 /* Smartech Demo.entitlements */,
 				9DECFD9B2A2DCAD100B6D045 /* Views */,
+				BBCA3ABE2D6735CD00ED0CC0 /* Model */,
 				97093C902652D438006DF7D0 /* ViewControllers */,
 				BB1F018D2B90D701004E856B /* SupportingFiles */,
 			);
@@ -254,17 +255,17 @@
 		97093C902652D438006DF7D0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBCA3AC12D6738F900ED0CC0 /* AppInboxCellTableViewCell.swift */,
+				BBCA3AC22D6738F900ED0CC0 /* AppInboxCellTableViewCell.xib */,
+				1862FB72280402A400EC3395 /* NotificationVC.swift */,
 				97093C602652A9A4006DF7D0 /* ViewController.swift */,
 				BBAF93E32C5DFB5A00C4E698 /* QuickTestVC.swift */,
 				97093C8C2652D404006DF7D0 /* RegisterViewController.swift */,
 				97093C8E2652D428006DF7D0 /* DashboardVC.swift */,
-				1862FB72280402A400EC3395 /* NotificationVC.swift */,
 				BBA4ADE82CE5FC5000A937B0 /* CollectionPage.swift */,
 				9D4A89AE2945DDD600AC54B0 /* CEViewController.swift */,
 				9DC618652950DAC400E670C5 /* InAppViewController.swift */,
 				9D6BC01B2951F46000D569E3 /* PXTableViewController.swift */,
-				9D8692AF2A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift */,
-				9D8692B02A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib */,
 				BB5270142B715769004A459B /* HelperFonts.swift */,
 			);
 			path = ViewControllers;
@@ -309,8 +310,6 @@
 				BB52700F2B6D4A1C004A459B /* Fonts */,
 				97093C5C2652A9A4006DF7D0 /* AppDelegate.swift */,
 				9D5370C6296DBAD600E3C1BE /* SceneDelegate.swift */,
-				97093C912652DC21006DF7D0 /* Utilities.swift */,
-				9D09A912294D8739005E88C3 /* Helper.swift */,
 				97093C652652A9B6006DF7D0 /* Assets.xcassets */,
 				97093C6A2652A9B6006DF7D0 /* Info.plist */,
 			);
@@ -378,6 +377,9 @@
 			dependencies = (
 				9D456F402941D2DB00ABCF10 /* PBXTargetDependency */,
 				9D9C9FCF29B10D6C00654732 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BBCA3ABE2D6735CD00ED0CC0 /* Model */,
 			);
 			name = "Smartech Demo";
 			productName = "Smartech Demo";
@@ -512,12 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAA66622BC8311A00DB86D6 /* GTM-M6QRHT25.json in Resources */,
-				9D8692B22A2F9EA500FABA1F /* AppInboxCellTableViewCell.xib in Resources */,
 				BB5270132B714D71004A459B /* TruenoRg.otf in Resources */,
 				97093C692652A9B6006DF7D0 /* LaunchScreen.storyboard in Resources */,
 				9D456F5C2941D78800ABCF10 /* GoogleService-Info.plist in Resources */,
 				97093C662652A9B6006DF7D0 /* Assets.xcassets in Resources */,
 				BB0DF1142D314B8100A77D63 /* test.wav in Resources */,
+				BBCA3AC32D6738F900ED0CC0 /* AppInboxCellTableViewCell.xib in Resources */,
 				97093C642652A9A4006DF7D0 /* Main.storyboard in Resources */,
 				BB0DF1162D314C0500A77D63 /* vibration.wav in Resources */,
 			);
@@ -665,18 +667,16 @@
 			files = (
 				9D4A89AF2945DDD600AC54B0 /* CEViewController.swift in Sources */,
 				9D6BC01C2951F46000D569E3 /* PXTableViewController.swift in Sources */,
-				9D8692B12A2F9EA500FABA1F /* AppInboxCellTableViewCell.swift in Sources */,
-				97093C922652DC21006DF7D0 /* Utilities.swift in Sources */,
 				97093C612652A9A4006DF7D0 /* ViewController.swift in Sources */,
 				BB5270152B715769004A459B /* HelperFonts.swift in Sources */,
 				97093C5D2652A9A4006DF7D0 /* AppDelegate.swift in Sources */,
 				9DC618662950DAC400E670C5 /* InAppViewController.swift in Sources */,
+				BBCA3AC42D6738F900ED0CC0 /* AppInboxCellTableViewCell.swift in Sources */,
 				97093C8F2652D428006DF7D0 /* DashboardVC.swift in Sources */,
 				BBAF93E42C5DFB5A00C4E698 /* QuickTestVC.swift in Sources */,
 				9D5370C7296DBAD600E3C1BE /* SceneDelegate.swift in Sources */,
 				97093C8D2652D404006DF7D0 /* RegisterViewController.swift in Sources */,
 				1862FB73280402A400EC3395 /* NotificationVC.swift in Sources */,
-				9D09A913294D8739005E88C3 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
