@@ -282,6 +282,22 @@ typedef NS_ENUM(NSUInteger, SMTLogLevel) {
  */
 - (void)updateUserProfile:(NSDictionary *)payloadDictionary;
 
+/**
+ @brief This method is used to fetch the user profile.
+ 
+ @discussion This method should be called by the developer to fetch all the user related attributes from Smartech.
+ 
+ You can use the below code.
+ 
+ @code
+ [[Smartech sharedInstance] getUserProfile];
+ @endcode
+ 
+ @return NSDictionary The current user profile data.
+
+ */
+- (NSDictionary *)getUserProfile;
+
 
 #pragma mark - GDPR Methods
 

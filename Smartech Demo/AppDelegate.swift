@@ -31,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         Smartech.sharedInstance().trackEvent(eventName, andPayload: properties)
     }
     
-   
+    
     let defaults = UserDefaults(suiteName: "group.com.netcore.SmartechApp") // Use your App Group here
-   
+    
     
     // MARK: PX - ActionListener
     func onActionPerformed(action: String!) {
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         //
     }
     
-
+    
     var window: UIWindow?
     
     var VC:ViewController?
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     }
     
     
-
+    
     // MARK: Onelink deeplink case
     func didResolveDeepLink(_ result: DeepLinkResult) {
         
@@ -74,8 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     // MARK: DIDFINISH LAUNCH
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-
-                    
+        UNUserNotificationCenter.current().delegate = self
+        
+        
         if isUserLoggedIn == true {
             
             print("Already logged in")
@@ -100,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         //MARK: FIREBASE SDK INIT
         FirebaseApp.configure()
-       
+        
         //MARK: SMARTECH SDK INIT
         Smartech.sharedInstance().initSDK(with: self, withLaunchOptions: launchOptions)
         
@@ -148,7 +149,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         MoEngageSDKMessaging.sharedInstance.registerForRemoteNotification(withCategories: nil, andUserNotificationCenterDelegate: self)
         
-        UNUserNotificationCenter.current().delegate = self
         
         
         return true
@@ -184,8 +184,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
         defaults?.set(0, forKey: "badgeCount")
-
-
+        
+        
         NSLog("SMTL-APP (foreground APN):- \(notification.request.content.userInfo)\n")
         SmartPush.sharedInstance().willPresentForegroundNotification(notification)
         completionHandler([.badge, .sound, .alert])
@@ -193,7 +193,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-
+        
         if SmartPush.sharedInstance().isNotification(fromSmartech: response.notification.request.content.userInfo){
             
             SmartPush.sharedInstance().didReceive(response)
@@ -209,13 +209,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             print(pushDictionary)
             NSLog("SMTL-APP (didReceive MOE):- \(response)")
         }
-    
+        
         
         completionHandler()
     }
     
     
-//    
+    //
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
         
@@ -250,7 +250,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
         
         return ((GIDSignIn.sharedInstance.handle(url)) != nil)
     }
-//    
+    //
     func moveToTabbar(_ withIndex : Int){
         let tabBarController = UITabBarController()
         tabBarController.selectedIndex = withIndex
@@ -262,7 +262,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     //Universal link handling
     fileprivate func emailAPITracking(emailURL: String ) {
         //https://cedocs.netcorecloud.com/docs/universal-links-for-email-engagement#implementing-link-resolution
-
+        
         let netcoreURL = URL(string: emailURL)
         
         //        if let referralURL = userActivity.webpageURL, let netcoreURL = URL(string: String(describing: referralURL)){
@@ -290,7 +290,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
                 print("Invalid or unsuccessful HTTP response")
                 
             }
-        
+            
             
             
             
@@ -298,17 +298,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             //            print("Invalid referral URL")
             //
             //        }
-           
-                        
+            
+            
         }
         task.resume()
         
-    
+        
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
         
-//        emailAPITracking(emailURL: "https://google.com")
+        //        emailAPITracking(emailURL: "https://google.com")
         emailAPITracking(emailURL: String(describing: userActivity.webpageURL!))
         
         return true
@@ -317,6 +317,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     //MARK: SMT DEEPLINK CALLBACK
     func handleDeeplinkAction(withURLString deeplinkURLString: String, andNotificationPayload notificationPayload: [AnyHashable : Any]?) {
+        
+        NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
+        NSLog("SMTLogger NOTIF PAYLOAD CALL: \(notificationPayload!)")
         
         
         
@@ -329,31 +332,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             return
         }
         
-//        let deeplinkURLString = "arguments={\"route\":\"live Test\",\"key\":\"value\"}"
-
-//             MARK: Extract the JSON substring
-//        if let range = deeplinkURLString.range(of: "arguments=") {
-//            let jsonSubstring = deeplinkURLString[range.upperBound...].trimmingCharacters(in: .whitespaces)
-//            
-//            if let jsonData = jsonSubstring.data(using: .utf8),
-//               let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
-//               let jsonDataFormatted = try? JSONSerialization.data(withJSONObject: jsonObject, options: []),
-//               let jsonString = String(data: jsonDataFormatted, encoding: .utf8) {
-//                print(jsonString) // Output: {"route":"live Test","key":"value"}
-//                NSLog("SMTLogger JSON CALL: \(jsonString)")
-//
-//            }
-//        }
+        //        let deeplinkURLString = "arguments={\"route\":\"live Test\",\"key\":\"value\"}"
         
-        NSLog("SMTLogger DEEPLINK NEW CALL: \(deeplinkURLString)")
-        NSLog("SMTLogger CUSTOM PAYLOAD CALL: \(notificationPayload)")
+        //             MARK: Extract the JSON substring
+        //        if let range = deeplinkURLString.range(of: "arguments=") {
+        //            let jsonSubstring = deeplinkURLString[range.upperBound...].trimmingCharacters(in: .whitespaces)
+        //
+        //            if let jsonData = jsonSubstring.data(using: .utf8),
+        //               let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+        //               let jsonDataFormatted = try? JSONSerialization.data(withJSONObject: jsonObject, options: []),
+        //               let jsonString = String(data: jsonDataFormatted, encoding: .utf8) {
+        //                print(jsonString) // Output: {"route":"live Test","key":"value"}
+        //                NSLog("SMTLogger JSON CALL: \(jsonString)")
+        //
+        //            }
+        //        }
+        
+        
         
         if let custDict = notificationPayload!["smtCustomPayload"] {
             print("Name: \(custDict)") // Output: Name: John
         } else {
             print("Key not found")
         }
-
+        
         handleDeepLink(url: deeplinkURLString)
     }
     
@@ -423,11 +425,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
             
             NSLog("SMTL-APP BACKGROUND inside : \(userInfo)")
             
+            
         }
         completionHandler(UIBackgroundFetchResult.newData)
     }
-     
     
+           
     func applicationDidBecomeActive(_ application: UIApplication) {
         var badgeCount = defaults?.integer(forKey: "badgeCount") ?? 0
         defaults?.setValue(0, forKey: "badgeCount")
@@ -437,7 +440,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SmartechDelegate, CLLocat
     
     
 }
-
-
 
 

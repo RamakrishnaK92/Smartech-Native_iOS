@@ -83,11 +83,12 @@ class CEViewController: UIViewController {
      }
      */
     
-    //    override func viewDidAppear(_ animated: Bool) {
-    //                        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"PushNotification", "next_page":"abc"])
-    //
-    //
-    //    }
+        override func viewDidAppear(_ animated: Bool) {
+//                            Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current_page":"PushNotification", "next_page":"abc"])
+            Smartech.sharedInstance().trackEvent("product_view", andPayload: ["amount": 100.00])
+
+    
+        }
     
 
     func postALamofireTest() {

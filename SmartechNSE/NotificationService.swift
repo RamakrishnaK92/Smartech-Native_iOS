@@ -23,10 +23,13 @@ class NotificationService: UNNotificationServiceExtension {
         
         // Check if the notification is from Smartech
         if SmartPush.sharedInstance().isNotification(fromSmartech: bestAttemptContent.userInfo) {
+            
+            
             // Handle Smartech-specific processing
             smartechServiceExtension.didReceive(request) { bestAttemptContent in
                 
-                NSLog("SMTLogger Updated content: \(bestAttemptContent)")
+                NSLog("SMTLogger Updated content: \(bestAttemptContent.userInfo)")
+                
                 // Add badge key to the updated content
                 self.addBadge(to: bestAttemptContent, contentHandler: contentHandler)
                 

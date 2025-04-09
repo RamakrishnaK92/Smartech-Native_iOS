@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-O0-lf8" userLabel="CE Stack">
-                                <rect key="frame" x="20" y="72" width="350" height="580.33333333333337"/>
+                                <rect key="frame" x="20" y="72" width="350" height="634.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events to CE, PX and Attributes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGF-ih-tfW">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
@@ -346,6 +346,14 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Click to send Events Data "/>
                                         <connections>
                                             <action selector="events" destination="z6M-Y9-cmL" eventType="touchUpInside" id="yGa-xq-9Pd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-kz-82a">
+                                        <rect key="frame" x="0.0" y="600.33333333333337" width="350" height="34.333333333333371"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="My Location"/>
+                                        <connections>
+                                            <action selector="simulateLocation:" destination="z6M-Y9-cmL" eventType="touchUpInside" id="AI4-Sf-nEE"/>
                                         </connections>
                                     </button>
                                 </subviews>

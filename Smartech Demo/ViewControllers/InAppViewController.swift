@@ -45,6 +45,7 @@ class InAppViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
       //  Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"InAppMessage"])
-       
+        Smartech.sharedInstance().trackEvent("Product Purchase", andPayload: ["amount": 500.00])
+            
     }
 }

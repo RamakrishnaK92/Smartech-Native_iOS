@@ -23,10 +23,13 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
- //       Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"Profile page"])
+       
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        Smartech.sharedInstance().trackEvent("screen_viewed", andPayload: ["current page":"Profile page"])
+    }
   
     
     

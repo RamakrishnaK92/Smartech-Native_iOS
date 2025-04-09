@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -146,7 +146,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BBCA3ABE2D6735CD00ED0CC0 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		BBCA3ABE2D6735CD00ED0CC0 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,7 +491,6 @@
 				};
 			};
 			buildConfigurationList = 97093C542652A9A4006DF7D0 /* Build configuration list for PBXProject "Smartech Demo" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -495,6 +498,7 @@
 				Base,
 			);
 			mainGroup = 97093C502652A9A4006DF7D0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 97093C5A2652A9A4006DF7D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

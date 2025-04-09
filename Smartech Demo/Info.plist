@@ -8,10 +8,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.netcore</string>
+			<string>BUNDLE ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>hanselpebbletrace</string>
+				<string>smartech</string>
 			</array>
 		</dict>
 		<dict>

@@ -10,6 +10,8 @@
 		<string>applinks:elink-prod.mailivan.com</string>
 		<string>applinks:smartechapp.app.link</string>
 		<string>applinks:elink.mailivan.com</string>
+		<string>applinks:elink.savmoney.me</string>
+		<string>applinks:elink.sav.money</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>

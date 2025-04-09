@@ -8,7 +8,8 @@ target 'Smartech Demo' do
   
   
   # Pods for Smartech Demo
-  pod 'Smartech-iOS-SDK', '~> 3.6.0'
+  pod 'Smartech-iOS-SDK', '~> 3.6.1
+  '
   pod 'SmartPush-iOS-SDK', '~> 3.5.5'
   pod 'SmartechNudges', '9.0.17'
   pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.6'

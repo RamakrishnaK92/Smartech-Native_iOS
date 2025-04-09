@@ -171,9 +171,7 @@ class ViewController: UITableViewController{
         
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-//        Smartech.sharedInstance().trackEvent("Product Purchase", andPayload: ["amount": 500.00])
-    }
+   
     
 }
 
