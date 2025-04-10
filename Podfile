@@ -11,15 +11,16 @@ target 'Smartech Demo' do
   pod 'Smartech-iOS-SDK', '~> 3.6.1
   '
   pod 'SmartPush-iOS-SDK', '~> 3.5.5'
-  pod 'SmartechNudges', '9.0.17'
-  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.6'
+  pod 'SmartechNudges', '9.0.19'
+  pod 'SmartechAppInbox-iOS-SDK', '~> 3.5.7'
   
   pod 'IQKeyboardManagerSwift'
-  #pod 'Firebase/Analytics'
+  pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
   pod 'GoogleTagManager'
+  
   
   pod 'AppsFlyerFramework'  #appsflyer SDK
   pod 'MoEngage-iOS-SDK'
